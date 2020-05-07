@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1213</width>
+    <height>958</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1191</width>
+      <height>911</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Параметры</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1081</width>
+        <height>809</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="15" column="2">
+        <layout class="QGridLayout" name="gridLayout_12">
+         <item row="0" column="0" alignment="Qt::AlignLeft">
+          <widget class="QLineEdit" name="city8"/>
+         </item>
+         <item row="1" column="0" alignment="Qt::AlignLeft">
+          <widget class="QLineEdit" name="city9"/>
+         </item>
+        </layout>
+       </item>
+       <item row="12" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio5">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="1">
+        <widget class="QLineEdit" name="startTime">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="25" column="1">
+        <widget class="QLineEdit" name="gates">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="3">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Рефери:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_39">
+           <property name="maximumSize">
+            <size>
+             <width>82</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string> run per duel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="runsComboBox">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="15" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Открывающие:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city6"/>
+       </item>
+       <item row="7" column="0" colspan="3">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="0">
+        <widget class="QLabel" name="label_28">
+         <property name="text">
+          <string>Время начала</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_40">
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string> Квалификации</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="qualificationsComboBox">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="currentText">
+            <string>2</string>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="15" column="1">
+        <layout class="QGridLayout" name="gridLayout_11">
+         <item row="0" column="0" alignment="Qt::AlignLeft">
+          <widget class="QLineEdit" name="fio8">
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" alignment="Qt::AlignLeft">
+          <widget class="QLineEdit" name="fio9">
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio2">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="25" column="0">
+        <widget class="QLabel" name="label_26">
+         <property name="text">
+          <string>Количество ворот</string>
+         </property>
+        </widget>
+       </item>
+       <item row="28" column="0">
+        <widget class="QLabel" name="label_29">
+         <property name="text">
+          <string>Финалы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Название трассы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city7"/>
+       </item>
+       <item row="14" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio7">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Главный секретарь:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Место и дата проведения</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Тип соревнований</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="typelineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="titlelineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="28" column="1">
+        <widget class="QLineEdit" name="finals">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Директор соревнований:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Постановщик трассы:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>ФИО</string>
+         </property>
+        </widget>
+       </item>
+       <item row="32" column="1">
+        <widget class="QLineEdit" name="finishTemp">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="23" column="1">
+        <widget class="QLineEdit" name="altitudeDiff">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Начальник трассы:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="0">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>Финиш</string>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="1">
+        <widget class="QLineEdit" name="start">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Технический делегат:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="orglineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+        <widget class="QLineEdit" name="fio1">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_37">
+           <property name="maximumSize">
+            <size>
+             <width>78</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string> rounds</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="roundsComboBox">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Организаторы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="24" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>№ гомологации</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Город</string>
+         </property>
+        </widget>
+       </item>
+       <item row="33" column="0">
+        <widget class="QLabel" name="label_34">
+         <property name="text">
+          <string>Снег</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="datelineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="24" column="1">
+        <widget class="QLineEdit" name="homologation">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="0" colspan="3" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>ИНФОРМАЦИЯ О ТРАССЕ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="3" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>ГЛАВНАЯ СУДЕЙСКАЯ КОМИССИЯ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city3"/>
+       </item>
+       <item row="31" column="0">
+        <widget class="QLabel" name="label_32">
+         <property name="text">
+          <string>Температура старта</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Рефери на старте:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="31" column="1">
+        <widget class="QLineEdit" name="startTemp">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>Старт</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city5"/>
+       </item>
+       <item row="30" column="0" colspan="3" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_30">
+         <property name="text">
+          <string>ПОГОДА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city4"/>
+       </item>
+       <item row="22" column="1">
+        <widget class="QLineEdit" name="finish">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="1">
+        <widget class="QLineEdit" name="trackName">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Должность</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio3">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio4">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city2"/>
+       </item>
+       <item row="33" column="2">
+        <widget class="QPushButton" name="saveParams">
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Сохранить</string>
+         </property>
+        </widget>
+       </item>
+       <item row="23" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Перепад высот</string>
+         </property>
+        </widget>
+       </item>
+       <item row="29" column="0" colspan="3">
+        <widget class="QLabel" name="label_31">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Название</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio6">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="33" column="1">
+        <widget class="QLineEdit" name="snow">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="32" column="0">
+        <widget class="QLabel" name="label_33">
+         <property name="text">
+          <string>Температура финиша</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city1"/>
+       </item>
+       <item row="26" column="1">
+        <widget class="QLineEdit" name="length">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="26" column="0">
+        <widget class="QLabel" name="label_27">
+         <property name="text">
+          <string>Длинна трассы</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Спортсмены</string>
+     </attribute>
+     <widget class="QTableWidget" name="participantsTable">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>751</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>С.Ф.</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ФИО</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Год рождения</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Разряд</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Очки КР</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>770</y>
+        <width>401</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="editpushButton">
+         <property name="text">
+          <string>Редактировать данные</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addpushButton">
+         <property name="text">
+          <string>Добавить спортсмена</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLoadList">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>20</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Загрузить список участников</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>759</x>
+        <y>100</y>
+        <width>351</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_38">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Файл:</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="fileNameLabel">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>CC Q_1</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>1181</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_36">
+         <property name="text">
+          <string>СИНЯЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTableWidget" name="redListQ1">
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_35">
+         <property name="text">
+          <string>КРАСНАЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="blueListQ1">
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Res Q_1</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>1181</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_109">
+         <property name="text">
+          <string>КРАСНАЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_110">
+         <property name="text">
+          <string>СИНЯЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="ResBlueListQ1">
+         <column>
+          <property name="text">
+           <string>Место</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTableWidget" name="ResRedListQ1">
+         <column>
+          <property name="text">
+           <string>Место</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="CC_Q_2_Tab">
+     <attribute name="title">
+      <string>CC Q_2</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_22">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>1181</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_28">
+       <item row="1" column="0">
+        <widget class="QTableWidget" name="redListQ2">
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_112">
+         <property name="text">
+          <string>КРАСНАЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_111">
+         <property name="text">
+          <string>СИНЯЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="bluListQ2">
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="RES_Q_2_Tab">
+     <attribute name="title">
+      <string>Res Q_2</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>1181</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_113">
+         <property name="text">
+          <string>КРАСНАЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_114">
+         <property name="text">
+          <string>СИНЯЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="ResBlueListQ2">
+         <column>
+          <property name="text">
+           <string>Место</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTableWidget" name="ResRedListQ2">
+         <column>
+          <property name="text">
+           <string>Место</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ст№</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.Ф.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Год рождения</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>С.К.</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Finals</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>1261</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_9"/>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>Итог</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_8">
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>1261</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_10"/>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1213</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
