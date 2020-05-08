@@ -70,7 +70,10 @@ class Data:
                 for row_index in range(28, rows):
                     part_data = {}
                     for column_index, column_name in enumerate(column_names):
-                        part_data[column_name] = sheet.cell(row_index, column_index).value
+                        if column_index != 0:
+                            part_data[column_name] = sheet.cell(row_index, column_index).value
+                        else:
+                            part_data[column_name] = int(sheet.cell(row_index, column_index).value)
                     part_data.setdefault('QT_course', None)
                     part_data.setdefault('QT_1', None)
                     part_data.setdefault('QT_2', None)
@@ -93,4 +96,4 @@ class Data:
                     part_data.setdefault('FTBig_1', None)
                     part_data.setdefault('FTBig_2', None)
                     self._competitors_data.append(part_data)
-                print(int(self._competitors_data[0]['Ст№']))
+        print(self._competitors_data)
