@@ -804,6 +804,11 @@
       </property>
       <column>
        <property name="text">
+        <string>bib</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
         <string>С.Ф.</string>
        </property>
       </column>
@@ -925,7 +930,7 @@
         <widget class="QTableWidget" name="redListQ1">
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -961,7 +966,7 @@
         <widget class="QTableWidget" name="blueListQ1">
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -1026,7 +1031,7 @@
          </column>
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -1065,7 +1070,7 @@
          </column>
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -1116,7 +1121,7 @@
         <widget class="QTableWidget" name="redListQ2">
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -1159,7 +1164,7 @@
         <widget class="QTableWidget" name="bluListQ2">
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -1224,7 +1229,7 @@
          </column>
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
@@ -1263,7 +1268,7 @@
          </column>
          <column>
           <property name="text">
-           <string>Ст№</string>
+           <string>bib</string>
           </property>
          </column>
          <column>
