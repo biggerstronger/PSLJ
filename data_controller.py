@@ -96,4 +96,4 @@ class Data:
                     part_data.setdefault('FTBig_1', None)
                     part_data.setdefault('FTBig_2', None)
                     self._competitors_data.append(part_data)
-        print(self._competitors_data)
+        # print(self._competitors_data)
