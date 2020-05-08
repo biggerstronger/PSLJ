@@ -913,7 +913,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
+        <y>50</y>
         <width>1181</width>
         <height>771</height>
        </rect>
@@ -993,6 +993,32 @@
        </item>
       </layout>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>840</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ПОДТВЕРДИТЬ СПИСОК</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>20</y>
+        <width>341</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ПОСТАНОВКА НА СТАРТ РУЧКАМИ ПО ТЫКАЛКЕ??????</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -1011,14 +1037,14 @@
        <item row="0" column="0" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_109">
          <property name="text">
-          <string>КРАСНАЯ ТРАССА</string>
+          <string>НЕСОРТ ВРЕМЯ РЕАЛТАЙМ</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_110">
          <property name="text">
-          <string>СИНЯЯ ТРАССА</string>
+          <string>СОРТ ВРЕМЯ РЕАЛТАЙМ + место</string>
          </property>
         </widget>
        </item>
@@ -1051,11 +1077,6 @@
          </column>
          <column>
           <property name="text">
-           <string>С.К.</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string>Время</string>
           </property>
          </column>
@@ -1065,17 +1086,7 @@
         <widget class="QTableWidget" name="ResRedListQ1">
          <column>
           <property name="text">
-           <string>Место</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string>bib</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>С.Ф.</string>
           </property>
          </column>
          <column>
@@ -1086,11 +1097,6 @@
          <column>
           <property name="text">
            <string>Год рождения</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>С.К.</string>
           </property>
          </column>
          <column>

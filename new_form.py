@@ -549,7 +549,7 @@ class Ui_MainWindow(object):
         self.tab_2.setObjectName(u"tab_2")
         self.gridLayoutWidget_2 = QWidget(self.tab_2)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(0, 10, 1181, 771))
+        self.gridLayoutWidget_2.setGeometry(QRect(0, 50, 1181, 771))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -597,6 +597,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.blueListQ1, 1, 1, 1, 1)
 
+        self.pushButton = QPushButton(self.tab_2)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(800, 840, 331, 41))
+        self.label_41 = QLabel(self.tab_2)
+        self.label_41.setObjectName(u"label_41")
+        self.label_41.setGeometry(QRect(460, 20, 341, 16))
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
@@ -617,8 +623,8 @@ class Ui_MainWindow(object):
         self.gridLayout_6.addWidget(self.label_110, 0, 1, 1, 1, Qt.AlignHCenter)
 
         self.ResBlueListQ1 = QTableWidget(self.gridLayoutWidget_4)
-        if (self.ResBlueListQ1.columnCount() < 7):
-            self.ResBlueListQ1.setColumnCount(7)
+        if (self.ResBlueListQ1.columnCount() < 6):
+            self.ResBlueListQ1.setColumnCount(6)
         __qtablewidgetitem16 = QTableWidgetItem()
         self.ResBlueListQ1.setHorizontalHeaderItem(0, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
@@ -631,29 +637,21 @@ class Ui_MainWindow(object):
         self.ResBlueListQ1.setHorizontalHeaderItem(4, __qtablewidgetitem20)
         __qtablewidgetitem21 = QTableWidgetItem()
         self.ResBlueListQ1.setHorizontalHeaderItem(5, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.ResBlueListQ1.setHorizontalHeaderItem(6, __qtablewidgetitem22)
         self.ResBlueListQ1.setObjectName(u"ResBlueListQ1")
 
         self.gridLayout_6.addWidget(self.ResBlueListQ1, 1, 1, 1, 1)
 
         self.ResRedListQ1 = QTableWidget(self.gridLayoutWidget_4)
-        if (self.ResRedListQ1.columnCount() < 7):
-            self.ResRedListQ1.setColumnCount(7)
+        if (self.ResRedListQ1.columnCount() < 4):
+            self.ResRedListQ1.setColumnCount(4)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.ResRedListQ1.setHorizontalHeaderItem(0, __qtablewidgetitem22)
         __qtablewidgetitem23 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(0, __qtablewidgetitem23)
+        self.ResRedListQ1.setHorizontalHeaderItem(1, __qtablewidgetitem23)
         __qtablewidgetitem24 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(1, __qtablewidgetitem24)
+        self.ResRedListQ1.setHorizontalHeaderItem(2, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(2, __qtablewidgetitem25)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(3, __qtablewidgetitem26)
-        __qtablewidgetitem27 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(4, __qtablewidgetitem27)
-        __qtablewidgetitem28 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(5, __qtablewidgetitem28)
-        __qtablewidgetitem29 = QTableWidgetItem()
-        self.ResRedListQ1.setHorizontalHeaderItem(6, __qtablewidgetitem29)
+        self.ResRedListQ1.setHorizontalHeaderItem(3, __qtablewidgetitem25)
         self.ResRedListQ1.setObjectName(u"ResRedListQ1")
 
         self.gridLayout_6.addWidget(self.ResRedListQ1, 1, 0, 1, 1)
@@ -670,16 +668,16 @@ class Ui_MainWindow(object):
         self.redListQ2 = QTableWidget(self.gridLayoutWidget_22)
         if (self.redListQ2.columnCount() < 5):
             self.redListQ2.setColumnCount(5)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.redListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.redListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem27)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.redListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.redListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
-        self.redListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem30)
-        __qtablewidgetitem31 = QTableWidgetItem()
-        self.redListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem31)
-        __qtablewidgetitem32 = QTableWidgetItem()
-        self.redListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem32)
-        __qtablewidgetitem33 = QTableWidgetItem()
-        self.redListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem33)
-        __qtablewidgetitem34 = QTableWidgetItem()
-        self.redListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem34)
+        self.redListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem30)
         self.redListQ2.setObjectName(u"redListQ2")
 
         self.gridLayout_28.addWidget(self.redListQ2, 1, 0, 1, 1)
@@ -697,16 +695,16 @@ class Ui_MainWindow(object):
         self.bluListQ2 = QTableWidget(self.gridLayoutWidget_22)
         if (self.bluListQ2.columnCount() < 5):
             self.bluListQ2.setColumnCount(5)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.bluListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.bluListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem32)
+        __qtablewidgetitem33 = QTableWidgetItem()
+        self.bluListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem33)
+        __qtablewidgetitem34 = QTableWidgetItem()
+        self.bluListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem34)
         __qtablewidgetitem35 = QTableWidgetItem()
-        self.bluListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem35)
-        __qtablewidgetitem36 = QTableWidgetItem()
-        self.bluListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem36)
-        __qtablewidgetitem37 = QTableWidgetItem()
-        self.bluListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem37)
-        __qtablewidgetitem38 = QTableWidgetItem()
-        self.bluListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem38)
-        __qtablewidgetitem39 = QTableWidgetItem()
-        self.bluListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem39)
+        self.bluListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem35)
         self.bluListQ2.setObjectName(u"bluListQ2")
 
         self.gridLayout_28.addWidget(self.bluListQ2, 1, 1, 1, 1)
@@ -733,20 +731,20 @@ class Ui_MainWindow(object):
         self.ResBlueListQ2 = QTableWidget(self.gridLayoutWidget_5)
         if (self.ResBlueListQ2.columnCount() < 7):
             self.ResBlueListQ2.setColumnCount(7)
+        __qtablewidgetitem36 = QTableWidgetItem()
+        self.ResBlueListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        self.ResBlueListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        self.ResBlueListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem38)
+        __qtablewidgetitem39 = QTableWidgetItem()
+        self.ResBlueListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem39)
         __qtablewidgetitem40 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem40)
+        self.ResBlueListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem40)
         __qtablewidgetitem41 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem41)
+        self.ResBlueListQ2.setHorizontalHeaderItem(5, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem42)
-        __qtablewidgetitem43 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem43)
-        __qtablewidgetitem44 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem44)
-        __qtablewidgetitem45 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(5, __qtablewidgetitem45)
-        __qtablewidgetitem46 = QTableWidgetItem()
-        self.ResBlueListQ2.setHorizontalHeaderItem(6, __qtablewidgetitem46)
+        self.ResBlueListQ2.setHorizontalHeaderItem(6, __qtablewidgetitem42)
         self.ResBlueListQ2.setObjectName(u"ResBlueListQ2")
 
         self.gridLayout_7.addWidget(self.ResBlueListQ2, 1, 1, 1, 1)
@@ -754,20 +752,20 @@ class Ui_MainWindow(object):
         self.ResRedListQ2 = QTableWidget(self.gridLayoutWidget_5)
         if (self.ResRedListQ2.columnCount() < 7):
             self.ResRedListQ2.setColumnCount(7)
+        __qtablewidgetitem43 = QTableWidgetItem()
+        self.ResRedListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem43)
+        __qtablewidgetitem44 = QTableWidgetItem()
+        self.ResRedListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem44)
+        __qtablewidgetitem45 = QTableWidgetItem()
+        self.ResRedListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem45)
+        __qtablewidgetitem46 = QTableWidgetItem()
+        self.ResRedListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(0, __qtablewidgetitem47)
+        self.ResRedListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(1, __qtablewidgetitem48)
+        self.ResRedListQ2.setHorizontalHeaderItem(5, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(2, __qtablewidgetitem49)
-        __qtablewidgetitem50 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(3, __qtablewidgetitem50)
-        __qtablewidgetitem51 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(4, __qtablewidgetitem51)
-        __qtablewidgetitem52 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(5, __qtablewidgetitem52)
-        __qtablewidgetitem53 = QTableWidgetItem()
-        self.ResRedListQ2.setHorizontalHeaderItem(6, __qtablewidgetitem53)
+        self.ResRedListQ2.setHorizontalHeaderItem(6, __qtablewidgetitem49)
         self.ResRedListQ2.setObjectName(u"ResRedListQ2")
 
         self.gridLayout_7.addWidget(self.ResRedListQ2, 1, 0, 1, 1)
@@ -902,9 +900,11 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
         ___qtablewidgetitem15 = self.blueListQ1.horizontalHeaderItem(4)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0414\u0422\u0412\u0415\u0420\u0414\u0418\u0422\u042c \u0421\u041f\u0418\u0421\u041e\u041a", None))
+        self.label_41.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0421\u0422\u0410\u041d\u041e\u0412\u041a\u0410 \u041d\u0410 \u0421\u0422\u0410\u0420\u0422 \u0420\u0423\u0427\u041a\u0410\u041c\u0418 \u041f\u041e \u0422\u042b\u041a\u0410\u041b\u041a\u0415??????", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"CC Q_1", None))
-        self.label_109.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0420\u0410\u0421\u041d\u0410\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
-        self.label_110.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
+        self.label_109.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0415\u0421\u041e\u0420\u0422 \u0412\u0420\u0415\u041c\u042f \u0420\u0415\u0410\u041b\u0422\u0410\u0419\u041c", None))
+        self.label_110.setText(QCoreApplication.translate("MainWindow", u"\u0421\u041e\u0420\u0422 \u0412\u0420\u0415\u041c\u042f \u0420\u0415\u0410\u041b\u0422\u0410\u0419\u041c + \u043c\u0435\u0441\u0442\u043e", None))
         ___qtablewidgetitem16 = self.ResBlueListQ1.horizontalHeaderItem(0)
         ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e", None));
         ___qtablewidgetitem17 = self.ResBlueListQ1.horizontalHeaderItem(1)
@@ -916,77 +916,69 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem20 = self.ResBlueListQ1.horizontalHeaderItem(4)
         ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
         ___qtablewidgetitem21 = self.ResBlueListQ1.horizontalHeaderItem(5)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
-        ___qtablewidgetitem22 = self.ResBlueListQ1.horizontalHeaderItem(6)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
-        ___qtablewidgetitem23 = self.ResRedListQ1.horizontalHeaderItem(0)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e", None));
-        ___qtablewidgetitem24 = self.ResRedListQ1.horizontalHeaderItem(1)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"bib", None));
-        ___qtablewidgetitem25 = self.ResRedListQ1.horizontalHeaderItem(2)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
-        ___qtablewidgetitem26 = self.ResRedListQ1.horizontalHeaderItem(3)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
-        ___qtablewidgetitem27 = self.ResRedListQ1.horizontalHeaderItem(4)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
-        ___qtablewidgetitem28 = self.ResRedListQ1.horizontalHeaderItem(5)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
-        ___qtablewidgetitem29 = self.ResRedListQ1.horizontalHeaderItem(6)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
+        ___qtablewidgetitem22 = self.ResRedListQ1.horizontalHeaderItem(0)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"bib", None));
+        ___qtablewidgetitem23 = self.ResRedListQ1.horizontalHeaderItem(1)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
+        ___qtablewidgetitem24 = self.ResRedListQ1.horizontalHeaderItem(2)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
+        ___qtablewidgetitem25 = self.ResRedListQ1.horizontalHeaderItem(3)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Res Q_1", None))
-        ___qtablewidgetitem30 = self.redListQ2.horizontalHeaderItem(0)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"bib", None));
-        ___qtablewidgetitem31 = self.redListQ2.horizontalHeaderItem(1)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
-        ___qtablewidgetitem32 = self.redListQ2.horizontalHeaderItem(2)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
-        ___qtablewidgetitem33 = self.redListQ2.horizontalHeaderItem(3)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
-        ___qtablewidgetitem34 = self.redListQ2.horizontalHeaderItem(4)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
+        ___qtablewidgetitem26 = self.redListQ2.horizontalHeaderItem(0)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"bib", None));
+        ___qtablewidgetitem27 = self.redListQ2.horizontalHeaderItem(1)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
+        ___qtablewidgetitem28 = self.redListQ2.horizontalHeaderItem(2)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
+        ___qtablewidgetitem29 = self.redListQ2.horizontalHeaderItem(3)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
+        ___qtablewidgetitem30 = self.redListQ2.horizontalHeaderItem(4)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
         self.label_112.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0420\u0410\u0421\u041d\u0410\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
         self.label_111.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
-        ___qtablewidgetitem35 = self.bluListQ2.horizontalHeaderItem(0)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"bib", None));
-        ___qtablewidgetitem36 = self.bluListQ2.horizontalHeaderItem(1)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
-        ___qtablewidgetitem37 = self.bluListQ2.horizontalHeaderItem(2)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
-        ___qtablewidgetitem38 = self.bluListQ2.horizontalHeaderItem(3)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
-        ___qtablewidgetitem39 = self.bluListQ2.horizontalHeaderItem(4)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
+        ___qtablewidgetitem31 = self.bluListQ2.horizontalHeaderItem(0)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"bib", None));
+        ___qtablewidgetitem32 = self.bluListQ2.horizontalHeaderItem(1)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
+        ___qtablewidgetitem33 = self.bluListQ2.horizontalHeaderItem(2)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
+        ___qtablewidgetitem34 = self.bluListQ2.horizontalHeaderItem(3)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
+        ___qtablewidgetitem35 = self.bluListQ2.horizontalHeaderItem(4)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.CC_Q_2_Tab), QCoreApplication.translate("MainWindow", u"CC Q_2", None))
         self.label_113.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0420\u0410\u0421\u041d\u0410\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
         self.label_114.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
-        ___qtablewidgetitem40 = self.ResBlueListQ2.horizontalHeaderItem(0)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e", None));
-        ___qtablewidgetitem41 = self.ResBlueListQ2.horizontalHeaderItem(1)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"bib", None));
-        ___qtablewidgetitem42 = self.ResBlueListQ2.horizontalHeaderItem(2)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
-        ___qtablewidgetitem43 = self.ResBlueListQ2.horizontalHeaderItem(3)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
-        ___qtablewidgetitem44 = self.ResBlueListQ2.horizontalHeaderItem(4)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
-        ___qtablewidgetitem45 = self.ResBlueListQ2.horizontalHeaderItem(5)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
-        ___qtablewidgetitem46 = self.ResBlueListQ2.horizontalHeaderItem(6)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
-        ___qtablewidgetitem47 = self.ResRedListQ2.horizontalHeaderItem(0)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e", None));
-        ___qtablewidgetitem48 = self.ResRedListQ2.horizontalHeaderItem(1)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"bib", None));
-        ___qtablewidgetitem49 = self.ResRedListQ2.horizontalHeaderItem(2)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
-        ___qtablewidgetitem50 = self.ResRedListQ2.horizontalHeaderItem(3)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
-        ___qtablewidgetitem51 = self.ResRedListQ2.horizontalHeaderItem(4)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
-        ___qtablewidgetitem52 = self.ResRedListQ2.horizontalHeaderItem(5)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
-        ___qtablewidgetitem53 = self.ResRedListQ2.horizontalHeaderItem(6)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
+        ___qtablewidgetitem36 = self.ResBlueListQ2.horizontalHeaderItem(0)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e", None));
+        ___qtablewidgetitem37 = self.ResBlueListQ2.horizontalHeaderItem(1)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"bib", None));
+        ___qtablewidgetitem38 = self.ResBlueListQ2.horizontalHeaderItem(2)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
+        ___qtablewidgetitem39 = self.ResBlueListQ2.horizontalHeaderItem(3)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
+        ___qtablewidgetitem40 = self.ResBlueListQ2.horizontalHeaderItem(4)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
+        ___qtablewidgetitem41 = self.ResBlueListQ2.horizontalHeaderItem(5)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
+        ___qtablewidgetitem42 = self.ResBlueListQ2.horizontalHeaderItem(6)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
+        ___qtablewidgetitem43 = self.ResRedListQ2.horizontalHeaderItem(0)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e", None));
+        ___qtablewidgetitem44 = self.ResRedListQ2.horizontalHeaderItem(1)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"bib", None));
+        ___qtablewidgetitem45 = self.ResRedListQ2.horizontalHeaderItem(2)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u0424.", None));
+        ___qtablewidgetitem46 = self.ResRedListQ2.horizontalHeaderItem(3)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
+        ___qtablewidgetitem47 = self.ResRedListQ2.horizontalHeaderItem(4)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
+        ___qtablewidgetitem48 = self.ResRedListQ2.horizontalHeaderItem(5)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
+        ___qtablewidgetitem49 = self.ResRedListQ2.horizontalHeaderItem(6)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.RES_Q_2_Tab), QCoreApplication.translate("MainWindow", u"Res Q_2", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Finals", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u0418\u0442\u043e\u0433", None))
