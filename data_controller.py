@@ -5,12 +5,18 @@ import xlrd
 from PySide2 import QtWidgets
 
 
+def write_to_json(data_dict):
+    with open("main_data.json", 'w') as f:
+        json.dump(data_dict, f)
+
+
 class Data:
     file_path = None
-    _competitors_data = []
+    _participants_data = []
+    _competition_data = {}
 
     def save_settings(self):
-        competition_data = {
+        self._competition_data = {
             'title': self.titlelineEdit.text(),
             'place': self.datelineEdit.text(),
             'type': self.typelineEdit.text(),
@@ -44,14 +50,11 @@ class Data:
             'snow': self.snow.text()
 
         }
-        if competition_data["Q_amount"] == '1':
+        if self._competition_data["Q_amount"] == '1':
             self.CC_Q_2_Tab.setDisabled(1)
             self.RES_Q_2_Tab.setDisabled(1)
-        self.write_to_json(competition_data)
-
-    def write_to_json(self, data_dict):
-        with open("main_data.json", 'w') as f:
-            json.dump(data_dict, f)
+        write_to_json(self._competition_data)
+        print(self._competition_data)
 
     def choose_file_participants(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Выберите файл", "",
@@ -95,5 +98,5 @@ class Data:
                     part_data.setdefault('FTBig_course', None)
                     part_data.setdefault('FTBig_1', None)
                     part_data.setdefault('FTBig_2', None)
-                    self._competitors_data.append(part_data)
-        # print(self._competitors_data)
+                    self._participants_data.append(part_data)
+        # print(self._participants_data)

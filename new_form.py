@@ -303,6 +303,7 @@ class Ui_MainWindow(object):
         self.roundsComboBox = QComboBox(self.gridLayoutWidget)
         self.roundsComboBox.addItem("")
         self.roundsComboBox.addItem("")
+        self.roundsComboBox.addItem("")
         self.roundsComboBox.setObjectName(u"roundsComboBox")
         self.roundsComboBox.setMaximumSize(QSize(50, 16777215))
 
@@ -800,10 +801,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         self.runsComboBox.setCurrentIndex(1)
         self.qualificationsComboBox.setCurrentIndex(1)
-        self.roundsComboBox.setCurrentIndex(1)
+        self.roundsComboBox.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -839,8 +840,9 @@ class Ui_MainWindow(object):
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u043d\u0438\u0448", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0434\u0435\u043b\u0435\u0433\u0430\u0442:", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u" rounds", None))
-        self.roundsComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
-        self.roundsComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
+        self.roundsComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"1/16", None))
+        self.roundsComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"1/8", None))
+        self.roundsComboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"1/4", None))
 
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0442\u043e\u0440\u044b", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u2116 \u0433\u043e\u043c\u043e\u043b\u043e\u0433\u0430\u0446\u0438\u0438", None))

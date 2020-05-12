@@ -1,6 +1,7 @@
 from PySide2 import QtCore, QtWidgets, QtGui
 import new_form
 from data_controller import Data
+from time import sleep
 
 
 class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
@@ -11,14 +12,16 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.pushButtonLoadList.clicked.connect(self.load_file_callback)
 
     def save_settings_callback(self):
-        Data.save_settings()
+        Data.save_settings(self)
+        sleep(2)
+        self.tabWidget.setCurrentIndex(1)  # TODO закоммитить
         print("Данные сохранены!")
 
     def load_file_callback(self):
         Data.choose_file_participants(self)
         Data.load_file(self)
-        self.display_participants(Data._competitors_data)
-        self.divide(Data._competitors_data)
+        self.display_participants(Data._participants_data)
+        self.divide(Data._participants_data)
 
     def display_participants(self, data):
         self.participantsTable.setRowCount(0)
