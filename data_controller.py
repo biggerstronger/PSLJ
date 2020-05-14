@@ -1,5 +1,5 @@
 import json
-
+import random
 import xlrd
 
 from PySide2 import QtWidgets
@@ -13,10 +13,31 @@ def write_to_json(data_dict):
 class Data:
     file_path = None
     _participants_data = []
-    _competition_data = {}
+    competition_data = {}
+
+    def get_time(self):
+        for _ in range(len(self._participants_data)):
+            ttime = '{:.2f}'.format(random.uniform(10.00, 60.00))
+            if self.competition_data['rounds_amount'] == '1/16':
+                if self.competition_data['run_amount'] == '1':
+                    self._participants_data[_]['FT1/16_1'] = ttime
+                else:
+                    self._participants_data[_]['FT1/16_2'] = ttime
+            elif self.competition_data['rounds_amount'] == '1/8':
+                if self.competition_data['run_amount'] == '1':
+                    self._participants_data[_]['FT1/8_1'] = ttime
+                else:
+                    self._participants_data[_]['FT1/8_2'] = ttime
+            elif self.competition_data['rounds_amount'] == '1/4':
+                if self.competition_data['run_amount'] == '1':
+                    self._participants_data[_]['FT1/4_1'] = ttime
+                else:
+                    self._participants_data[_]['FT1/4_2'] = ttime
+            # print(self._participants_data[_])
+            # print(ttime)
 
     def save_settings(self):
-        self._competition_data = {
+        self.competition_data = {
             'title': self.titlelineEdit.text(),
             'place': self.datelineEdit.text(),
             'type': self.typelineEdit.text(),
@@ -50,11 +71,12 @@ class Data:
             'snow': self.snow.text()
 
         }
-        if self._competition_data["Q_amount"] == '1':
+        if self.competition_data["Q_amount"] == '1':
             self.CC_Q_2_Tab.setDisabled(1)
             self.RES_Q_2_Tab.setDisabled(1)
-        write_to_json(self._competition_data)
-        print(self._competition_data)
+        write_to_json(self.competition_data)
+        x = self.competition_data['rounds_amount']
+        print(x)
 
     def choose_file_participants(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Выберите файл", "",
@@ -80,18 +102,18 @@ class Data:
                     part_data.setdefault('QT_course', None)
                     part_data.setdefault('QT_1', None)
                     part_data.setdefault('QT_2', None)
-                    part_data.setdefault('FT32_course', None)
-                    part_data.setdefault('FT32_1', None)
-                    part_data.setdefault('FT32_2', None)
-                    part_data.setdefault('FT16_course', None)
-                    part_data.setdefault('FT16_1', None)
-                    part_data.setdefault('FT16_2', None)
-                    part_data.setdefault('FT8_course', None)
-                    part_data.setdefault('FT8_1', None)
-                    part_data.setdefault('FT8_2', None)
-                    part_data.setdefault('FT4_course', None)
-                    part_data.setdefault('FT4_1', None)
-                    part_data.setdefault('FT4_2', None)
+                    part_data.setdefault('FT1/32_course', None)
+                    part_data.setdefault('FT1/32_1', None)
+                    part_data.setdefault('FT1/32_2', None)
+                    part_data.setdefault('FT1/16_course', None)
+                    part_data.setdefault('FT1/16_1', None)
+                    part_data.setdefault('FT1/16_2', None)
+                    part_data.setdefault('FT1/8_course', None)
+                    part_data.setdefault('FT1/8_1', None)
+                    part_data.setdefault('FT1/8_2', None)
+                    part_data.setdefault('FT1/4_course', None)
+                    part_data.setdefault('FT1/4_1', None)
+                    part_data.setdefault('FT1/4_2', None)
                     part_data.setdefault('FTSmall_course', None)
                     part_data.setdefault('FTSmall_1', None)
                     part_data.setdefault('FTSmall_2', None)

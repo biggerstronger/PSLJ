@@ -123,7 +123,7 @@
             </size>
            </property>
            <property name="text">
-            <string> run per duel</string>
+            <string>Кол-во заездов</string>
            </property>
           </widget>
          </item>
@@ -481,7 +481,7 @@
             </size>
            </property>
            <property name="text">
-            <string> rounds</string>
+            <string>Круги</string>
            </property>
           </widget>
          </item>
@@ -494,7 +494,7 @@
             </size>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <item>
             <property name="text">
@@ -933,6 +933,12 @@
        </item>
        <item row="1" column="0">
         <widget class="QTableWidget" name="redListQ1">
+         <property name="maximumSize">
+          <size>
+           <width>505</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <column>
           <property name="text">
            <string>bib</string>
@@ -998,7 +1004,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButtonAccept">
       <property name="geometry">
        <rect>
         <x>800</x>
@@ -1054,7 +1060,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QTableWidget" name="ResBlueListQ1">
+        <widget class="QTableWidget" name="ResSortListQ1">
          <column>
           <property name="text">
            <string>Место</string>
@@ -1088,7 +1094,13 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="ResRedListQ1">
+        <widget class="QTableWidget" name="ResUnsortListQ1">
+         <property name="maximumSize">
+          <size>
+           <width>510</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <column>
           <property name="text">
            <string>bib</string>
