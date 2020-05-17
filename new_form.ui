@@ -1125,6 +1125,19 @@
        </item>
       </layout>
      </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>820</y>
+        <width>411</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ТУТ ВСЕ УЧАСТНИКИ. ВЫДЕЛЯТЬ ЦВЕТАМИ ТРАССУ И СЕРЫМ ПРОШЕДШИХ</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="CC_Q_2_Tab">
      <attribute name="title">
@@ -1213,6 +1226,19 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAccept_CCQ2">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>810</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ПОДТВЕРДИТЬ СПИСОК</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="RES_Q_2_Tab">

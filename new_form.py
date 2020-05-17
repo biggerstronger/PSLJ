@@ -573,6 +573,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem10 = QTableWidgetItem()
         self.redListQ1.setHorizontalHeaderItem(4, __qtablewidgetitem10)
         self.redListQ1.setObjectName(u"redListQ1")
+        self.redListQ1.setMaximumSize(QSize(505, 16777215))
 
         self.gridLayout_2.addWidget(self.redListQ1, 1, 0, 1, 1)
 
@@ -654,9 +655,13 @@ class Ui_MainWindow(object):
         __qtablewidgetitem25 = QTableWidgetItem()
         self.ResUnsortListQ1.setHorizontalHeaderItem(3, __qtablewidgetitem25)
         self.ResUnsortListQ1.setObjectName(u"ResUnsortListQ1")
+        self.ResUnsortListQ1.setMaximumSize(QSize(510, 16777215))
 
         self.gridLayout_6.addWidget(self.ResUnsortListQ1, 1, 0, 1, 1)
 
+        self.label_42 = QLabel(self.tab_4)
+        self.label_42.setObjectName(u"label_42")
+        self.label_42.setGeometry(QRect(70, 820, 411, 20))
         self.tabWidget.addTab(self.tab_4, "")
         self.CC_Q_2_Tab = QWidget()
         self.CC_Q_2_Tab.setObjectName(u"CC_Q_2_Tab")
@@ -710,6 +715,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout_28.addWidget(self.bluListQ2, 1, 1, 1, 1)
 
+        self.pushButtonAccept_CCQ2 = QPushButton(self.CC_Q_2_Tab)
+        self.pushButtonAccept_CCQ2.setObjectName(u"pushButtonAccept_CCQ2")
+        self.pushButtonAccept_CCQ2.setGeometry(QRect(820, 810, 331, 41))
         self.tabWidget.addTab(self.CC_Q_2_Tab, "")
         self.RES_Q_2_Tab = QWidget()
         self.RES_Q_2_Tab.setObjectName(u"RES_Q_2_Tab")
@@ -927,6 +935,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
         ___qtablewidgetitem25 = self.ResUnsortListQ1.horizontalHeaderItem(3)
         ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
+        self.label_42.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0423\u0422 \u0412\u0421\u0415 \u0423\u0427\u0410\u0421\u0422\u041d\u0418\u041a\u0418. \u0412\u042b\u0414\u0415\u041b\u042f\u0422\u042c \u0426\u0412\u0415\u0422\u0410\u041c\u0418 \u0422\u0420\u0410\u0421\u0421\u0423 \u0418 \u0421\u0415\u0420\u042b\u041c \u041f\u0420\u041e\u0428\u0415\u0414\u0428\u0418\u0425", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Res Q_1", None))
         ___qtablewidgetitem26 = self.redListQ2.horizontalHeaderItem(0)
         ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"bib", None));
@@ -950,6 +959,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0434 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f", None));
         ___qtablewidgetitem35 = self.bluListQ2.horizontalHeaderItem(4)
         ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"\u0421.\u041a.", None));
+        self.pushButtonAccept_CCQ2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0414\u0422\u0412\u0415\u0420\u0414\u0418\u0422\u042c \u0421\u041f\u0418\u0421\u041e\u041a", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.CC_Q_2_Tab), QCoreApplication.translate("MainWindow", u"CC Q_2", None))
         self.label_113.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0420\u0410\u0421\u041d\u0410\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
         self.label_114.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
