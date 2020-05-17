@@ -48,6 +48,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.blueListQ1.setRowCount(0)
         t = n = m = 0
         for x in data:
+
             if data[t]['Ст№'] % 2 == 1:
                 self.redListQ1.insertRow(n)
                 self.redListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(x["Ст№"])))
@@ -70,6 +71,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         Data.get_time(self)
         self.ResUnsortListQ1.setRowCount(0)
         n = 0
+        counter = 0
         for x in data:
             self.ResUnsortListQ1.insertRow(n)
             self.ResUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(x["Ст№"])))
@@ -77,7 +79,11 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.ResUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(x["Г.р."])))
             self.ResUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(
                 str(x["FT{0}_{1}".format(self.roundsComboBox.currentText(), self.runsComboBox.currentText())])))
+            self.participantsTable.item(n, 0).setBackground(QtGui.QColor(100, 50, 28))
+            self.ResUnsortListQ1.selectRow(counter)
+            self.ResUnsortListQ1.selectRow(counter + 1)
             n += 1
+            counter += 2
 
     def sort_res_q1(self, data):
         self.ResSortListQ1.setRowCount(0)
@@ -97,6 +103,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             if n == z * 2:
                 self.ResSortListQ1.sortItems(5)
                 break
-        for _ in range(z * 2):
-            self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
-            place += 1
+        self.ResSortListQ1.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
+        for _ in range(1, z * 2):
+            if self.ResSortListQ1.item(_, 5).text() == self.ResSortListQ1.item(_ - 1, 5).text():
+                self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
+            else:
+                place += 1
+                self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
