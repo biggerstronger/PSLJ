@@ -17,7 +17,7 @@ class Data:
 
     def get_time(self):
         for _ in range(len(self._participants_data)):
-            ttime = '{:.2f}'.format(random.uniform(10.00, 60.00))
+            ttime = '{:.2f}'.format(int(random.uniform(10.00, 60.00)))
             if self.competition_data['rounds_amount'] == '1/16':
                 if self.competition_data['run_amount'] == '1':
                     self._participants_data[_]['FT1/16_1'] = ttime
