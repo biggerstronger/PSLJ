@@ -110,5 +110,3 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             else:
                 place = _ + 1
                 self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
-                # place += 1
-
