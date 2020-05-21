@@ -1,8 +1,8 @@
 import json
 import random
 import xlrd
-
 from PySide2 import QtWidgets
+from time import sleep
 
 
 def write_to_json(data_dict):
@@ -15,26 +15,36 @@ class Data:
     _participants_data = []
     competition_data = {}
 
-    def get_time(self):
+    def get_time_qual1(self):
         for _ in range(len(self._participants_data)):
-            ttime = '{:.2f}'.format(int(random.uniform(10.00, 60.00)))
+            g1time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
+            self._participants_data[_]['QT_1'] = g1time
+
+    def get_time_qual2(self):
+        for _ in range(len(self._participants_data)):
+            g2time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
+            self._participants_data[_]['QT_2'] = g2time
+            print(self._participants_data[_]['QT_2'])
+
+    def get_time_finals(self):
+        for _ in range(len(self._participants_data)):
+            mtime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
+            # stime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             if self.competition_data['rounds_amount'] == '1/16':
                 if self.competition_data['run_amount'] == '1':
-                    self._participants_data[_]['FT1/16_1'] = ttime
+                    self._participants_data[_]['FT1/16_1'] = mtime
                 else:
-                    self._participants_data[_]['FT1/16_2'] = ttime
+                    self._participants_data[_]['FT1/16_2'] = mtime
             elif self.competition_data['rounds_amount'] == '1/8':
                 if self.competition_data['run_amount'] == '1':
-                    self._participants_data[_]['FT1/8_1'] = ttime
+                    self._participants_data[_]['FT1/8_1'] = mtime
                 else:
-                    self._participants_data[_]['FT1/8_2'] = ttime
+                    self._participants_data[_]['FT1/8_2'] = mtime
             elif self.competition_data['rounds_amount'] == '1/4':
                 if self.competition_data['run_amount'] == '1':
-                    self._participants_data[_]['FT1/4_1'] = ttime
+                    self._participants_data[_]['FT1/4_1'] = mtime
                 else:
-                    self._participants_data[_]['FT1/4_2'] = ttime
-            # print(self._participants_data[_])
-            # print(ttime)
+                    self._participants_data[_]['FT1/4_2'] = mtime  # TODO показ минут
 
     def save_settings(self):
         self.competition_data = {
@@ -99,8 +109,9 @@ class Data:
                             part_data[column_name] = sheet.cell(row_index, column_index).value
                         else:
                             part_data[column_name] = int(sheet.cell(row_index, column_index).value)
-                    part_data.setdefault('QT_course', None)
+                    part_data.setdefault('QT1_course', None)
                     part_data.setdefault('QT_1', None)
+                    part_data.setdefault('QT2_course', None)
                     part_data.setdefault('QT_2', None)
                     part_data.setdefault('FT1/32_course', None)
                     part_data.setdefault('FT1/32_1', None)

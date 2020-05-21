@@ -935,7 +935,7 @@
         <widget class="QTableWidget" name="redListQ1">
          <property name="maximumSize">
           <size>
-           <width>505</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1164,10 +1164,10 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="redListQ1_2">
+        <widget class="QTableWidget" name="redListQ2">
          <property name="maximumSize">
           <size>
-           <width>505</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1178,17 +1178,12 @@
          </column>
          <column>
           <property name="text">
-           <string>С.Ф.</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string>ФИО</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>С.К.</string>
+           <string>Время Q1</string>
           </property>
          </column>
         </widget>
@@ -1201,15 +1196,10 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QTableWidget" name="blueListQ1_2">
+        <widget class="QTableWidget" name="blueListQ2">
          <column>
           <property name="text">
            <string>bib</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>С.Ф.</string>
           </property>
          </column>
          <column>
@@ -1219,7 +1209,7 @@
          </column>
          <column>
           <property name="text">
-           <string>С.К.</string>
+           <string>Время Q1</string>
           </property>
          </column>
         </widget>
@@ -1269,7 +1259,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QTableWidget" name="ResSortListQ1_2">
+        <widget class="QTableWidget" name="ResSortListQ2">
          <column>
           <property name="text">
            <string>Место</string>
@@ -1282,17 +1272,17 @@
          </column>
          <column>
           <property name="text">
-           <string>С.Ф.</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string>ФИО</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Время</string>
+           <string>ВремяQ1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ВремяQ2</string>
           </property>
          </column>
          <column>
@@ -1303,10 +1293,10 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="ResUnsortListQ1_2">
+        <widget class="QTableWidget" name="ResUnsortListQ2">
          <property name="maximumSize">
           <size>
-           <width>510</width>
+           <width>550</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1322,7 +1312,12 @@
          </column>
          <column>
           <property name="text">
-           <string>Время</string>
+           <string>ВремяQ1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ВремяQ2</string>
           </property>
          </column>
          <column>
