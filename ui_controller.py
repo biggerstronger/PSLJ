@@ -100,13 +100,15 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.ResSortListQ1.setItem(n, 5, QtWidgets.QTableWidgetItem(
                 str(x["FT{0}_{1}".format(self.roundsComboBox.currentText(), self.runsComboBox.currentText())])))
             n += 1
-            if n == z * 2:
-                self.ResSortListQ1.sortItems(5)
-                break
-        self.ResSortListQ1.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
+            self.ResSortListQ1.sortItems(5)
+            self.ResSortListQ1.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
+
         for _ in range(1, z * 2):
             if self.ResSortListQ1.item(_, 5).text() == self.ResSortListQ1.item(_ - 1, 5).text():
                 self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             else:
                 place = _ + 1
                 self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
+        print(len(data))
+        for _ in range(z * 2, len(data)):
+            self.ResSortListQ1.removeRow(z * 2)
