@@ -99,7 +99,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.ResSortListQ1.setItem(n, 4, QtWidgets.QTableWidgetItem(str(x['QT_1'])))
             self.ResSortListQ1.setItem(n, 5, QtWidgets.QTableWidgetItem(str(x['QT1_course'])))
             n += 1
-            self.ResSortListQ1.sortItems(4)
+        self.ResSortListQ1.sortItems(4)
         self.ResSortListQ1.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
         for _ in range(1, break_flag + 1):
             if self.ResSortListQ1.item(_, 4).text() == self.ResSortListQ1.item(_ - 1, 4).text():
@@ -110,7 +110,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         for _ in range(break_flag, len(data)):
             self.ResSortListQ1.removeRow(break_flag)
 
-    # TODO переписать под реалии пройденного КУ1
     def divideQ2(self):
         self.redListQ2.setRowCount(0)
         self.blueListQ2.setRowCount(0)
@@ -147,16 +146,16 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.ResSortListQ2.setRowCount(0)
         place = 1
         break_flag = self.ResSortListQ1.rowCount() // 2
-        for n in range(break_flag):
+        for n in range(self.ResSortListQ1.rowCount()):
             self.ResSortListQ2.insertRow(n)
             self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 0).text())))
             self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 1).text())))
             self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 2).text())))
             self.ResSortListQ2.setItem(n, 4, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 3).text())))
             self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(str(Data._participants_data[n]['QT2_course'])))
-            self.ResSortListQ2.sortItems(4)
+        self.ResSortListQ2.sortItems(4)
         self.ResSortListQ2.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
-        for _ in range(1, break_flag):
+        for _ in range(1, self.ResUnsortListQ2.rowCount()):
             if self.ResSortListQ2.item(_, 4).text() == self.ResSortListQ2.item(_ - 1, 4).text():
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             else:

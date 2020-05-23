@@ -24,7 +24,6 @@ class Data:
         for _ in range(len(self._participants_data)):
             g2time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             self._participants_data[_]['QT_2'] = g2time
-            print(self._participants_data[_]['QT_2'])
 
     def get_time_finals(self):
         for _ in range(len(self._participants_data)):
