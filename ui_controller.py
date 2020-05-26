@@ -10,23 +10,29 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.setupUi(self)
         self.saveParams.clicked.connect(self.save_settings_callback)
         self.pushButtonLoadList.clicked.connect(self.load_file_callback)
-        self.pushButtonAccept.clicked.connect(self.display_res_callback)
+        self.pushButtonAccept.clicked.connect(self.display_resQ1_callback)
+        self.pushButtonAccept_2.clicked.connect(self.display_resQ2_callback)
 
-    def display_res_callback(self):
+    def display_resQ1_callback(self):
         sleep(1)
         self.tabWidget.setCurrentIndex(3)
         self.display_res_q1(Data._participants_data)
         self.sort_res_q1(Data._participants_data)
         if self.competition_data['Q_amount'] == '2':
             self.divideQ2()
-            self.display_res_q2()
-            self.sort_res_q2()
+
+    def display_resQ2_callback(self):
+        sleep(1)  # TODO пофиксить переключение вкладок
+        self.tabWidget.setCurrentIndex(4)
+        self.display_res_q2()
+        self.sort_res_q2()
 
     def save_settings_callback(self):
         Data.save_settings(self)
         sleep(1)
         self.tabWidget.setCurrentIndex(1)
         print('Данные сохранены!')
+        self.show_finals()
 
     def load_file_callback(self):
         Data.choose_file_participants(self)
@@ -113,24 +119,22 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def divideQ2(self):
         self.redListQ2.setRowCount(0)
         self.blueListQ2.setRowCount(0)
-        t = x = m = 0
-        for n in range(self.ResSortListQ1.rowCount()):
-            # if Data._participants_data[t]['Ст№'] % 2 == 1:
-            self.redListQ2.insertRow(n)
-            self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 1).text())))
-            self.redListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 3).text())))
-            self.redListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 4).text())))
-            # Data._participants_data[t]['QT2_course'] = 'Красная'
-            # # n += 1
-            # # else:
-            # self.blueListQ2.insertRow(m)
-            # self.blueListQ2.setItem(m, 0, QtWidgets.QTableWidgetItem(str(x['Ст№'])))
-            # self.blueListQ2.setItem(m, 1, QtWidgets.QTableWidgetItem(str(x['С.Ф.'])))
-            # self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(x['Фамилия Имя'])))
-            # self.blueListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(str(x['Спорт. разр.'])))
-            # Data._participants_data[t]['QT2_course'] = 'Синяя'
-            n += 1
-        # t += 1
+        m = n = 0
+        for t in range(self.ResSortListQ1.rowCount()):
+            if int(self.ResSortListQ1.item(t, 1).text()) % 2 == 0:
+                self.redListQ2.insertRow(n)
+                self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 1).text())))
+                self.redListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 3).text())))
+                self.redListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 4).text())))
+                Data._participants_data[t]['QT2_course'] = 'Красная'
+                n += 1
+            else:
+                self.blueListQ2.insertRow(m)
+                self.blueListQ2.setItem(m, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 1).text())))
+                self.blueListQ2.setItem(m, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 3).text())))
+                self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 4).text())))
+                Data._participants_data[t]['QT2_course'] = 'Синяя'
+                m += 1
 
     def display_res_q2(self):
         Data.get_time_qual2(self)
@@ -145,7 +149,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def sort_res_q2(self):
         self.ResSortListQ2.setRowCount(0)
         place = 1
-        break_flag = self.ResSortListQ1.rowCount() // 2
+        break_flag = self.competition_data['rounds_amount'].split(sep='/')[1]
+        break_flag = int(break_flag)
         for n in range(self.ResSortListQ1.rowCount()):
             self.ResSortListQ2.insertRow(n)
             self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 0).text())))
@@ -155,7 +160,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(str(Data._participants_data[n]['QT2_course'])))
         self.ResSortListQ2.sortItems(4)
         self.ResSortListQ2.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
-        for _ in range(1, self.ResUnsortListQ2.rowCount()):
+        for _ in range(1, break_flag):
             if self.ResSortListQ2.item(_, 4).text() == self.ResSortListQ2.item(_ - 1, 4).text():
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             else:
@@ -163,3 +168,15 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
         for _ in range(break_flag, self.ResSortListQ1.rowCount()):
             self.ResSortListQ2.removeRow(break_flag)
+
+    def show_finals(self):
+        # self.tableWidgetFinals.setRowCount(0)
+        # for i in range(0, 16):
+        #     self.tableWidgetFinals.setItem(i, 1, QtWidgets.QTableWidgetItem(self.))
+        #     self.tableWidgetFinals.setItem(i, 1, QtWidgets.QTableWidgetItem('Красная'))
+        #     self.tableWidgetFinals.setItem(i, 3, QtWidgets.QTableWidgetItem('Синяя'))
+        #
+        # # else:
+        # #     pass
+        # if self.radioButtonBF_SF.isChecked():
+        pass

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1213</width>
-    <height>958</height>
+    <width>1224</width>
+    <height>961</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -912,7 +912,7 @@
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>CC Q_1</string>
+      <string>Start List Q_1</string>
      </attribute>
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
@@ -1005,19 +1005,6 @@
       </property>
       <property name="text">
        <string>ПОДТВЕРДИТЬ СПИСОК</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_41">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>20</y>
-        <width>341</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>ПОСТАНОВКА НА СТАРТ РУЧКАМИ ПО ТЫКАЛКЕ??????</string>
       </property>
      </widget>
     </widget>
@@ -1115,37 +1102,11 @@
        </item>
       </layout>
      </widget>
-     <widget class="QLabel" name="label_42">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>820</y>
-        <width>411</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>ТУТ ВСЕ УЧАСТНИКИ. ВЫДЕЛЯТЬ ЦВЕТАМИ ТРАССУ И СЕРЫМ ПРОШЕДШИХ</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="CC_Q_2_Tab">
      <attribute name="title">
-      <string>CC Q_2</string>
+      <string>Start List Q_2</string>
      </attribute>
-     <widget class="QLabel" name="label_45">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>341</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>ПОСТАНОВКА НА СТАРТ РУЧКАМИ ПО ТЫКАЛКЕ??????</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="gridLayoutWidget_3">
       <property name="geometry">
        <rect>
@@ -1329,21 +1290,252 @@
        </item>
       </layout>
      </widget>
+     <widget class="QPushButton" name="pushButtonShowFinals">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>830</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ПОКАЗАТЬ ФИНАЛЫ</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_6">
      <attribute name="title">
       <string>Finals</string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget_7">
+     <widget class="QTableWidget" name="tableWidgetFinals">
       <property name="geometry">
        <rect>
-        <x>-1</x>
-        <y>-1</y>
-        <width>1261</width>
-        <height>771</height>
+        <x>10</x>
+        <y>40</y>
+        <width>891</width>
+        <height>621</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_9"/>
+      <row>
+       <property name="text">
+        <string>Heat 1</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 2</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 3</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 4</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 5</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 6</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 7</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 9</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 10</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 11</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 12</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 13</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 14</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 15</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heat 16</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>bib</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Трасса1</string>
+       </property>
+       <property name="background">
+        <color>
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Время 1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Трасса2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Время 2</string>
+       </property>
+      </column>
+      <item row="0" column="1">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="background">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+      <item row="0" column="3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="background">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+      <item row="1" column="1">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="background">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+      <item row="3" column="1">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>245</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QRadioButton" name="radioButton8">
+         <property name="text">
+          <string>1/8</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton4">
+         <property name="text">
+          <string>1/4</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButtonBF_SF">
+         <property name="text">
+          <string>BF|SF</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_8">
@@ -1369,7 +1561,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1213</width>
+     <width>1224</width>
      <height>21</height>
     </rect>
    </property>
@@ -1378,4 +1570,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
