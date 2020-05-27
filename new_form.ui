@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1224</width>
-    <height>961</height>
+    <width>1483</width>
+    <height>945</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>1191</width>
+      <width>1481</width>
       <height>911</height>
      </rect>
     </property>
@@ -187,7 +187,7 @@
             </size>
            </property>
            <property name="text">
-            <string> Квалификации</string>
+            <string>Квалификации</string>
            </property>
           </widget>
          </item>
@@ -509,6 +509,11 @@
            <item>
             <property name="text">
              <string>1/4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1/2</string>
             </property>
            </item>
           </widget>
@@ -849,14 +854,14 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QPushButton" name="editpushButton">
+        <widget class="QPushButton" name="pushButtonDelete">
          <property name="text">
-          <string>Редактировать данные</string>
+          <string>Удилить данные</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="addpushButton">
+        <widget class="QPushButton" name="pushButtonAdd">
          <property name="text">
           <string>Добавить спортсмена</string>
          </property>
@@ -918,7 +923,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>50</y>
+        <y>0</y>
         <width>1181</width>
         <height>771</height>
        </rect>
@@ -933,6 +938,9 @@
        </item>
        <item row="1" column="0">
         <widget class="QTableWidget" name="redListQ1">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -998,7 +1006,7 @@
       <property name="geometry">
        <rect>
         <x>800</x>
-        <y>840</y>
+        <y>790</y>
         <width>331</width>
         <height>41</height>
        </rect>
@@ -1017,64 +1025,16 @@
        <rect>
         <x>0</x>
         <y>10</y>
-        <width>1181</width>
+        <width>1461</width>
         <height>771</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_109">
-         <property name="text">
-          <string>НЕСОРТ ВРЕМЯ РЕАЛТАЙМ</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_110">
-         <property name="text">
-          <string>СОРТ ВРЕМЯ РЕАЛТАЙМ + место</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QTableWidget" name="ResSortListQ1">
-         <column>
-          <property name="text">
-           <string>Место</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>bib</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>С.Ф.</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>ФИО</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Время</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Трасса</string>
-          </property>
-         </column>
-        </widget>
-       </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="ResUnsortListQ1">
+        <widget class="QTableWidget" name="RedUnsortListQ1">
          <property name="maximumSize">
           <size>
-           <width>510</width>
+           <width>430</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1100,6 +1060,92 @@
          </column>
         </widget>
        </item>
+       <item row="1" column="1">
+        <widget class="QTableWidget" name="BlueUnsortListQ1">
+         <property name="maximumSize">
+          <size>
+           <width>430</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>bib</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Трасса</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_110">
+         <property name="text">
+          <string>СИНЯЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_109">
+         <property name="text">
+          <string>КРАССНАЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QTableWidget" name="ResSortListQ1">
+         <property name="maximumSize">
+          <size>
+           <width>600</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Место</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>bib</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Трасса</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="2" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_113">
+         <property name="text">
+          <string>ОТСОРТИРОВАННОЕ ОБЩЕЕ ВРЕМЯ</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -1111,7 +1157,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>50</y>
+        <y>0</y>
         <width>1181</width>
         <height>771</height>
        </rect>
@@ -1181,7 +1227,7 @@
       <property name="geometry">
        <rect>
         <x>800</x>
-        <y>840</y>
+        <y>790</y>
         <width>331</width>
         <height>41</height>
        </rect>
@@ -1195,32 +1241,111 @@
      <attribute name="title">
       <string>Res Q_2</string>
      </attribute>
+     <widget class="QPushButton" name="pushButtonShowFinals">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>830</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ПОКАЗАТЬ ФИНАЛЫ</string>
+      </property>
+     </widget>
      <widget class="QWidget" name="gridLayoutWidget_5">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>10</y>
-        <width>1181</width>
+        <width>1461</width>
         <height>771</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_7">
-       <item row="0" column="0" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_111">
-         <property name="text">
-          <string>НЕСОРТ ВРЕМЯ РЕАЛТАЙМ</string>
+       <item row="1" column="0">
+        <widget class="QTableWidget" name="RedUnsortListQ2">
+         <property name="maximumSize">
+          <size>
+           <width>430</width>
+           <height>16777215</height>
+          </size>
          </property>
-        </widget>
-       </item>
-       <item row="0" column="1" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_112">
-         <property name="text">
-          <string>СОРТ ВРЕМЯ РЕАЛТАЙМ + место</string>
-         </property>
+         <column>
+          <property name="text">
+           <string>bib</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Трасса</string>
+          </property>
+         </column>
         </widget>
        </item>
        <item row="1" column="1">
+        <widget class="QTableWidget" name="BlueUnsortListQ2">
+         <property name="maximumSize">
+          <size>
+           <width>430</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>bib</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Время</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Трасса</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_111">
+         <property name="text">
+          <string>СИНЯЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_112">
+         <property name="text">
+          <string>КРАССНАЯ ТРАССА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
         <widget class="QTableWidget" name="ResSortListQ2">
+         <property name="maximumSize">
+          <size>
+           <width>600</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <column>
           <property name="text">
            <string>Место</string>
@@ -1238,12 +1363,12 @@
          </column>
          <column>
           <property name="text">
-           <string>ВремяQ1</string>
+           <string>Время Q_1</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>ВремяQ2</string>
+           <string>Время Q_2</string>
           </property>
          </column>
          <column>
@@ -1253,55 +1378,14 @@
          </column>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QTableWidget" name="ResUnsortListQ2">
-         <property name="maximumSize">
-          <size>
-           <width>550</width>
-           <height>16777215</height>
-          </size>
+       <item row="0" column="2" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_114">
+         <property name="text">
+          <string>ОТСОРТИРОВАННОЕ ОБЩЕЕ ВРЕМЯ</string>
          </property>
-         <column>
-          <property name="text">
-           <string>bib</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>ФИО</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>ВремяQ1</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>ВремяQ2</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Трасса</string>
-          </property>
-         </column>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="pushButtonShowFinals">
-      <property name="geometry">
-       <rect>
-        <x>790</x>
-        <y>830</y>
-        <width>331</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>ПОКАЗАТЬ ФИНАЛЫ</string>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_6">
@@ -1561,7 +1645,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1224</width>
+     <width>1483</width>
      <height>21</height>
     </rect>
    </property>

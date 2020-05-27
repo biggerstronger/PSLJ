@@ -12,38 +12,38 @@ def write_to_json(data_dict):
 
 class Data:
     file_path = None
-    _participants_data = []
+    _participants_data = {}
     competition_data = {}
 
     def get_time_qual1(self):
-        for _ in range(len(self._participants_data)):
+        for _ in range(1, len(self._participants_data) + 1):
             g1time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
-            self._participants_data[_]['QT_1'] = g1time
+            self._participants_data[str(_)]['QT_1'] = g1time
 
     def get_time_qual2(self):
-        for _ in range(len(self._participants_data)):
+        for _ in range(1, len(self._participants_data) + 1):
             g2time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
-            self._participants_data[_]['QT_2'] = g2time
+            self._participants_data[str(_)]['QT_2'] = g2time
 
     def get_time_finals(self):
-        for _ in range(len(self._participants_data)):
+        for _ in range(1, len(self._participants_data) + 1):  # TODO переписать генерирование времени в конкретный финал
             mtime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             # stime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             if self.competition_data['rounds_amount'] == '1/16':
                 if self.competition_data['run_amount'] == '1':
-                    self._participants_data[_]['FT1/16_1'] = mtime
+                    self._participants_data[str(_)]['FT1/16_1'] = mtime
                 else:
-                    self._participants_data[_]['FT1/16_2'] = mtime
+                    self._participants_data[str(_)]['FT1/16_2'] = mtime
             elif self.competition_data['rounds_amount'] == '1/8':
                 if self.competition_data['run_amount'] == '1':
-                    self._participants_data[_]['FT1/8_1'] = mtime
+                    self._participants_data[str(_)]['FT1/8_1'] = mtime
                 else:
-                    self._participants_data[_]['FT1/8_2'] = mtime
+                    self._participants_data[str(_)]['FT1/8_2'] = mtime
             elif self.competition_data['rounds_amount'] == '1/4':
                 if self.competition_data['run_amount'] == '1':
-                    self._participants_data[_]['FT1/4_1'] = mtime
+                    self._participants_data[str(_)]['FT1/4_1'] = mtime
                 else:
-                    self._participants_data[_]['FT1/4_2'] = mtime  # TODO показ минут
+                    self._participants_data[str(_)]['FT1/4_2'] = mtime  # TODO показ минут
 
     def save_settings(self):
         self.competition_data = {
@@ -130,5 +130,5 @@ class Data:
                     part_data.setdefault('FTBig_course', None)
                     part_data.setdefault('FTBig_1', None)
                     part_data.setdefault('FTBig_2', None)
-                    self._participants_data.append(part_data)
+                    self._participants_data['{}'.format(part_data['Ст№'])] = part_data
         # print(self._participants_data)

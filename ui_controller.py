@@ -13,6 +13,14 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.pushButtonAccept.clicked.connect(self.display_resQ1_callback)
         self.pushButtonAccept_2.clicked.connect(self.display_resQ2_callback)
 
+    @staticmethod
+    def setColorRed(table, rowIndex, cellIndex):
+        table.item(rowIndex, cellIndex).setForeground(QtGui.QColor(255, 0, 0))
+
+    @staticmethod
+    def setColorBlue(table, rowIndex, cellIndex):
+        table.item(rowIndex, cellIndex).setForeground(QtGui.QColor(0, 0, 255))
+
     def display_resQ1_callback(self):
         sleep(1)
         self.tabWidget.setCurrentIndex(3)
@@ -43,69 +51,85 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def display_participants(self, data):
         self.participantsTable.setRowCount(0)
         row = 0
-        for entry in data:
+        for entry in range(1, len(data) + 1):
             self.participantsTable.insertRow(row)
-            self.participantsTable.setItem(row, 0, QtWidgets.QTableWidgetItem(str(entry['Ст№'])))
-            self.participantsTable.setItem(row, 1, QtWidgets.QTableWidgetItem(str(entry['С.Ф.'])))
-            self.participantsTable.setItem(row, 2, QtWidgets.QTableWidgetItem(str(entry['Фамилия Имя'])))
-            self.participantsTable.setItem(row, 3, QtWidgets.QTableWidgetItem(str(entry['Г.р.'])))
-            self.participantsTable.setItem(row, 4, QtWidgets.QTableWidgetItem(str(entry['Спорт. разр.'])))
-            self.participantsTable.setItem(row, 5, QtWidgets.QTableWidgetItem(str(entry['Очки КР'])))
+            self.participantsTable.setItem(row, 0, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['Ст№'])))
+            self.participantsTable.setItem(row, 1, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['С.Ф.'])))
+            self.participantsTable.setItem(row, 2, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['Фамилия Имя'])))
+            self.participantsTable.setItem(row, 3, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['Г.р.'])))
+            self.participantsTable.setItem(row, 4, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['Спорт. разр.'])))
+            self.participantsTable.setItem(row, 5, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['Очки КР'])))
             row += 1
 
     def divideQ1(self, data):
         self.redListQ1.setRowCount(0)
         self.blueListQ1.setRowCount(0)
-        t = n = m = 0
-        for x in data:
-
-            if data[t]['Ст№'] % 2 == 1:
+        n = m = 0
+        for t in range(1, len(data) + 1):
+            if data[str(t)]['Ст№'] % 2 == 1:
                 self.redListQ1.insertRow(n)
-                self.redListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(x['Ст№'])))
-                self.redListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(x['С.Ф.'])))
-                self.redListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(x['Фамилия Имя'])))
-                self.redListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(x['Спорт. разр.'])))
-                Data._participants_data[t]['QT1_course'] = 'Красная'
+                self.redListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(t)]['Ст№'])))
+                self.redListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(t)]['С.Ф.'])))
+                self.redListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(t)]['Фамилия Имя'])))
+                self.redListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(data[str(t)]['Спорт. разр.'])))
+                data[str(t)]['QT1_course'] = 'Красная'
                 n += 1
             else:
                 self.blueListQ1.insertRow(m)
-                self.blueListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(x['Ст№'])))
-                self.blueListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(x['С.Ф.'])))
-                self.blueListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(x['Фамилия Имя'])))
-                self.blueListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(x['Спорт. разр.'])))
-                Data._participants_data[t]['QT1_course'] = 'Синяя'
+                self.blueListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(data[str(t)]['Ст№'])))
+                self.blueListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(t)]['С.Ф.'])))
+                self.blueListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(t)]['Фамилия Имя'])))
+                self.blueListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(data[str(t)]['Спорт. разр.'])))
+                data[str(t)]['QT1_course'] = 'Синяя'
                 m += 1
-            t += 1
 
     def display_res_q1(self, data):
         Data.get_time_qual1(self)
-        self.ResUnsortListQ1.setRowCount(0)
-        n = 0
-        for x in data:
-            self.ResUnsortListQ1.insertRow(n)
-            self.ResUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(x['Ст№'])))
-            self.ResUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(x['Фамилия Имя'])))
-            self.ResUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(x['QT_1'])))
-            self.ResUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(x['QT1_course'])))
-            n += 1
+        self.RedUnsortListQ1.setRowCount(0)
+        self.BlueUnsortListQ1.setRowCount(0)
+        n = m = 0
+        for x in range(1, len(data) + 1):
+            if data[str(x)]['QT1_course'] == 'Красная':
+                self.RedUnsortListQ1.insertRow(n)
+                self.RedUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
+                self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
+                self.RedUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
+                self.RedUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT1_course'])))
+                self.setColorRed(self.RedUnsortListQ1, n, 3)
+                n += 1
+            else:
+                self.BlueUnsortListQ1.insertRow(m)
+                self.BlueUnsortListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
+                self.BlueUnsortListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
+                self.BlueUnsortListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
+                self.BlueUnsortListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT1_course'])))
+                self.setColorBlue(self.BlueUnsortListQ1, m, 3)
+                m += 1
 
     def sort_res_q1(self, data):
         self.ResSortListQ1.setRowCount(0)
         n = 0
         place = 1
-        if len(data) % 2 == 0:
-            break_flag = len(data) // 2 + 2
-        else:
-            break_flag = len(data) // 2 + 1
-        for x in data:
+        break_flag = len(Data._participants_data) // 2 + 2 if len(Data._participants_data) % 2 == 0 else len(
+            Data._participants_data) // 2 + 1
+        for x in range(1, len(data) + 1):
             self.ResSortListQ1.insertRow(n)
-            self.ResSortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(x['Ст№'])))
-            self.ResSortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(x['С.Ф.'])))
-            self.ResSortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(x['Фамилия Имя'])))
-            self.ResSortListQ1.setItem(n, 4, QtWidgets.QTableWidgetItem(str(x['QT_1'])))
-            self.ResSortListQ1.setItem(n, 5, QtWidgets.QTableWidgetItem(str(x['QT1_course'])))
+            self.ResSortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
+            self.ResSortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
+            self.ResSortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
+            self.ResSortListQ1.setItem(n, 4, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT1_course'])))
+            if data[str(x)]['QT1_course'] == 'Красная':
+                self.setColorRed(self.ResSortListQ1, n, 4)
+            else:
+                self.setColorBlue(self.ResSortListQ1, n, 4)
             n += 1
-        self.ResSortListQ1.sortItems(4)
+        self.ResSortListQ1.sortItems(3)
         self.ResSortListQ1.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
         for _ in range(1, break_flag + 1):
             if self.ResSortListQ1.item(_, 4).text() == self.ResSortListQ1.item(_ - 1, 4).text():
@@ -120,44 +144,69 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.redListQ2.setRowCount(0)
         self.blueListQ2.setRowCount(0)
         m = n = 0
-        for t in range(self.ResSortListQ1.rowCount()):
-            if int(self.ResSortListQ1.item(t, 1).text()) % 2 == 0:
+        for t in range(1, self.ResSortListQ1.rowCount() + 1):
+            if int(self.ResSortListQ1.item(t - 1, 1).text()) % 2 == 0:
                 self.redListQ2.insertRow(n)
-                self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 1).text())))
-                self.redListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 3).text())))
-                self.redListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 4).text())))
-                Data._participants_data[t]['QT2_course'] = 'Красная'
+                self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 1).text())))
+                self.redListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 2).text())))
+                self.redListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 3).text())))
+                Data._participants_data[str(self.ResSortListQ1.item(t - 1, 1).text())]['QT2_course'] = 'Красная'
                 n += 1
             else:
                 self.blueListQ2.insertRow(m)
-                self.blueListQ2.setItem(m, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 1).text())))
-                self.blueListQ2.setItem(m, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 3).text())))
-                self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 4).text())))
-                Data._participants_data[t]['QT2_course'] = 'Синяя'
+                self.blueListQ2.setItem(m, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 1).text())))
+                self.blueListQ2.setItem(m, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 2).text())))
+                self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 3).text())))
+                Data._participants_data[str(self.ResSortListQ1.item(t - 1, 1).text())]['QT2_course'] = 'Синяя'
                 m += 1
 
     def display_res_q2(self):
         Data.get_time_qual2(self)
-        self.ResUnsortListQ2.setRowCount(0)
-        for n in range(self.ResSortListQ1.rowCount()):
-            self.ResUnsortListQ2.insertRow(n)
-            self.ResUnsortListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 1).text())))
-            self.ResUnsortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 3).text())))
-            self.ResUnsortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 4).text())))
-            self.ResUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(Data._participants_data[n]['QT_2'])))
+        self.RedUnsortListQ2.setRowCount(0)
+        self.BlueUnsortListQ2.setRowCount(0)
+        for n in range(self.redListQ2.rowCount()):
+            self.RedUnsortListQ2.insertRow(n)
+            self.RedUnsortListQ2.setItem(n, 0,
+                                         QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 0).text())))
+            self.RedUnsortListQ2.setItem(n, 1,
+                                         QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
+            self.RedUnsortListQ2.setItem(n, 2,
+                                         QtWidgets.QTableWidgetItem(str(
+                                             Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2'])))
+            self.RedUnsortListQ2.setItem(n, 3,
+                                         QtWidgets.QTableWidgetItem(str(
+                                             Data._participants_data[str(self.redListQ2.item(n, 0).text())][
+                                                 'QT2_course'])))
+            self.setColorRed(self.RedUnsortListQ2, n, 3)
+        for m in range(self.blueListQ2.rowCount()):
+            self.BlueUnsortListQ2.insertRow(m)
+            self.BlueUnsortListQ2.setItem(m, 0,
+                                          QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 0).text())))
+            self.BlueUnsortListQ2.setItem(m, 1,
+                                          QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
+            self.BlueUnsortListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(
+                str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT_2'])))
+            self.BlueUnsortListQ2.setItem(m, 3,
+                                          QtWidgets.QTableWidgetItem(
+                                              str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT2_course'])))  # TODO wrong time
+            self.setColorBlue(self.BlueUnsortListQ2, m, 3)
 
     def sort_res_q2(self):
         self.ResSortListQ2.setRowCount(0)
         place = 1
-        break_flag = self.competition_data['rounds_amount'].split(sep='/')[1]
-        break_flag = int(break_flag)
+        break_flag = int(self.competition_data['rounds_amount'].split(sep='/')[1]) * 2
         for n in range(self.ResSortListQ1.rowCount()):
             self.ResSortListQ2.insertRow(n)
-            self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 0).text())))
-            self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 1).text())))
-            self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 2).text())))
-            self.ResSortListQ2.setItem(n, 4, QtWidgets.QTableWidgetItem(str(self.ResUnsortListQ2.item(n, 3).text())))
-            self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(str(Data._participants_data[n]['QT2_course'])))
+            self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 1).text())))
+            self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 2).text())))
+            self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 3).text())))
+            self.ResSortListQ2.setItem(n, 4, QtWidgets.QTableWidgetItem(
+                str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT_2'])))  # TODO wrong time
+            self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'])))
+            if Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'] == 'Красная':
+                self.setColorRed(self.ResSortListQ2, n, 5)
+            else:
+                self.setColorBlue(self.ResSortListQ2, n, 5)
         self.ResSortListQ2.sortItems(4)
         self.ResSortListQ2.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
         for _ in range(1, break_flag):
