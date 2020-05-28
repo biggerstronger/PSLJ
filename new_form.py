@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1483, 945)
+        MainWindow.resize(1448, 945)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -551,6 +551,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.fileNameLabel, 0, Qt.AlignLeft)
 
+        self.labelError = QLabel(self.tab_3)
+        self.labelError.setObjectName(u"labelError")
+        self.labelError.setGeometry(QRect(760, 170, 351, 31))
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -922,7 +925,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1483, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1448, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -1010,6 +1013,7 @@ class Ui_MainWindow(object):
         self.pushButtonLoadList.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0441\u043f\u0438\u0441\u043e\u043a \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u043e\u0432", None))
         self.label_38.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0439\u043b:", None))
         self.fileNameLabel.setText("")
+        self.labelError.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"\u0421\u043f\u043e\u0440\u0442\u0441\u043c\u0435\u043d\u044b", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
         ___qtablewidgetitem6 = self.redListQ1.horizontalHeaderItem(0)

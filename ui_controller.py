@@ -72,6 +72,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             part_data.setdefault('FTBig_1', None)
             part_data.setdefault('FTBig_2', None)
             Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())] = part_data
+            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == ' ':
+                self.labelError.setText('Ошибка в строке {}'.format(i))
+                del Data._participants_data[' ']
+                continue
             self.divideQ1(Data._participants_data)
 
     def delete_participant(self):
