@@ -1,6 +1,9 @@
+import sys
+
 from PySide2 import QtCore, QtWidgets, QtGui
 from PySide2.QtCore import QPersistentModelIndex
 
+import error_controller
 import new_form
 from data_controller import Data
 from time import sleep
@@ -17,6 +20,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.pushButtonSave.clicked.connect(self.save_participants)
         self.pushButtonAccept.clicked.connect(self.display_resQ1_callback)
         self.pushButtonAccept_2.clicked.connect(self.display_resQ2_callback)
+        self.error = error_controller.ErrorController()
 
     @staticmethod
     def setColorRed(table, rowIndex, cellIndex):
@@ -72,9 +76,21 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             part_data.setdefault('FTBig_1', None)
             part_data.setdefault('FTBig_2', None)
             Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())] = part_data
+            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == ' ' and \
+                    Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == ' ':
+                del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
+                self.error.show()
+                self.error.error_msg_double(i)
+                continue
             if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == ' ':
-                self.labelError.setText('Ошибка в строке {}'.format(i))
-                del Data._participants_data[' ']
+                del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
+                self.error.error_msg_bib(i)
+                self.error.show()
+                continue
+            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == ' ':
+                del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
+                self.error.show()
+                self.error.error_msg_fio(i)
                 continue
             self.divideQ1(Data._participants_data)
 

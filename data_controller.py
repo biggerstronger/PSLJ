@@ -2,7 +2,6 @@ import json
 import random
 import xlrd
 from PySide2 import QtWidgets
-from time import sleep
 
 
 def write_to_json(data_dict):

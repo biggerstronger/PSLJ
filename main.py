@@ -3,6 +3,7 @@
 from PySide2 import QtWidgets
 import sys
 
+import error_controller
 from ui_controller import Controller
 
 
