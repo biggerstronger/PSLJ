@@ -66,9 +66,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         if self.participantsTable.selectionModel().hasSelection():
             indexes = [QPersistentModelIndex(index) for index in self.participantsTable.selectionModel().selectedRows()]
             for index in sorted(indexes):
-                Data._participants_data.pop(str(self.participantsTable.item(index.row(), 0).text()))
                 print('Deleting row %d...' % index.row())
                 self.participantsTable.removeRow(index.row())
+                Data._participants_data.pop(str(self.participantsTable.item(index.row(), 0).text()))
         else:
             print('No row selected!')
 
