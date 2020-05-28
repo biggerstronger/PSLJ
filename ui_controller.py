@@ -33,12 +33,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def add_participant(self):
         self.participantsTable.insertRow(0)
         self.counter()
-        self.participantsTable.setItem(0, 0, QtWidgets.QTableWidgetItem('Пожалуйста,'))
-        self.participantsTable.setItem(0, 1, QtWidgets.QTableWidgetItem('Введите'))
-        self.participantsTable.setItem(0, 2, QtWidgets.QTableWidgetItem('Данные'))
-        self.participantsTable.setItem(0, 3, QtWidgets.QTableWidgetItem('О'))
-        self.participantsTable.setItem(0, 4, QtWidgets.QTableWidgetItem('Спортсмене'))
-        self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem('!!!'))
+        self.participantsTable.setItem(0, 0, QtWidgets.QTableWidgetItem(' '))
+        self.participantsTable.setItem(0, 1, QtWidgets.QTableWidgetItem(' '))
+        self.participantsTable.setItem(0, 2, QtWidgets.QTableWidgetItem(' '))
+        self.participantsTable.setItem(0, 3, QtWidgets.QTableWidgetItem(' '))
+        self.participantsTable.setItem(0, 4, QtWidgets.QTableWidgetItem(' '))
+        self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem(' '))
 
     def save_participants(self):
         for i in range(1, self.counter()):
