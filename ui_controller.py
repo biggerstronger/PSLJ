@@ -26,49 +26,64 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def setColorBlue(table, rowIndex, cellIndex):
         table.item(rowIndex, cellIndex).setForeground(QtGui.QColor(0, 0, 255))
 
+    def counter(self):
+        x = self.participantsTable.rowCount()
+        return x + 1
+
     def add_participant(self):
         self.participantsTable.insertRow(0)
+        self.counter()
+        self.participantsTable.setItem(0, 0, QtWidgets.QTableWidgetItem('Пожалуйста,'))
+        self.participantsTable.setItem(0, 1, QtWidgets.QTableWidgetItem('Введите'))
+        self.participantsTable.setItem(0, 2, QtWidgets.QTableWidgetItem('Данные'))
+        self.participantsTable.setItem(0, 3, QtWidgets.QTableWidgetItem('О'))
+        self.participantsTable.setItem(0, 4, QtWidgets.QTableWidgetItem('Спортсмене'))
+        self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem('!!!'))
+
     def save_participants(self):
-        part_data = {}
-        part_data.setdefault('Ст№', self.participantsTable.item(0, 0).text())
-        part_data.setdefault('С.Ф.', self.participantsTable.item(0, 1).text())
-        part_data.setdefault('Фамилия Имя', self.participantsTable.item(0, 2).text())
-        part_data.setdefault('Г.р.', self.participantsTable.item(0, 3).text())
-        part_data.setdefault('Спорт. разр.', self.participantsTable.item(0, 4).text())
-        part_data.setdefault('Очки КР', self.participantsTable.item(0, 5).text())
-        part_data.setdefault('QT1_course', None)
-        part_data.setdefault('QT_1', None)
-        part_data.setdefault('QT2_course', None)
-        part_data.setdefault('QT_2', None)
-        part_data.setdefault('FT1/32_course', None)
-        part_data.setdefault('FT1/32_1', None)
-        part_data.setdefault('FT1/32_2', None)
-        part_data.setdefault('FT1/16_course', None)
-        part_data.setdefault('FT1/16_1', None)
-        part_data.setdefault('FT1/16_2', None)
-        part_data.setdefault('FT1/8_course', None)
-        part_data.setdefault('FT1/8_1', None)
-        part_data.setdefault('FT1/8_2', None)
-        part_data.setdefault('FT1/4_course', None)
-        part_data.setdefault('FT1/4_1', None)
-        part_data.setdefault('FT1/4_2', None)
-        part_data.setdefault('FTSmall_course', None)
-        part_data.setdefault('FTSmall_1', None)
-        part_data.setdefault('FTSmall_2', None)
-        part_data.setdefault('FTBig_course', None)
-        part_data.setdefault('FTBig_1', None)
-        part_data.setdefault('FTBig_2', None)
-        Data._participants_data[str(self.participantsTable.item(0, 0).text())] = part_data
-        # print(Data._participants_data[str(self.participantsTable.item(0, 0).text())])
-        self.divideQ1(Data._participants_data)
+        for i in range(1, self.counter()):
+            part_data = {}
+            part_data.setdefault('Ст№', self.participantsTable.item(i - 1, 0).text())
+            part_data.setdefault('С.Ф.', self.participantsTable.item(i - 1, 1).text())
+            part_data.setdefault('Фамилия Имя', self.participantsTable.item(i - 1, 2).text())
+            part_data.setdefault('Г.р.', self.participantsTable.item(i - 1, 3).text())
+            part_data.setdefault('Спорт. разр.', self.participantsTable.item(i - 1, 4).text())
+            part_data.setdefault('Очки КР', self.participantsTable.item(i - 1, 5).text())
+            part_data.setdefault('QT1_course', None)
+            part_data.setdefault('QT_1', None)
+            part_data.setdefault('QT2_course', None)
+            part_data.setdefault('QT_2', None)
+            part_data.setdefault('FT1/32_course', None)
+            part_data.setdefault('FT1/32_1', None)
+            part_data.setdefault('FT1/32_2', None)
+            part_data.setdefault('FT1/16_course', None)
+            part_data.setdefault('FT1/16_1', None)
+            part_data.setdefault('FT1/16_2', None)
+            part_data.setdefault('FT1/8_course', None)
+            part_data.setdefault('FT1/8_1', None)
+            part_data.setdefault('FT1/8_2', None)
+            part_data.setdefault('FT1/4_course', None)
+            part_data.setdefault('FT1/4_1', None)
+            part_data.setdefault('FT1/4_2', None)
+            part_data.setdefault('FTSmall_course', None)
+            part_data.setdefault('FTSmall_1', None)
+            part_data.setdefault('FTSmall_2', None)
+            part_data.setdefault('FTBig_course', None)
+            part_data.setdefault('FTBig_1', None)
+            part_data.setdefault('FTBig_2', None)
+            Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())] = part_data
+            self.divideQ1(Data._participants_data)
 
     def delete_participant(self):
         if self.participantsTable.selectionModel().hasSelection():
             indexes = [QPersistentModelIndex(index) for index in self.participantsTable.selectionModel().selectedRows()]
             for index in sorted(indexes):
                 print('Deleting row %d...' % index.row())
-                self.participantsTable.removeRow(index.row())
-                Data._participants_data.pop(str(self.participantsTable.item(index.row(), 0).text()))
+                try:
+                    Data._participants_data.pop(str(self.participantsTable.item(index.row(), 0).text()))
+                    self.participantsTable.removeRow(index.row())
+                except:
+                    self.participantsTable.removeRow(index.row())
         else:
             print('No row selected!')
 
