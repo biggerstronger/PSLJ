@@ -37,12 +37,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def add_participant(self):
         self.participantsTable.insertRow(0)
         self.counter()
-        self.participantsTable.setItem(0, 0, QtWidgets.QTableWidgetItem(' '))
-        self.participantsTable.setItem(0, 1, QtWidgets.QTableWidgetItem(' '))
-        self.participantsTable.setItem(0, 2, QtWidgets.QTableWidgetItem(' '))
-        self.participantsTable.setItem(0, 3, QtWidgets.QTableWidgetItem(' '))
-        self.participantsTable.setItem(0, 4, QtWidgets.QTableWidgetItem(' '))
-        self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem(' '))
+        self.participantsTable.setItem(0, 0, QtWidgets.QTableWidgetItem(''))
+        self.participantsTable.setItem(0, 1, QtWidgets.QTableWidgetItem(''))
+        self.participantsTable.setItem(0, 2, QtWidgets.QTableWidgetItem(''))
+        self.participantsTable.setItem(0, 3, QtWidgets.QTableWidgetItem(''))
+        self.participantsTable.setItem(0, 4, QtWidgets.QTableWidgetItem(''))
+        self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem(''))
 
     def save_participants(self):
         for i in range(1, self.counter()):
@@ -76,18 +76,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             part_data.setdefault('FTBig_1', None)
             part_data.setdefault('FTBig_2', None)
             Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())] = part_data
-            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == ' ' and \
-                    Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == ' ':
+            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == '' and \
+                    Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == '':
                 del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
                 self.error.show()
                 self.error.error_msg_double(i)
                 break
-            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == ' ':
+            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == '':
                 del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
                 self.error.error_msg_bib(i)
                 self.error.show()
                 break
-            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == ' ':
+            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == '':
                 del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
                 self.error.show()
                 self.error.error_msg_fio(i)
