@@ -856,7 +856,7 @@
        <item>
         <widget class="QPushButton" name="pushButtonDelete">
          <property name="text">
-          <string>Удилить данные</string>
+          <string>Удaлить данные</string>
          </property>
         </widget>
        </item>
@@ -864,6 +864,13 @@
         <widget class="QPushButton" name="pushButtonAdd">
          <property name="text">
           <string>Добавить спортсмена</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonSave">
+         <property name="text">
+          <string>Сохранить данные!</string>
          </property>
         </widget>
        </item>

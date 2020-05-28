@@ -1,4 +1,6 @@
 from PySide2 import QtCore, QtWidgets, QtGui
+from PySide2.QtCore import QPersistentModelIndex
+
 import new_form
 from data_controller import Data
 from time import sleep
@@ -10,6 +12,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.setupUi(self)
         self.saveParams.clicked.connect(self.save_settings_callback)
         self.pushButtonLoadList.clicked.connect(self.load_file_callback)
+        self.pushButtonAdd.clicked.connect(self.add_participant)
+        self.pushButtonDelete.clicked.connect(self.delete_participant)
+        self.pushButtonSave.clicked.connect(self.save_participants)
         self.pushButtonAccept.clicked.connect(self.display_resQ1_callback)
         self.pushButtonAccept_2.clicked.connect(self.display_resQ2_callback)
 
@@ -20,6 +25,52 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     @staticmethod
     def setColorBlue(table, rowIndex, cellIndex):
         table.item(rowIndex, cellIndex).setForeground(QtGui.QColor(0, 0, 255))
+
+    def add_participant(self):
+        self.participantsTable.insertRow(0)
+    def save_participants(self):
+        part_data = {}
+        part_data.setdefault('Ст№', self.participantsTable.item(0, 0).text())
+        part_data.setdefault('С.Ф.', self.participantsTable.item(0, 1).text())
+        part_data.setdefault('Фамилия Имя', self.participantsTable.item(0, 2).text())
+        part_data.setdefault('Г.р.', self.participantsTable.item(0, 3).text())
+        part_data.setdefault('Спорт. разр.', self.participantsTable.item(0, 4).text())
+        part_data.setdefault('Очки КР', self.participantsTable.item(0, 5).text())
+        part_data.setdefault('QT1_course', None)
+        part_data.setdefault('QT_1', None)
+        part_data.setdefault('QT2_course', None)
+        part_data.setdefault('QT_2', None)
+        part_data.setdefault('FT1/32_course', None)
+        part_data.setdefault('FT1/32_1', None)
+        part_data.setdefault('FT1/32_2', None)
+        part_data.setdefault('FT1/16_course', None)
+        part_data.setdefault('FT1/16_1', None)
+        part_data.setdefault('FT1/16_2', None)
+        part_data.setdefault('FT1/8_course', None)
+        part_data.setdefault('FT1/8_1', None)
+        part_data.setdefault('FT1/8_2', None)
+        part_data.setdefault('FT1/4_course', None)
+        part_data.setdefault('FT1/4_1', None)
+        part_data.setdefault('FT1/4_2', None)
+        part_data.setdefault('FTSmall_course', None)
+        part_data.setdefault('FTSmall_1', None)
+        part_data.setdefault('FTSmall_2', None)
+        part_data.setdefault('FTBig_course', None)
+        part_data.setdefault('FTBig_1', None)
+        part_data.setdefault('FTBig_2', None)
+        Data._participants_data[str(self.participantsTable.item(0, 0).text())] = part_data
+        # print(Data._participants_data[str(self.participantsTable.item(0, 0).text())])
+        self.divideQ1(Data._participants_data)
+
+    def delete_participant(self):
+        if self.participantsTable.selectionModel().hasSelection():
+            indexes = [QPersistentModelIndex(index) for index in self.participantsTable.selectionModel().selectedRows()]
+            for index in sorted(indexes):
+                Data._participants_data.pop(str(self.participantsTable.item(index.row(), 0).text()))
+                print('Deleting row %d...' % index.row())
+                self.participantsTable.removeRow(index.row())
+        else:
+            print('No row selected!')
 
     def display_resQ1_callback(self):
         sleep(1)
@@ -40,13 +91,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         sleep(1)
         self.tabWidget.setCurrentIndex(1)
         print('Данные сохранены!')
-        self.show_finals()
+        # self.show_finals()
 
     def load_file_callback(self):
         Data.choose_file_participants(self)
         Data.load_file(self)
         self.display_participants(Data._participants_data)
-        self.divideQ1(Data._participants_data)
 
     def display_participants(self, data):
         self.participantsTable.setRowCount(0)
@@ -65,14 +115,15 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 str(data['{}'.format(entry)]['Спорт. разр.'])))
             self.participantsTable.setItem(row, 5, QtWidgets.QTableWidgetItem(
                 str(data['{}'.format(entry)]['Очки КР'])))
+            # self.participantsTable.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
             row += 1
 
     def divideQ1(self, data):
         self.redListQ1.setRowCount(0)
         self.blueListQ1.setRowCount(0)
         n = m = 0
-        for t in range(1, len(data) + 1):
-            if data[str(t)]['Ст№'] % 2 == 1:
+        for t in data:
+            if int(data[str(t)]['Ст№']) % 2 == 1:
                 self.redListQ1.insertRow(n)
                 self.redListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(t)]['Ст№'])))
                 self.redListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(t)]['С.Ф.'])))
@@ -88,14 +139,16 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.blueListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(data[str(t)]['Спорт. разр.'])))
                 data[str(t)]['QT1_course'] = 'Синяя'
                 m += 1
+        self.redListQ1.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
+        self.blueListQ1.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
 
     def display_res_q1(self, data):
         Data.get_time_qual1(self)
         self.RedUnsortListQ1.setRowCount(0)
         self.BlueUnsortListQ1.setRowCount(0)
         n = m = 0
-        for x in range(1, len(data) + 1):
-            if data[str(x)]['QT1_course'] == 'Красная':
+        for x in data:
+            if data[x]['QT1_course'] == 'Красная':
                 self.RedUnsortListQ1.insertRow(n)
                 self.RedUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
                 self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
@@ -118,7 +171,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         place = 1
         break_flag = len(Data._participants_data) // 2 + 2 if len(Data._participants_data) % 2 == 0 else len(
             Data._participants_data) // 2 + 1
-        for x in range(1, len(data) + 1):
+        for x in data:
             self.ResSortListQ1.insertRow(n)
             self.ResSortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
             self.ResSortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
@@ -159,6 +212,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 3).text())))
                 Data._participants_data[str(self.ResSortListQ1.item(t - 1, 1).text())]['QT2_course'] = 'Синяя'
                 m += 1
+        self.redListQ2.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
+        self.blueListQ2.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
+        # self.blueListQ2.column(0).
 
     def display_res_q2(self):
         Data.get_time_qual2(self)
@@ -188,7 +244,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT_2'])))
             self.BlueUnsortListQ2.setItem(m, 3,
                                           QtWidgets.QTableWidgetItem(
-                                              str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT2_course'])))  # TODO wrong time
+                                              str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())][
+                                                      'QT2_course'])))
             self.setColorBlue(self.BlueUnsortListQ2, m, 3)
 
     def sort_res_q2(self):
@@ -201,8 +258,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 2).text())))
             self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 3).text())))
             self.ResSortListQ2.setItem(n, 4, QtWidgets.QTableWidgetItem(
-                str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT_2'])))  # TODO wrong time
-            self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'])))
+                str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT_2'])))
+            self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(
+                str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'])))
             if Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'] == 'Красная':
                 self.setColorRed(self.ResSortListQ2, n, 5)
             else:

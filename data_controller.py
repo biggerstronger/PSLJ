@@ -16,17 +16,17 @@ class Data:
     competition_data = {}
 
     def get_time_qual1(self):
-        for _ in range(1, len(self._participants_data) + 1):
+        for _ in self._participants_data:
             g1time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             self._participants_data[str(_)]['QT_1'] = g1time
 
     def get_time_qual2(self):
-        for _ in range(1, len(self._participants_data) + 1):
+        for _ in self._participants_data:
             g2time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             self._participants_data[str(_)]['QT_2'] = g2time
 
     def get_time_finals(self):
-        for _ in range(1, len(self._participants_data) + 1):  # TODO переписать генерирование времени в конкретный финал
+        for _ in self._participants_data:  # TODO переписать генерирование времени в конкретный финал
             mtime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             # stime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
             if self.competition_data['rounds_amount'] == '1/16':
