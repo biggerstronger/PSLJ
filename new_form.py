@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1448, 945)
+        MainWindow.resize(1487, 945)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -31,32 +31,42 @@ class Ui_MainWindow(object):
         self.tab.setObjectName(u"tab")
         self.gridLayoutWidget = QWidget(self.tab)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 10, 1081, 831))
+        self.gridLayoutWidget.setGeometry(QRect(10, 10, 1391, 831))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_12 = QGridLayout()
-        self.gridLayout_12.setObjectName(u"gridLayout_12")
-        self.city8 = QLineEdit(self.gridLayoutWidget)
-        self.city8.setObjectName(u"city8")
-        self.city8.setMinimumSize(QSize(0, 20))
+        self.label_21 = QLabel(self.gridLayoutWidget)
+        self.label_21.setObjectName(u"label_21")
 
-        self.gridLayout_12.addWidget(self.city8, 0, 0, 1, 1, Qt.AlignLeft)
+        self.gridLayout.addWidget(self.label_21, 17, 0, 1, 1)
 
-        self.city9 = QLineEdit(self.gridLayoutWidget)
-        self.city9.setObjectName(u"city9")
-        self.city9.setMinimumSize(QSize(0, 20))
+        self.label_5 = QLabel(self.gridLayoutWidget)
+        self.label_5.setObjectName(u"label_5")
 
-        self.gridLayout_12.addWidget(self.city9, 1, 0, 1, 1, Qt.AlignLeft)
+        self.gridLayout.addWidget(self.label_5, 1, 0, 1, 1)
 
+        self.label_13 = QLabel(self.gridLayoutWidget)
+        self.label_13.setObjectName(u"label_13")
 
-        self.gridLayout.addLayout(self.gridLayout_12, 15, 2, 1, 1)
+        self.gridLayout.addWidget(self.label_13, 11, 0, 1, 1)
 
-        self.fio5 = QLineEdit(self.gridLayoutWidget)
-        self.fio5.setObjectName(u"fio5")
-        self.fio5.setMinimumSize(QSize(300, 0))
+        self.fio8 = QLineEdit(self.gridLayoutWidget)
+        self.fio8.setObjectName(u"fio8")
+        self.fio8.setMinimumSize(QSize(300, 20))
+        self.fio8.setMaximumSize(QSize(300, 20))
 
-        self.gridLayout.addWidget(self.fio5, 12, 1, 1, 1, Qt.AlignLeft)
+        self.gridLayout.addWidget(self.fio8, 15, 1, 1, 1)
+
+        self.orglineEdit = QLineEdit(self.gridLayoutWidget)
+        self.orglineEdit.setObjectName(u"orglineEdit")
+        self.orglineEdit.setMinimumSize(QSize(300, 0))
+
+        self.gridLayout.addWidget(self.orglineEdit, 3, 1, 1, 1, Qt.AlignLeft)
+
+        self.label_2 = QLabel(self.gridLayoutWidget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.gridLayout.addWidget(self.label_2, 14, 0, 1, 1)
 
         self.startTime = QLineEdit(self.gridLayoutWidget)
         self.startTime.setObjectName(u"startTime")
@@ -64,23 +74,6 @@ class Ui_MainWindow(object):
         self.startTime.setMaximumSize(QSize(300, 16777215))
 
         self.gridLayout.addWidget(self.startTime, 27, 1, 1, 1)
-
-        self.gates = QLineEdit(self.gridLayoutWidget)
-        self.gates.setObjectName(u"gates")
-        self.gates.setMinimumSize(QSize(300, 0))
-        self.gates.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.gates, 25, 1, 1, 1)
-
-        self.label_18 = QLabel(self.gridLayoutWidget)
-        self.label_18.setObjectName(u"label_18")
-
-        self.gridLayout.addWidget(self.label_18, 4, 0, 1, 3)
-
-        self.label_12 = QLabel(self.gridLayoutWidget)
-        self.label_12.setObjectName(u"label_12")
-
-        self.gridLayout.addWidget(self.label_12, 10, 0, 1, 1)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -91,36 +84,58 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.label_39)
 
-        self.runsComboBox = QComboBox(self.gridLayoutWidget)
-        self.runsComboBox.addItem("")
-        self.runsComboBox.addItem("")
-        self.runsComboBox.setObjectName(u"runsComboBox")
-        self.runsComboBox.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_5.addWidget(self.runsComboBox)
-
 
         self.gridLayout.addLayout(self.horizontalLayout_5, 1, 2, 1, 1)
 
-        self.label_3 = QLabel(self.gridLayoutWidget)
-        self.label_3.setObjectName(u"label_3")
+        self.label_7 = QLabel(self.gridLayoutWidget)
+        self.label_7.setObjectName(u"label_7")
 
-        self.gridLayout.addWidget(self.label_3, 15, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_7, 3, 0, 1, 1)
 
-        self.city6 = QLineEdit(self.gridLayoutWidget)
-        self.city6.setObjectName(u"city6")
+        self.label_33 = QLabel(self.gridLayoutWidget)
+        self.label_33.setObjectName(u"label_33")
 
-        self.gridLayout.addWidget(self.city6, 13, 2, 1, 1, Qt.AlignLeft)
+        self.gridLayout.addWidget(self.label_33, 32, 0, 1, 1)
 
-        self.label_19 = QLabel(self.gridLayoutWidget)
-        self.label_19.setObjectName(u"label_19")
+        self.label_17 = QLabel(self.gridLayoutWidget)
+        self.label_17.setObjectName(u"label_17")
 
-        self.gridLayout.addWidget(self.label_19, 7, 0, 1, 3)
+        self.gridLayout.addWidget(self.label_17, 6, 2, 1, 1, Qt.AlignLeft)
 
-        self.label_28 = QLabel(self.gridLayoutWidget)
-        self.label_28.setObjectName(u"label_28")
+        self.city5 = QLineEdit(self.gridLayoutWidget)
+        self.city5.setObjectName(u"city5")
 
-        self.gridLayout.addWidget(self.label_28, 27, 0, 1, 1)
+        self.gridLayout.addWidget(self.city5, 12, 2, 1, 1, Qt.AlignLeft)
+
+        self.label_20 = QLabel(self.gridLayoutWidget)
+        self.label_20.setObjectName(u"label_20")
+
+        self.gridLayout.addWidget(self.label_20, 23, 0, 1, 1)
+
+        self.city9 = QLineEdit(self.gridLayoutWidget)
+        self.city9.setObjectName(u"city9")
+        self.city9.setMinimumSize(QSize(0, 20))
+        self.city9.setMaximumSize(QSize(133, 20))
+
+        self.gridLayout.addWidget(self.city9, 17, 2, 1, 1)
+
+        self.label_31 = QLabel(self.gridLayoutWidget)
+        self.label_31.setObjectName(u"label_31")
+
+        self.gridLayout.addWidget(self.label_31, 29, 0, 1, 3)
+
+        self.city8 = QLineEdit(self.gridLayoutWidget)
+        self.city8.setObjectName(u"city8")
+        self.city8.setMinimumSize(QSize(0, 20))
+        self.city8.setMaximumSize(QSize(133, 20))
+
+        self.gridLayout.addWidget(self.city8, 15, 2, 1, 1)
+
+        self.titlelineEdit = QLineEdit(self.gridLayoutWidget)
+        self.titlelineEdit.setObjectName(u"titlelineEdit")
+        self.titlelineEdit.setMinimumSize(QSize(300, 0))
+
+        self.gridLayout.addWidget(self.titlelineEdit, 0, 1, 1, 1, Qt.AlignLeft)
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -130,275 +145,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.label_40)
 
-        self.qualificationsComboBox = QComboBox(self.gridLayoutWidget)
-        self.qualificationsComboBox.addItem("")
-        self.qualificationsComboBox.addItem("")
-        self.qualificationsComboBox.setObjectName(u"qualificationsComboBox")
-        self.qualificationsComboBox.setMaximumSize(QSize(50, 16777215))
-        self.qualificationsComboBox.setFrame(True)
-
-        self.horizontalLayout_4.addWidget(self.qualificationsComboBox)
-
 
         self.gridLayout.addLayout(self.horizontalLayout_4, 0, 2, 1, 1)
-
-        self.gridLayout_11 = QGridLayout()
-        self.gridLayout_11.setObjectName(u"gridLayout_11")
-        self.fio8 = QLineEdit(self.gridLayoutWidget)
-        self.fio8.setObjectName(u"fio8")
-        self.fio8.setMinimumSize(QSize(300, 20))
-
-        self.gridLayout_11.addWidget(self.fio8, 0, 0, 1, 1, Qt.AlignLeft)
-
-        self.fio9 = QLineEdit(self.gridLayoutWidget)
-        self.fio9.setObjectName(u"fio9")
-        self.fio9.setMinimumSize(QSize(300, 20))
-
-        self.gridLayout_11.addWidget(self.fio9, 1, 0, 1, 1, Qt.AlignLeft)
-
-
-        self.gridLayout.addLayout(self.gridLayout_11, 15, 1, 1, 1)
-
-        self.fio2 = QLineEdit(self.gridLayoutWidget)
-        self.fio2.setObjectName(u"fio2")
-        self.fio2.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.fio2, 9, 1, 1, 1, Qt.AlignLeft)
-
-        self.label_26 = QLabel(self.gridLayoutWidget)
-        self.label_26.setObjectName(u"label_26")
-
-        self.gridLayout.addWidget(self.label_26, 25, 0, 1, 1)
-
-        self.label_29 = QLabel(self.gridLayoutWidget)
-        self.label_29.setObjectName(u"label_29")
-
-        self.gridLayout.addWidget(self.label_29, 28, 0, 1, 1)
-
-        self.label_21 = QLabel(self.gridLayoutWidget)
-        self.label_21.setObjectName(u"label_21")
-
-        self.gridLayout.addWidget(self.label_21, 17, 0, 1, 1)
-
-        self.label_22 = QLabel(self.gridLayoutWidget)
-        self.label_22.setObjectName(u"label_22")
-
-        self.gridLayout.addWidget(self.label_22, 20, 0, 1, 1)
-
-        self.city7 = QLineEdit(self.gridLayoutWidget)
-        self.city7.setObjectName(u"city7")
-
-        self.gridLayout.addWidget(self.city7, 14, 2, 1, 1, Qt.AlignLeft)
-
-        self.fio7 = QLineEdit(self.gridLayoutWidget)
-        self.fio7.setObjectName(u"fio7")
-        self.fio7.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.fio7, 14, 1, 1, 1, Qt.AlignLeft)
-
-        self.label_13 = QLabel(self.gridLayoutWidget)
-        self.label_13.setObjectName(u"label_13")
-
-        self.gridLayout.addWidget(self.label_13, 11, 0, 1, 1)
-
-        self.label_5 = QLabel(self.gridLayoutWidget)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout.addWidget(self.label_5, 1, 0, 1, 1)
-
-        self.label_6 = QLabel(self.gridLayoutWidget)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout.addWidget(self.label_6, 2, 0, 1, 1)
-
-        self.typelineEdit = QLineEdit(self.gridLayoutWidget)
-        self.typelineEdit.setObjectName(u"typelineEdit")
-        self.typelineEdit.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.typelineEdit, 2, 1, 1, 1, Qt.AlignLeft)
-
-        self.titlelineEdit = QLineEdit(self.gridLayoutWidget)
-        self.titlelineEdit.setObjectName(u"titlelineEdit")
-        self.titlelineEdit.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.titlelineEdit, 0, 1, 1, 1, Qt.AlignLeft)
-
-        self.finalsTime = QLineEdit(self.gridLayoutWidget)
-        self.finalsTime.setObjectName(u"finalsTime")
-        self.finalsTime.setMinimumSize(QSize(300, 0))
-        self.finalsTime.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.finalsTime, 28, 1, 1, 1)
-
-        self.label_11 = QLabel(self.gridLayoutWidget)
-        self.label_11.setObjectName(u"label_11")
-
-        self.gridLayout.addWidget(self.label_11, 9, 0, 1, 1)
-
-        self.label_2 = QLabel(self.gridLayoutWidget)
-        self.label_2.setObjectName(u"label_2")
-
-        self.gridLayout.addWidget(self.label_2, 14, 0, 1, 1)
-
-        self.label_16 = QLabel(self.gridLayoutWidget)
-        self.label_16.setObjectName(u"label_16")
-
-        self.gridLayout.addWidget(self.label_16, 6, 1, 1, 1, Qt.AlignLeft)
-
-        self.finishTemp = QLineEdit(self.gridLayoutWidget)
-        self.finishTemp.setObjectName(u"finishTemp")
-        self.finishTemp.setMinimumSize(QSize(300, 0))
-        self.finishTemp.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.finishTemp, 32, 1, 1, 1)
-
-        self.altitudeDiff = QLineEdit(self.gridLayoutWidget)
-        self.altitudeDiff.setObjectName(u"altitudeDiff")
-        self.altitudeDiff.setMinimumSize(QSize(300, 0))
-        self.altitudeDiff.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.altitudeDiff, 23, 1, 1, 1)
-
-        self.label_14 = QLabel(self.gridLayoutWidget)
-        self.label_14.setObjectName(u"label_14")
-
-        self.gridLayout.addWidget(self.label_14, 12, 0, 1, 1)
-
-        self.label_24 = QLabel(self.gridLayoutWidget)
-        self.label_24.setObjectName(u"label_24")
-
-        self.gridLayout.addWidget(self.label_24, 22, 0, 1, 1)
-
-        self.start = QLineEdit(self.gridLayoutWidget)
-        self.start.setObjectName(u"start")
-        self.start.setMinimumSize(QSize(300, 0))
-        self.start.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.start, 21, 1, 1, 1)
-
-        self.label_10 = QLabel(self.gridLayoutWidget)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.label_10, 8, 0, 1, 1)
-
-        self.orglineEdit = QLineEdit(self.gridLayoutWidget)
-        self.orglineEdit.setObjectName(u"orglineEdit")
-        self.orglineEdit.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.orglineEdit, 3, 1, 1, 1, Qt.AlignLeft)
-
-        self.fio1 = QLineEdit(self.gridLayoutWidget)
-        self.fio1.setObjectName(u"fio1")
-        self.fio1.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.fio1, 8, 1, 1, 1, Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.label_37 = QLabel(self.gridLayoutWidget)
-        self.label_37.setObjectName(u"label_37")
-        self.label_37.setMaximumSize(QSize(78, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.label_37)
-
-        self.roundsComboBox = QComboBox(self.gridLayoutWidget)
-        self.roundsComboBox.addItem("")
-        self.roundsComboBox.addItem("")
-        self.roundsComboBox.addItem("")
-        self.roundsComboBox.addItem("")
-        self.roundsComboBox.setObjectName(u"roundsComboBox")
-        self.roundsComboBox.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.roundsComboBox)
-
-
-        self.gridLayout.addLayout(self.horizontalLayout_6, 2, 2, 1, 1)
-
-        self.label_7 = QLabel(self.gridLayoutWidget)
-        self.label_7.setObjectName(u"label_7")
-
-        self.gridLayout.addWidget(self.label_7, 3, 0, 1, 1)
-
-        self.label_25 = QLabel(self.gridLayoutWidget)
-        self.label_25.setObjectName(u"label_25")
-
-        self.gridLayout.addWidget(self.label_25, 24, 0, 1, 1)
-
-        self.label_17 = QLabel(self.gridLayoutWidget)
-        self.label_17.setObjectName(u"label_17")
-
-        self.gridLayout.addWidget(self.label_17, 6, 2, 1, 1, Qt.AlignLeft)
-
-        self.label_34 = QLabel(self.gridLayoutWidget)
-        self.label_34.setObjectName(u"label_34")
-
-        self.gridLayout.addWidget(self.label_34, 33, 0, 1, 1)
-
-        self.datelineEdit = QLineEdit(self.gridLayoutWidget)
-        self.datelineEdit.setObjectName(u"datelineEdit")
-        self.datelineEdit.setMinimumSize(QSize(300, 0))
-
-        self.gridLayout.addWidget(self.datelineEdit, 1, 1, 1, 1, Qt.AlignLeft)
-
-        self.homologation = QLineEdit(self.gridLayoutWidget)
-        self.homologation.setObjectName(u"homologation")
-        self.homologation.setMinimumSize(QSize(300, 0))
-        self.homologation.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.homologation, 24, 1, 1, 1)
-
-        self.label_4 = QLabel(self.gridLayoutWidget)
-        self.label_4.setObjectName(u"label_4")
-
-        self.gridLayout.addWidget(self.label_4, 18, 0, 1, 3, Qt.AlignHCenter)
-
-        self.label_8 = QLabel(self.gridLayoutWidget)
-        self.label_8.setObjectName(u"label_8")
-
-        self.gridLayout.addWidget(self.label_8, 5, 0, 1, 3, Qt.AlignHCenter)
-
-        self.city3 = QLineEdit(self.gridLayoutWidget)
-        self.city3.setObjectName(u"city3")
-
-        self.gridLayout.addWidget(self.city3, 10, 2, 1, 1, Qt.AlignLeft)
-
-        self.label_32 = QLabel(self.gridLayoutWidget)
-        self.label_32.setObjectName(u"label_32")
-
-        self.gridLayout.addWidget(self.label_32, 31, 0, 1, 1)
-
-        self.label_15 = QLabel(self.gridLayoutWidget)
-        self.label_15.setObjectName(u"label_15")
-
-        self.gridLayout.addWidget(self.label_15, 13, 0, 1, 1)
-
-        self.startTemp = QLineEdit(self.gridLayoutWidget)
-        self.startTemp.setObjectName(u"startTemp")
-        self.startTemp.setMinimumSize(QSize(300, 0))
-        self.startTemp.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.startTemp, 31, 1, 1, 1)
-
-        self.label_23 = QLabel(self.gridLayoutWidget)
-        self.label_23.setObjectName(u"label_23")
-
-        self.gridLayout.addWidget(self.label_23, 21, 0, 1, 1)
-
-        self.city5 = QLineEdit(self.gridLayoutWidget)
-        self.city5.setObjectName(u"city5")
-
-        self.gridLayout.addWidget(self.city5, 12, 2, 1, 1, Qt.AlignLeft)
-
-        self.label_30 = QLabel(self.gridLayoutWidget)
-        self.label_30.setObjectName(u"label_30")
-
-        self.gridLayout.addWidget(self.label_30, 30, 0, 1, 3, Qt.AlignHCenter)
-
-        self.city4 = QLineEdit(self.gridLayoutWidget)
-        self.city4.setObjectName(u"city4")
-
-        self.gridLayout.addWidget(self.city4, 11, 2, 1, 1, Qt.AlignLeft)
 
         self.finish = QLineEdit(self.gridLayoutWidget)
         self.finish.setObjectName(u"finish")
@@ -406,18 +154,6 @@ class Ui_MainWindow(object):
         self.finish.setMaximumSize(QSize(300, 16777215))
 
         self.gridLayout.addWidget(self.finish, 22, 1, 1, 1)
-
-        self.trackName = QLineEdit(self.gridLayoutWidget)
-        self.trackName.setObjectName(u"trackName")
-        self.trackName.setMinimumSize(QSize(300, 0))
-        self.trackName.setMaximumSize(QSize(300, 16777215))
-
-        self.gridLayout.addWidget(self.trackName, 20, 1, 1, 1)
-
-        self.label_9 = QLabel(self.gridLayoutWidget)
-        self.label_9.setObjectName(u"label_9")
-
-        self.gridLayout.addWidget(self.label_9, 6, 0, 1, 1, Qt.AlignLeft)
 
         self.fio3 = QLineEdit(self.gridLayoutWidget)
         self.fio3.setObjectName(u"fio3")
@@ -431,10 +167,70 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.fio4, 11, 1, 1, 1, Qt.AlignLeft)
 
+        self.label_12 = QLabel(self.gridLayoutWidget)
+        self.label_12.setObjectName(u"label_12")
+
+        self.gridLayout.addWidget(self.label_12, 10, 0, 1, 1)
+
+        self.snow = QLineEdit(self.gridLayoutWidget)
+        self.snow.setObjectName(u"snow")
+        self.snow.setMinimumSize(QSize(300, 20))
+        self.snow.setMaximumSize(QSize(300, 20))
+
+        self.gridLayout.addWidget(self.snow, 33, 1, 1, 1)
+
         self.city2 = QLineEdit(self.gridLayoutWidget)
         self.city2.setObjectName(u"city2")
 
         self.gridLayout.addWidget(self.city2, 9, 2, 1, 1, Qt.AlignLeft)
+
+        self.label_22 = QLabel(self.gridLayoutWidget)
+        self.label_22.setObjectName(u"label_22")
+
+        self.gridLayout.addWidget(self.label_22, 20, 0, 1, 1)
+
+        self.fio2 = QLineEdit(self.gridLayoutWidget)
+        self.fio2.setObjectName(u"fio2")
+        self.fio2.setMinimumSize(QSize(300, 0))
+
+        self.gridLayout.addWidget(self.fio2, 9, 1, 1, 1, Qt.AlignLeft)
+
+        self.city6 = QLineEdit(self.gridLayoutWidget)
+        self.city6.setObjectName(u"city6")
+
+        self.gridLayout.addWidget(self.city6, 13, 2, 1, 1, Qt.AlignLeft)
+
+        self.label_9 = QLabel(self.gridLayoutWidget)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout.addWidget(self.label_9, 6, 0, 1, 1, Qt.AlignLeft)
+
+        self.label_3 = QLabel(self.gridLayoutWidget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.gridLayout.addWidget(self.label_3, 15, 0, 1, 1)
+
+        self.label_28 = QLabel(self.gridLayoutWidget)
+        self.label_28.setObjectName(u"label_28")
+
+        self.gridLayout.addWidget(self.label_28, 27, 0, 1, 1)
+
+        self.altitudeDiff = QLineEdit(self.gridLayoutWidget)
+        self.altitudeDiff.setObjectName(u"altitudeDiff")
+        self.altitudeDiff.setMinimumSize(QSize(300, 0))
+        self.altitudeDiff.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.altitudeDiff, 23, 1, 1, 1)
+
+        self.label_23 = QLabel(self.gridLayoutWidget)
+        self.label_23.setObjectName(u"label_23")
+
+        self.gridLayout.addWidget(self.label_23, 21, 0, 1, 1)
+
+        self.label_4 = QLabel(self.gridLayoutWidget)
+        self.label_4.setObjectName(u"label_4")
+
+        self.gridLayout.addWidget(self.label_4, 18, 0, 1, 3, Qt.AlignHCenter)
 
         self.saveParams = QPushButton(self.gridLayoutWidget)
         self.saveParams.setObjectName(u"saveParams")
@@ -442,20 +238,179 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.saveParams, 33, 2, 1, 1)
 
-        self.label_20 = QLabel(self.gridLayoutWidget)
-        self.label_20.setObjectName(u"label_20")
+        self.fio5 = QLineEdit(self.gridLayoutWidget)
+        self.fio5.setObjectName(u"fio5")
+        self.fio5.setMinimumSize(QSize(300, 0))
 
-        self.gridLayout.addWidget(self.label_20, 23, 0, 1, 1)
+        self.gridLayout.addWidget(self.fio5, 12, 1, 1, 1, Qt.AlignLeft)
 
-        self.label_31 = QLabel(self.gridLayoutWidget)
-        self.label_31.setObjectName(u"label_31")
+        self.fio7 = QLineEdit(self.gridLayoutWidget)
+        self.fio7.setObjectName(u"fio7")
+        self.fio7.setMinimumSize(QSize(300, 0))
 
-        self.gridLayout.addWidget(self.label_31, 29, 0, 1, 3)
+        self.gridLayout.addWidget(self.fio7, 14, 1, 1, 1, Qt.AlignLeft)
+
+        self.startTemp = QLineEdit(self.gridLayoutWidget)
+        self.startTemp.setObjectName(u"startTemp")
+        self.startTemp.setMinimumSize(QSize(300, 0))
+        self.startTemp.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.startTemp, 31, 1, 1, 1)
+
+        self.city7 = QLineEdit(self.gridLayoutWidget)
+        self.city7.setObjectName(u"city7")
+
+        self.gridLayout.addWidget(self.city7, 14, 2, 1, 1, Qt.AlignLeft)
+
+        self.label_27 = QLabel(self.gridLayoutWidget)
+        self.label_27.setObjectName(u"label_27")
+
+        self.gridLayout.addWidget(self.label_27, 26, 0, 1, 1)
+
+        self.label_24 = QLabel(self.gridLayoutWidget)
+        self.label_24.setObjectName(u"label_24")
+
+        self.gridLayout.addWidget(self.label_24, 22, 0, 1, 1)
+
+        self.city1 = QLineEdit(self.gridLayoutWidget)
+        self.city1.setObjectName(u"city1")
+
+        self.gridLayout.addWidget(self.city1, 8, 2, 1, 1, Qt.AlignLeft)
+
+        self.finishTemp = QLineEdit(self.gridLayoutWidget)
+        self.finishTemp.setObjectName(u"finishTemp")
+        self.finishTemp.setMinimumSize(QSize(300, 0))
+        self.finishTemp.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.finishTemp, 32, 1, 1, 1)
+
+        self.label_6 = QLabel(self.gridLayoutWidget)
+        self.label_6.setObjectName(u"label_6")
+
+        self.gridLayout.addWidget(self.label_6, 2, 0, 1, 1)
+
+        self.trackName = QLineEdit(self.gridLayoutWidget)
+        self.trackName.setObjectName(u"trackName")
+        self.trackName.setMinimumSize(QSize(300, 0))
+        self.trackName.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.trackName, 20, 1, 1, 1)
+
+        self.label_30 = QLabel(self.gridLayoutWidget)
+        self.label_30.setObjectName(u"label_30")
+
+        self.gridLayout.addWidget(self.label_30, 30, 0, 1, 3, Qt.AlignHCenter)
+
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.label_37 = QLabel(self.gridLayoutWidget)
+        self.label_37.setObjectName(u"label_37")
+        self.label_37.setMaximumSize(QSize(78, 16777215))
+
+        self.horizontalLayout_6.addWidget(self.label_37)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout_6, 2, 2, 1, 1)
+
+        self.typelineEdit = QLineEdit(self.gridLayoutWidget)
+        self.typelineEdit.setObjectName(u"typelineEdit")
+        self.typelineEdit.setMinimumSize(QSize(300, 0))
+
+        self.gridLayout.addWidget(self.typelineEdit, 2, 1, 1, 1, Qt.AlignLeft)
+
+        self.label_19 = QLabel(self.gridLayoutWidget)
+        self.label_19.setObjectName(u"label_19")
+
+        self.gridLayout.addWidget(self.label_19, 7, 0, 1, 3)
+
+        self.label_8 = QLabel(self.gridLayoutWidget)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout.addWidget(self.label_8, 5, 0, 1, 3, Qt.AlignHCenter)
+
+        self.finalsTime = QLineEdit(self.gridLayoutWidget)
+        self.finalsTime.setObjectName(u"finalsTime")
+        self.finalsTime.setMinimumSize(QSize(300, 0))
+        self.finalsTime.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.finalsTime, 28, 1, 1, 1)
+
+        self.city3 = QLineEdit(self.gridLayoutWidget)
+        self.city3.setObjectName(u"city3")
+
+        self.gridLayout.addWidget(self.city3, 10, 2, 1, 1, Qt.AlignLeft)
+
+        self.fio9 = QLineEdit(self.gridLayoutWidget)
+        self.fio9.setObjectName(u"fio9")
+        self.fio9.setMinimumSize(QSize(300, 20))
+        self.fio9.setMaximumSize(QSize(300, 20))
+
+        self.gridLayout.addWidget(self.fio9, 17, 1, 1, 1)
+
+        self.label_34 = QLabel(self.gridLayoutWidget)
+        self.label_34.setObjectName(u"label_34")
+
+        self.gridLayout.addWidget(self.label_34, 33, 0, 1, 1)
+
+        self.gates = QLineEdit(self.gridLayoutWidget)
+        self.gates.setObjectName(u"gates")
+        self.gates.setMinimumSize(QSize(300, 0))
+        self.gates.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.gates, 25, 1, 1, 1)
+
+        self.datelineEdit = QLineEdit(self.gridLayoutWidget)
+        self.datelineEdit.setObjectName(u"datelineEdit")
+        self.datelineEdit.setMinimumSize(QSize(300, 0))
+
+        self.gridLayout.addWidget(self.datelineEdit, 1, 1, 1, 1, Qt.AlignLeft)
 
         self.label = QLabel(self.gridLayoutWidget)
         self.label.setObjectName(u"label")
 
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+
+        self.label_26 = QLabel(self.gridLayoutWidget)
+        self.label_26.setObjectName(u"label_26")
+
+        self.gridLayout.addWidget(self.label_26, 25, 0, 1, 1)
+
+        self.label_29 = QLabel(self.gridLayoutWidget)
+        self.label_29.setObjectName(u"label_29")
+
+        self.gridLayout.addWidget(self.label_29, 28, 0, 1, 1)
+
+        self.fio1 = QLineEdit(self.gridLayoutWidget)
+        self.fio1.setObjectName(u"fio1")
+        self.fio1.setMinimumSize(QSize(300, 0))
+
+        self.gridLayout.addWidget(self.fio1, 8, 1, 1, 1, Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.label_16 = QLabel(self.gridLayoutWidget)
+        self.label_16.setObjectName(u"label_16")
+
+        self.gridLayout.addWidget(self.label_16, 6, 1, 1, 1, Qt.AlignLeft)
+
+        self.city4 = QLineEdit(self.gridLayoutWidget)
+        self.city4.setObjectName(u"city4")
+
+        self.gridLayout.addWidget(self.city4, 11, 2, 1, 1, Qt.AlignLeft)
+
+        self.label_14 = QLabel(self.gridLayoutWidget)
+        self.label_14.setObjectName(u"label_14")
+
+        self.gridLayout.addWidget(self.label_14, 12, 0, 1, 1)
+
+        self.label_10 = QLabel(self.gridLayoutWidget)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.label_10, 8, 0, 1, 1)
+
+        self.label_25 = QLabel(self.gridLayoutWidget)
+        self.label_25.setObjectName(u"label_25")
+
+        self.gridLayout.addWidget(self.label_25, 24, 0, 1, 1)
 
         self.fio6 = QLineEdit(self.gridLayoutWidget)
         self.fio6.setObjectName(u"fio6")
@@ -463,22 +418,27 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.fio6, 13, 1, 1, 1, Qt.AlignLeft)
 
-        self.snow = QLineEdit(self.gridLayoutWidget)
-        self.snow.setObjectName(u"snow")
-        self.snow.setMinimumSize(QSize(300, 0))
-        self.snow.setMaximumSize(QSize(300, 16777215))
+        self.label_32 = QLabel(self.gridLayoutWidget)
+        self.label_32.setObjectName(u"label_32")
 
-        self.gridLayout.addWidget(self.snow, 33, 1, 1, 1)
+        self.gridLayout.addWidget(self.label_32, 31, 0, 1, 1)
 
-        self.label_33 = QLabel(self.gridLayoutWidget)
-        self.label_33.setObjectName(u"label_33")
+        self.label_11 = QLabel(self.gridLayoutWidget)
+        self.label_11.setObjectName(u"label_11")
 
-        self.gridLayout.addWidget(self.label_33, 32, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_11, 9, 0, 1, 1)
 
-        self.city1 = QLineEdit(self.gridLayoutWidget)
-        self.city1.setObjectName(u"city1")
+        self.start = QLineEdit(self.gridLayoutWidget)
+        self.start.setObjectName(u"start")
+        self.start.setMinimumSize(QSize(300, 0))
+        self.start.setMaximumSize(QSize(300, 16777215))
 
-        self.gridLayout.addWidget(self.city1, 8, 2, 1, 1, Qt.AlignLeft)
+        self.gridLayout.addWidget(self.start, 21, 1, 1, 1)
+
+        self.label_15 = QLabel(self.gridLayoutWidget)
+        self.label_15.setObjectName(u"label_15")
+
+        self.gridLayout.addWidget(self.label_15, 13, 0, 1, 1)
 
         self.length = QLineEdit(self.gridLayoutWidget)
         self.length.setObjectName(u"length")
@@ -487,15 +447,49 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.length, 26, 1, 1, 1)
 
-        self.label_27 = QLabel(self.gridLayoutWidget)
-        self.label_27.setObjectName(u"label_27")
+        self.label_18 = QLabel(self.gridLayoutWidget)
+        self.label_18.setObjectName(u"label_18")
 
-        self.gridLayout.addWidget(self.label_27, 26, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_18, 4, 0, 1, 3)
+
+        self.homologation = QLineEdit(self.gridLayoutWidget)
+        self.homologation.setObjectName(u"homologation")
+        self.homologation.setMinimumSize(QSize(300, 0))
+        self.homologation.setMaximumSize(QSize(300, 16777215))
+
+        self.gridLayout.addWidget(self.homologation, 24, 1, 1, 1)
 
         self.pushButtonLoadSettings = QPushButton(self.gridLayoutWidget)
         self.pushButtonLoadSettings.setObjectName(u"pushButtonLoadSettings")
 
         self.gridLayout.addWidget(self.pushButtonLoadSettings, 31, 2, 1, 1)
+
+        self.runsComboBox = QComboBox(self.gridLayoutWidget)
+        self.runsComboBox.addItem("")
+        self.runsComboBox.addItem("")
+        self.runsComboBox.setObjectName(u"runsComboBox")
+        self.runsComboBox.setMaximumSize(QSize(50, 16777215))
+
+        self.gridLayout.addWidget(self.runsComboBox, 1, 3, 1, 1)
+
+        self.qualificationsComboBox = QComboBox(self.gridLayoutWidget)
+        self.qualificationsComboBox.addItem("")
+        self.qualificationsComboBox.addItem("")
+        self.qualificationsComboBox.setObjectName(u"qualificationsComboBox")
+        self.qualificationsComboBox.setMaximumSize(QSize(50, 16777215))
+        self.qualificationsComboBox.setFrame(True)
+
+        self.gridLayout.addWidget(self.qualificationsComboBox, 0, 3, 1, 1)
+
+        self.roundsComboBox = QComboBox(self.gridLayoutWidget)
+        self.roundsComboBox.addItem("")
+        self.roundsComboBox.addItem("")
+        self.roundsComboBox.addItem("")
+        self.roundsComboBox.addItem("")
+        self.roundsComboBox.setObjectName(u"roundsComboBox")
+        self.roundsComboBox.setMaximumSize(QSize(50, 16777215))
+
+        self.gridLayout.addWidget(self.roundsComboBox, 2, 3, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_3 = QWidget()
@@ -932,7 +926,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1448, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1487, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -951,57 +945,57 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_18.setText("")
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0444\u0435\u0440\u0438:", None))
+        self.label_21.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e \u0438 \u0434\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043b\u0430\u0432\u043d\u044b\u0439 \u0441\u0435\u043a\u0440\u0435\u0442\u0430\u0440\u044c:", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0449\u0438\u043a \u0442\u0440\u0430\u0441\u0441\u044b:", None))
         self.label_39.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b-\u0432\u043e \u0437\u0430\u0435\u0437\u0434\u043e\u0432", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0442\u043e\u0440\u044b", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0444\u0438\u043d\u0438\u0448\u0430", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0440\u043e\u0434", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u043f\u0430\u0434 \u0432\u044b\u0441\u043e\u0442", None))
+        self.label_31.setText("")
+        self.label_40.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0444\u0435\u0440\u0438:", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0440\u0430\u0441\u0441\u044b", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0442\u043a\u0440\u044b\u0432\u0430\u044e\u0449\u0438\u0435:", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u043d\u0430\u0447\u0430\u043b\u0430", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0440\u0442", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0418\u041d\u0424\u041e\u0420\u041c\u0410\u0426\u0418\u042f \u041e \u0422\u0420\u0410\u0421\u0421\u0415", None))
+        self.saveParams.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u043d\u0430 \u0442\u0440\u0430\u0441\u0441\u044b", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u043d\u0438\u0448", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0439", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0413\u041e\u0414\u0410", None))
+        self.label_37.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0440\u0443\u0433\u0438", None))
+        self.label_19.setText("")
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u0413\u041b\u0410\u0412\u041d\u0410\u042f \u0421\u0423\u0414\u0415\u0419\u0421\u041a\u0410\u042f \u041a\u041e\u041c\u0418\u0421\u0421\u0418\u042f", None))
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043d\u0435\u0433", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0440\u043e\u0442", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u0444\u0438\u043d\u0430\u043b\u043e\u0432", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u0438\u043a \u0442\u0440\u0430\u0441\u0441\u044b:", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0434\u0435\u043b\u0435\u0433\u0430\u0442:", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u2116 \u0433\u043e\u043c\u043e\u043b\u043e\u0433\u0430\u0446\u0438\u0438", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0441\u0442\u0430\u0440\u0442\u0430", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0440\u0435\u043a\u0442\u043e\u0440 \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0439:", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0444\u0435\u0440\u0438 \u043d\u0430 \u0441\u0442\u0430\u0440\u0442\u0435:", None))
+        self.label_18.setText("")
+        self.pushButtonLoadSettings.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.runsComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
         self.runsComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
 
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0442\u043a\u0440\u044b\u0432\u0430\u044e\u0449\u0438\u0435:", None))
-        self.label_19.setText("")
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u043d\u0430\u0447\u0430\u043b\u0430", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438", None))
         self.qualificationsComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
         self.qualificationsComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
 
         self.qualificationsComboBox.setCurrentText(QCoreApplication.translate("MainWindow", u"2", None))
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0440\u043e\u0442", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u0444\u0438\u043d\u0430\u043b\u043e\u0432", None))
-        self.label_21.setText("")
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0440\u0430\u0441\u0441\u044b", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043b\u0430\u0432\u043d\u044b\u0439 \u0441\u0435\u043a\u0440\u0435\u0442\u0430\u0440\u044c:", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u0441\u0442\u043e \u0438 \u0434\u0430\u0442\u0430 \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0439", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0440\u0435\u043a\u0442\u043e\u0440 \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0439:", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0449\u0438\u043a \u0442\u0440\u0430\u0441\u0441\u044b:", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u0438\u043a \u0442\u0440\u0430\u0441\u0441\u044b:", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u043d\u0438\u0448", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0434\u0435\u043b\u0435\u0433\u0430\u0442:", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0440\u0443\u0433\u0438", None))
         self.roundsComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"1/16", None))
         self.roundsComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"1/8", None))
         self.roundsComboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"1/4", None))
         self.roundsComboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"1/2", None))
 
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0442\u043e\u0440\u044b", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u2116 \u0433\u043e\u043c\u043e\u043b\u043e\u0433\u0430\u0446\u0438\u0438", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0440\u043e\u0434", None))
-        self.label_34.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043d\u0435\u0433", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0418\u041d\u0424\u041e\u0420\u041c\u0410\u0426\u0418\u042f \u041e \u0422\u0420\u0410\u0421\u0421\u0415", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u0413\u041b\u0410\u0412\u041d\u0410\u042f \u0421\u0423\u0414\u0415\u0419\u0421\u041a\u0410\u042f \u041a\u041e\u041c\u0418\u0421\u0421\u0418\u042f", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0441\u0442\u0430\u0440\u0442\u0430", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0444\u0435\u0440\u0438 \u043d\u0430 \u0441\u0442\u0430\u0440\u0442\u0435:", None))
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0440\u0442", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0413\u041e\u0414\u0410", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c", None))
-        self.saveParams.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u043f\u0430\u0434 \u0432\u044b\u0441\u043e\u0442", None))
-        self.label_31.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0444\u0438\u043d\u0438\u0448\u0430", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u043d\u0430 \u0442\u0440\u0430\u0441\u0441\u044b", None))
-        self.pushButtonLoadSettings.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         ___qtablewidgetitem = self.participantsTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"bib", None));
