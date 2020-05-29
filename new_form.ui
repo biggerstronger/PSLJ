@@ -980,7 +980,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>1181</width>
         <height>771</height>
        </rect>
@@ -988,6 +988,11 @@
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_36">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(0, 0, 255)
+</string>
+         </property>
          <property name="text">
           <string>СИНЯЯ ТРАССА</string>
          </property>
@@ -1028,6 +1033,10 @@
        </item>
        <item row="0" column="0" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_35">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(255, 0, 0)</string>
+         </property>
          <property name="text">
           <string>КРАСНАЯ ТРАССА</string>
          </property>
@@ -1119,6 +1128,10 @@
        </item>
        <item row="0" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_110">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(0, 0, 255)</string>
+         </property>
          <property name="text">
           <string>СИНЯЯ ТРАССА</string>
          </property>
@@ -1126,6 +1139,10 @@
        </item>
        <item row="0" column="0" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_109">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(255, 0, 0)</string>
+         </property>
          <property name="text">
           <string>КРАССНАЯ ТРАССА</string>
          </property>
@@ -1214,7 +1231,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>1181</width>
         <height>771</height>
        </rect>
@@ -1222,6 +1239,10 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_43">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(0, 0, 255)</string>
+         </property>
          <property name="text">
           <string>СИНЯЯ ТРАССА</string>
          </property>
@@ -1254,6 +1275,10 @@
        </item>
        <item row="0" column="0" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_44">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(255, 0, 0)</string>
+         </property>
          <property name="text">
           <string>КРАСНАЯ ТРАССА</string>
          </property>
@@ -1383,6 +1408,10 @@
        </item>
        <item row="0" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_111">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(0, 0, 255)</string>
+         </property>
          <property name="text">
           <string>СИНЯЯ ТРАССА</string>
          </property>
@@ -1390,6 +1419,10 @@
        </item>
        <item row="0" column="0" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_112">
+         <property name="styleSheet">
+          <string notr="true">font-weight: 600;
+color: rgb(255, 0, 0)</string>
+         </property>
          <property name="text">
           <string>КРАССНАЯ ТРАССА</string>
          </property>

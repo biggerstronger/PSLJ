@@ -560,12 +560,15 @@ class Ui_MainWindow(object):
         self.tab_2.setObjectName(u"tab_2")
         self.gridLayoutWidget_2 = QWidget(self.tab_2)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 1181, 771))
+        self.gridLayoutWidget_2.setGeometry(QRect(0, 10, 1181, 771))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.label_36 = QLabel(self.gridLayoutWidget_2)
         self.label_36.setObjectName(u"label_36")
+        self.label_36.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(0, 0, 255)\n"
+"")
 
         self.gridLayout_2.addWidget(self.label_36, 0, 1, 1, 1, Qt.AlignHCenter)
 
@@ -588,6 +591,8 @@ class Ui_MainWindow(object):
 
         self.label_35 = QLabel(self.gridLayoutWidget_2)
         self.label_35.setObjectName(u"label_35")
+        self.label_35.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(255, 0, 0)")
 
         self.gridLayout_2.addWidget(self.label_35, 0, 0, 1, 1, Qt.AlignHCenter)
 
@@ -636,11 +641,15 @@ class Ui_MainWindow(object):
 
         self.label_110 = QLabel(self.gridLayoutWidget_4)
         self.label_110.setObjectName(u"label_110")
+        self.label_110.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(0, 0, 255)")
 
         self.gridLayout_6.addWidget(self.label_110, 0, 1, 1, 1, Qt.AlignHCenter)
 
         self.label_109 = QLabel(self.gridLayoutWidget_4)
         self.label_109.setObjectName(u"label_109")
+        self.label_109.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(255, 0, 0)")
 
         self.gridLayout_6.addWidget(self.label_109, 0, 0, 1, 1, Qt.AlignHCenter)
 
@@ -688,12 +697,14 @@ class Ui_MainWindow(object):
         self.CC_Q_2_Tab.setObjectName(u"CC_Q_2_Tab")
         self.gridLayoutWidget_3 = QWidget(self.CC_Q_2_Tab)
         self.gridLayoutWidget_3.setObjectName(u"gridLayoutWidget_3")
-        self.gridLayoutWidget_3.setGeometry(QRect(0, 0, 1181, 771))
+        self.gridLayoutWidget_3.setGeometry(QRect(0, 10, 1181, 771))
         self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_43 = QLabel(self.gridLayoutWidget_3)
         self.label_43.setObjectName(u"label_43")
+        self.label_43.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(0, 0, 255)")
 
         self.gridLayout_3.addWidget(self.label_43, 0, 1, 1, 1, Qt.AlignHCenter)
 
@@ -713,6 +724,8 @@ class Ui_MainWindow(object):
 
         self.label_44 = QLabel(self.gridLayoutWidget_3)
         self.label_44.setObjectName(u"label_44")
+        self.label_44.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(255, 0, 0)")
 
         self.gridLayout_3.addWidget(self.label_44, 0, 0, 1, 1, Qt.AlignHCenter)
 
@@ -778,11 +791,15 @@ class Ui_MainWindow(object):
 
         self.label_111 = QLabel(self.gridLayoutWidget_5)
         self.label_111.setObjectName(u"label_111")
+        self.label_111.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(0, 0, 255)")
 
         self.gridLayout_7.addWidget(self.label_111, 0, 1, 1, 1, Qt.AlignHCenter)
 
         self.label_112 = QLabel(self.gridLayoutWidget_5)
         self.label_112.setObjectName(u"label_112")
+        self.label_112.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(255, 0, 0)")
 
         self.gridLayout_7.addWidget(self.label_112, 0, 0, 1, 1, Qt.AlignHCenter)
 
