@@ -13,9 +13,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.pushButtonLoadSettings.clicked.connect(self.load_file_callback)
+        self.pushButtonLoadSettings.clicked.connect(self.load_settings_callback)
         self.saveParams.clicked.connect(self.save_settings_callback)
-        # self.pushButtonLoadList.clicked.connect(self.load_file_callback)
+        self.pushButtonLoadList.clicked.connect(self.load_file_callback)
         self.pushButtonAdd.clicked.connect(self.add_participant)
         self.pushButtonDelete.clicked.connect(self.delete_participant)
         self.pushButtonSave.clicked.connect(self.save_participants)
@@ -131,9 +131,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         print('Данные сохранены!')
         # self.show_finals()
 
-    def load_file_callback(self):
+    def load_settings_callback(self):
         Data.choose_file_participants(self)
         Data.load_settings(self)
+        # self.display_participants(Data._participants_data)
+
+    def load_file_callback(self):
+        Data.choose_file_participants(self)
         Data.load_file(self)
         self.display_participants(Data._participants_data)
 
@@ -190,18 +194,16 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             if data[x]['QT1_course'] == 'Красная':
                 self.RedUnsortListQ1.insertRow(n)
                 self.RedUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
-                self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
-                self.RedUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
-                self.RedUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT1_course'])))
-                self.setColorRed(self.RedUnsortListQ1, n, 3)
+                self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
+                self.RedUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
+                self.RedUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
                 n += 1
             else:
                 self.BlueUnsortListQ1.insertRow(m)
                 self.BlueUnsortListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
-                self.BlueUnsortListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
-                self.BlueUnsortListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
-                self.BlueUnsortListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT1_course'])))
-                self.setColorBlue(self.BlueUnsortListQ1, m, 3)
+                self.BlueUnsortListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
+                self.BlueUnsortListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
+                self.BlueUnsortListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(data[str(x)]['QT_1'])))
                 m += 1
 
     def sort_res_q1(self, data):
@@ -253,7 +255,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 m += 1
         self.redListQ2.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
         self.blueListQ2.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
-        # self.blueListQ2.column(0).
 
     def display_res_q2(self):
         Data.get_time_qual2(self)
@@ -264,28 +265,26 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.RedUnsortListQ2.setItem(n, 0,
                                          QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 0).text())))
             self.RedUnsortListQ2.setItem(n, 1,
-                                         QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
-            self.RedUnsortListQ2.setItem(n, 2,
-                                         QtWidgets.QTableWidgetItem(str(
-                                             Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2'])))
-            self.RedUnsortListQ2.setItem(n, 3,
                                          QtWidgets.QTableWidgetItem(str(
                                              Data._participants_data[str(self.redListQ2.item(n, 0).text())][
-                                                 'QT2_course'])))
-            self.setColorRed(self.RedUnsortListQ2, n, 3)
+                                                 'С.Ф.'])))
+            self.RedUnsortListQ2.setItem(n, 2,
+                                         QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
+            self.RedUnsortListQ2.setItem(n, 3,
+                                         QtWidgets.QTableWidgetItem(str(
+                                             Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2'])))
         for m in range(self.blueListQ2.rowCount()):
             self.BlueUnsortListQ2.insertRow(m)
             self.BlueUnsortListQ2.setItem(m, 0,
                                           QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 0).text())))
             self.BlueUnsortListQ2.setItem(m, 1,
+                                          QtWidgets.QTableWidgetItem(str(
+                                              Data._participants_data[str(self.blueListQ2.item(m, 0).text())][
+                                                  'С.Ф.'])))
+            self.BlueUnsortListQ2.setItem(m, 2,
                                           QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
-            self.BlueUnsortListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(
+            self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(
                 str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT_2'])))
-            self.BlueUnsortListQ2.setItem(m, 3,
-                                          QtWidgets.QTableWidgetItem(
-                                              str(Data._participants_data[str(self.blueListQ2.item(m, 0).text())][
-                                                      'QT2_course'])))
-            self.setColorBlue(self.BlueUnsortListQ2, m, 3)
 
     def sort_res_q2(self):
         self.ResSortListQ2.setRowCount(0)
