@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.tab.setObjectName(u"tab")
         self.gridLayoutWidget = QWidget(self.tab)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 10, 1081, 809))
+        self.gridLayoutWidget.setGeometry(QRect(10, 10, 1081, 831))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -39,11 +39,13 @@ class Ui_MainWindow(object):
         self.gridLayout_12.setObjectName(u"gridLayout_12")
         self.city8 = QLineEdit(self.gridLayoutWidget)
         self.city8.setObjectName(u"city8")
+        self.city8.setMinimumSize(QSize(0, 20))
 
         self.gridLayout_12.addWidget(self.city8, 0, 0, 1, 1, Qt.AlignLeft)
 
         self.city9 = QLineEdit(self.gridLayoutWidget)
         self.city9.setObjectName(u"city9")
+        self.city9.setMinimumSize(QSize(0, 20))
 
         self.gridLayout_12.addWidget(self.city9, 1, 0, 1, 1, Qt.AlignLeft)
 
@@ -144,13 +146,13 @@ class Ui_MainWindow(object):
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.fio8 = QLineEdit(self.gridLayoutWidget)
         self.fio8.setObjectName(u"fio8")
-        self.fio8.setMinimumSize(QSize(300, 0))
+        self.fio8.setMinimumSize(QSize(300, 20))
 
         self.gridLayout_11.addWidget(self.fio8, 0, 0, 1, 1, Qt.AlignLeft)
 
         self.fio9 = QLineEdit(self.gridLayoutWidget)
         self.fio9.setObjectName(u"fio9")
-        self.fio9.setMinimumSize(QSize(300, 0))
+        self.fio9.setMinimumSize(QSize(300, 20))
 
         self.gridLayout_11.addWidget(self.fio9, 1, 0, 1, 1, Qt.AlignLeft)
 
@@ -221,12 +223,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.titlelineEdit, 0, 1, 1, 1, Qt.AlignLeft)
 
-        self.finals = QLineEdit(self.gridLayoutWidget)
-        self.finals.setObjectName(u"finals")
-        self.finals.setMinimumSize(QSize(300, 0))
-        self.finals.setMaximumSize(QSize(300, 16777215))
+        self.finalsTime = QLineEdit(self.gridLayoutWidget)
+        self.finalsTime.setObjectName(u"finalsTime")
+        self.finalsTime.setMinimumSize(QSize(300, 0))
+        self.finalsTime.setMaximumSize(QSize(300, 16777215))
 
-        self.gridLayout.addWidget(self.finals, 28, 1, 1, 1)
+        self.gridLayout.addWidget(self.finalsTime, 28, 1, 1, 1)
 
         self.label_11 = QLabel(self.gridLayoutWidget)
         self.label_11.setObjectName(u"label_11")
@@ -489,6 +491,11 @@ class Ui_MainWindow(object):
         self.label_27.setObjectName(u"label_27")
 
         self.gridLayout.addWidget(self.label_27, 26, 0, 1, 1)
+
+        self.pushButtonLoadSettings = QPushButton(self.gridLayoutWidget)
+        self.pushButtonLoadSettings.setObjectName(u"pushButtonLoadSettings")
+
+        self.gridLayout.addWidget(self.pushButtonLoadSettings, 31, 2, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_3 = QWidget()
@@ -959,7 +966,7 @@ class Ui_MainWindow(object):
 
         self.qualificationsComboBox.setCurrentText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0440\u043e\u0442", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u043d\u0430\u043b\u044b", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u0444\u0438\u043d\u0430\u043b\u043e\u0432", None))
         self.label_21.setText("")
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0440\u0430\u0441\u0441\u044b", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043b\u0430\u0432\u043d\u044b\u0439 \u0441\u0435\u043a\u0440\u0435\u0442\u0430\u0440\u044c:", None))
@@ -994,6 +1001,7 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0444\u0438\u043d\u0438\u0448\u0430", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u043d\u0430 \u0442\u0440\u0430\u0441\u0441\u044b", None))
+        self.pushButtonLoadSettings.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         ___qtablewidgetitem = self.participantsTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"bib", None));

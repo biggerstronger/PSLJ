@@ -280,7 +280,7 @@
        <item row="28" column="0">
         <widget class="QLabel" name="label_29">
          <property name="text">
-          <string>Финалы</string>
+          <string>Время финалов</string>
          </property>
         </widget>
        </item>
@@ -353,7 +353,7 @@
         </widget>
        </item>
        <item row="28" column="1">
-        <widget class="QLineEdit" name="finals">
+        <widget class="QLineEdit" name="finalsTime">
          <property name="minimumSize">
           <size>
            <width>300</width>
@@ -807,6 +807,13 @@
         <widget class="QLabel" name="label_27">
          <property name="text">
           <string>Длинна трассы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="31" column="2">
+        <widget class="QPushButton" name="pushButtonLoadSettings">
+         <property name="text">
+          <string>Загрузить из файла</string>
          </property>
         </widget>
        </item>

@@ -1,6 +1,7 @@
 import json
 import random
 import xlrd
+from datetime import time
 from PySide2 import QtWidgets
 
 
@@ -72,7 +73,7 @@ class Data:
             'gates_amount': self.gates.text(),
             'track_len': self.length.text(),
             'start_time': self.startTime.text(),
-            'finals': self.finals.text(),
+            'finals': self.finalsTime.text(),
 
             'start_temp': self.startTemp.text(),
             'finish_temp': self.finishTemp.text(),
@@ -92,6 +93,52 @@ class Data:
         if file_name[0]:
             self.file_path = file_name[0]
             self.fileNameLabel.setText(file_name[0])
+
+    def load_settings(self):
+        wb = xlrd.open_workbook(str(self.file_path))
+        for sheet in wb.sheets():
+            if sheet.name == "Шаблон":
+                xlstime = xlrd.xldate_as_tuple(sheet.cell(34, 1).value, wb.datemode)
+                stime = time(*xlstime[3:])
+                xlftime = xlrd.xldate_as_tuple(sheet.cell(35, 1).value, wb.datemode)
+                ftime = time(*xlftime[3:])
+                self.titlelineEdit.setText(sheet.cell(1, 1).value)
+                self.datelineEdit.setText(sheet.cell(2, 1).value)
+                self.typelineEdit.setText(sheet.cell(4, 1).value)
+                self.orglineEdit.setText(sheet.cell(6, 1).value)
+
+                self.fio1.setText(sheet.cell(9, 1).value)
+                self.city1.setText(sheet.cell(9, 2).value)
+                self.fio2.setText(sheet.cell(10, 1).value)
+                self.city2.setText(sheet.cell(10, 2).value)
+                self.fio3.setText(sheet.cell(11, 1).value)
+                self.city3.setText(sheet.cell(11, 2).value)
+                self.fio4.setText(sheet.cell(12, 1).value)
+                self.city4.setText(sheet.cell(12, 2).value)
+                self.fio5.setText(sheet.cell(14, 1).value)
+                self.city5.setText(sheet.cell(14, 2).value)
+                self.fio6.setText(sheet.cell(15, 1).value)
+                self.city6.setText(sheet.cell(15, 2).value)
+                self.fio7.setText(sheet.cell(17, 1).value)
+                self.city7.setText(sheet.cell(17, 2).value)
+                self.fio8.setText(sheet.cell(19, 1).value)
+                self.city8.setText(sheet.cell(19, 2).value)
+                self.fio9.setText(sheet.cell(20, 1).value)
+                self.city9.setText(sheet.cell(20, 2).value)
+
+                self.trackName.setText(sheet.cell(26, 1).value)
+                self.start.setText(sheet.cell(28, 1).value)
+                self.finish.setText(sheet.cell(29, 1).value),
+                self.altitudeDiff.setText(sheet.cell(30, 1).value)
+                self.homologation.setText(sheet.cell(31, 1).value)
+                self.gates.setText(str(sheet.cell(32, 1).value))
+                self.length.setText(sheet.cell(33, 1).value)
+                self.startTime.setText(str(stime))
+                self.finalsTime.setText(str(ftime))
+
+                self.startTemp.setText(str(sheet.cell(38, 1).value))
+                self.finishTemp.setText(str(sheet.cell(39, 1).value))
+                self.snow.setText(sheet.cell(41, 1).value)
 
     def load_file(self):
         wb = xlrd.open_workbook(str(self.file_path))

@@ -13,8 +13,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.pushButtonLoadSettings.clicked.connect(self.load_file_callback)
         self.saveParams.clicked.connect(self.save_settings_callback)
-        self.pushButtonLoadList.clicked.connect(self.load_file_callback)
+        # self.pushButtonLoadList.clicked.connect(self.load_file_callback)
         self.pushButtonAdd.clicked.connect(self.add_participant)
         self.pushButtonDelete.clicked.connect(self.delete_participant)
         self.pushButtonSave.clicked.connect(self.save_participants)
@@ -124,6 +125,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
     def save_settings_callback(self):
         Data.save_settings(self)
+        # print(self.competition_data)
         sleep(1)
         self.tabWidget.setCurrentIndex(1)
         print('Данные сохранены!')
@@ -131,6 +133,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
     def load_file_callback(self):
         Data.choose_file_participants(self)
+        Data.load_settings(self)
         Data.load_file(self)
         self.display_participants(Data._participants_data)
 
