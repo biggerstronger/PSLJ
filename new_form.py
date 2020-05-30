@@ -126,7 +126,7 @@ class Ui_MainWindow(object):
 
         self.city8 = QLineEdit(self.gridLayoutWidget)
         self.city8.setObjectName(u"city8")
-        self.city8.setMinimumSize(QSize(0, 20))
+        self.city8.setMinimumSize(QSize(133, 20))
         self.city8.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city8, 15, 2, 1, 1)
@@ -461,6 +461,7 @@ class Ui_MainWindow(object):
 
         self.pushButtonLoadSettings = QPushButton(self.gridLayoutWidget)
         self.pushButtonLoadSettings.setObjectName(u"pushButtonLoadSettings")
+        self.pushButtonLoadSettings.setMaximumSize(QSize(150, 45))
 
         self.gridLayout.addWidget(self.pushButtonLoadSettings, 31, 2, 1, 1)
 
@@ -468,7 +469,8 @@ class Ui_MainWindow(object):
         self.runsComboBox.addItem("")
         self.runsComboBox.addItem("")
         self.runsComboBox.setObjectName(u"runsComboBox")
-        self.runsComboBox.setMaximumSize(QSize(50, 16777215))
+        self.runsComboBox.setMinimumSize(QSize(70, 0))
+        self.runsComboBox.setMaximumSize(QSize(70, 16777215))
 
         self.gridLayout.addWidget(self.runsComboBox, 1, 3, 1, 1)
 
@@ -476,7 +478,8 @@ class Ui_MainWindow(object):
         self.qualificationsComboBox.addItem("")
         self.qualificationsComboBox.addItem("")
         self.qualificationsComboBox.setObjectName(u"qualificationsComboBox")
-        self.qualificationsComboBox.setMaximumSize(QSize(50, 16777215))
+        self.qualificationsComboBox.setMinimumSize(QSize(70, 0))
+        self.qualificationsComboBox.setMaximumSize(QSize(70, 16777215))
         self.qualificationsComboBox.setFrame(True)
 
         self.gridLayout.addWidget(self.qualificationsComboBox, 0, 3, 1, 1)
@@ -487,7 +490,8 @@ class Ui_MainWindow(object):
         self.roundsComboBox.addItem("")
         self.roundsComboBox.addItem("")
         self.roundsComboBox.setObjectName(u"roundsComboBox")
-        self.roundsComboBox.setMaximumSize(QSize(50, 16777215))
+        self.roundsComboBox.setMinimumSize(QSize(70, 0))
+        self.roundsComboBox.setMaximumSize(QSize(70, 16777215))
 
         self.gridLayout.addWidget(self.roundsComboBox, 2, 3, 1, 1)
 
@@ -510,10 +514,10 @@ class Ui_MainWindow(object):
         __qtablewidgetitem5 = QTableWidgetItem()
         self.participantsTable.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         self.participantsTable.setObjectName(u"participantsTable")
-        self.participantsTable.setGeometry(QRect(0, 0, 751, 761))
+        self.participantsTable.setGeometry(QRect(0, 0, 921, 761))
         self.horizontalLayoutWidget = QWidget(self.tab_3)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QRect(160, 770, 401, 51))
+        self.horizontalLayoutWidget.setGeometry(QRect(160, 770, 591, 51))
         self.horizontalLayout_3 = QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -534,10 +538,12 @@ class Ui_MainWindow(object):
 
         self.pushButtonLoadList = QPushButton(self.tab_3)
         self.pushButtonLoadList.setObjectName(u"pushButtonLoadList")
-        self.pushButtonLoadList.setGeometry(QRect(870, 20, 181, 61))
+        self.pushButtonLoadList.setGeometry(QRect(950, 20, 181, 61))
+        self.pushButtonLoadList.setMinimumSize(QSize(181, 61))
+        self.pushButtonLoadList.setMaximumSize(QSize(200, 60))
         self.horizontalLayoutWidget_2 = QWidget(self.tab_3)
         self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
-        self.horizontalLayoutWidget_2.setGeometry(QRect(759, 100, 351, 51))
+        self.horizontalLayoutWidget_2.setGeometry(QRect(950, 100, 351, 51))
         self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -560,7 +566,7 @@ class Ui_MainWindow(object):
         self.tab_2.setObjectName(u"tab_2")
         self.gridLayoutWidget_2 = QWidget(self.tab_2)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(0, 10, 1181, 771))
+        self.gridLayoutWidget_2.setGeometry(QRect(0, 10, 1441, 771))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -613,7 +619,7 @@ class Ui_MainWindow(object):
 
         self.pushButtonAccept = QPushButton(self.tab_2)
         self.pushButtonAccept.setObjectName(u"pushButtonAccept")
-        self.pushButtonAccept.setGeometry(QRect(800, 790, 331, 41))
+        self.pushButtonAccept.setGeometry(QRect(1100, 800, 331, 41))
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
@@ -697,7 +703,7 @@ class Ui_MainWindow(object):
         self.CC_Q_2_Tab.setObjectName(u"CC_Q_2_Tab")
         self.gridLayoutWidget_3 = QWidget(self.CC_Q_2_Tab)
         self.gridLayoutWidget_3.setObjectName(u"gridLayoutWidget_3")
-        self.gridLayoutWidget_3.setGeometry(QRect(0, 10, 1181, 771))
+        self.gridLayoutWidget_3.setGeometry(QRect(0, 10, 1441, 771))
         self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -744,13 +750,13 @@ class Ui_MainWindow(object):
 
         self.pushButtonAccept_2 = QPushButton(self.CC_Q_2_Tab)
         self.pushButtonAccept_2.setObjectName(u"pushButtonAccept_2")
-        self.pushButtonAccept_2.setGeometry(QRect(800, 790, 331, 41))
+        self.pushButtonAccept_2.setGeometry(QRect(1100, 800, 331, 41))
         self.tabWidget.addTab(self.CC_Q_2_Tab, "")
         self.RES_Q_2_Tab = QWidget()
         self.RES_Q_2_Tab.setObjectName(u"RES_Q_2_Tab")
         self.pushButtonShowFinals = QPushButton(self.RES_Q_2_Tab)
         self.pushButtonShowFinals.setObjectName(u"pushButtonShowFinals")
-        self.pushButtonShowFinals.setGeometry(QRect(790, 830, 331, 41))
+        self.pushButtonShowFinals.setGeometry(QRect(1120, 800, 331, 41))
         self.gridLayoutWidget_5 = QWidget(self.RES_Q_2_Tab)
         self.gridLayoutWidget_5.setObjectName(u"gridLayoutWidget_5")
         self.gridLayoutWidget_5.setGeometry(QRect(0, 10, 1461, 771))

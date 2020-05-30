@@ -89,20 +89,19 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                     Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Фамилия Имя'] == '':
                 del Data._participants_data[str(self.participantsTable.item(i, 0).text())]
                 self.error.show()
-                self.error.error_msg_double(i)
+                self.error.error_msg_double(i + 1)
                 break
             if Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Ст№'] == '':
                 del Data._participants_data[str(self.participantsTable.item(i, 0).text())]
-                self.error.error_msg_bib(i)
                 self.error.show()
+                self.error.error_msg_bib(i + 1)
                 break
             if Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Фамилия Имя'] == '':
                 del Data._participants_data[str(self.participantsTable.item(i, 0).text())]
                 self.error.show()
-                self.error.error_msg_fio(i)
+                self.error.error_msg_fio(i + 1)
                 break
-            else:
-                self.divideQ1(Data._participants_data)
+            self.divideQ1(Data._participants_data)
 
     def delete_participant(self):
         if self.participantsTable.selectionModel().hasSelection():

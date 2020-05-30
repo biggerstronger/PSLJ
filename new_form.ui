@@ -191,7 +191,7 @@
         <widget class="QLineEdit" name="city8">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>133</width>
            <height>20</height>
           </size>
          </property>
@@ -743,6 +743,12 @@
        </item>
        <item row="31" column="2">
         <widget class="QPushButton" name="pushButtonLoadSettings">
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>45</height>
+          </size>
+         </property>
          <property name="text">
           <string>Загрузить из файла</string>
          </property>
@@ -750,9 +756,15 @@
        </item>
        <item row="1" column="3">
         <widget class="QComboBox" name="runsComboBox">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>50</width>
+           <width>70</width>
            <height>16777215</height>
           </size>
          </property>
@@ -773,9 +785,15 @@
        </item>
        <item row="0" column="3">
         <widget class="QComboBox" name="qualificationsComboBox">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>50</width>
+           <width>70</width>
            <height>16777215</height>
           </size>
          </property>
@@ -802,9 +820,15 @@
        </item>
        <item row="2" column="3">
         <widget class="QComboBox" name="roundsComboBox">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>50</width>
+           <width>70</width>
            <height>16777215</height>
           </size>
          </property>
@@ -845,7 +869,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>751</width>
+        <width>921</width>
         <height>761</height>
        </rect>
       </property>
@@ -885,7 +909,7 @@
        <rect>
         <x>160</x>
         <y>770</y>
-        <width>401</width>
+        <width>591</width>
         <height>51</height>
        </rect>
       </property>
@@ -916,11 +940,23 @@
      <widget class="QPushButton" name="pushButtonLoadList">
       <property name="geometry">
        <rect>
-        <x>870</x>
+        <x>950</x>
         <y>20</y>
         <width>181</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>181</width>
+        <height>61</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>60</height>
+       </size>
       </property>
       <property name="text">
        <string>Загрузить список участников</string>
@@ -929,7 +965,7 @@
      <widget class="QWidget" name="horizontalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>759</x>
+        <x>950</x>
         <y>100</y>
         <width>351</width>
         <height>51</height>
@@ -981,7 +1017,7 @@
        <rect>
         <x>0</x>
         <y>10</y>
-        <width>1181</width>
+        <width>1441</width>
         <height>771</height>
        </rect>
       </property>
@@ -1071,8 +1107,8 @@ color: rgb(255, 0, 0)</string>
      <widget class="QPushButton" name="pushButtonAccept">
       <property name="geometry">
        <rect>
-        <x>800</x>
-        <y>790</y>
+        <x>1100</x>
+        <y>800</y>
         <width>331</width>
         <height>41</height>
        </rect>
@@ -1232,7 +1268,7 @@ color: rgb(255, 0, 0)</string>
        <rect>
         <x>0</x>
         <y>10</y>
-        <width>1181</width>
+        <width>1441</width>
         <height>771</height>
        </rect>
       </property>
@@ -1308,8 +1344,8 @@ color: rgb(255, 0, 0)</string>
      <widget class="QPushButton" name="pushButtonAccept_2">
       <property name="geometry">
        <rect>
-        <x>800</x>
-        <y>790</y>
+        <x>1100</x>
+        <y>800</y>
         <width>331</width>
         <height>41</height>
        </rect>
@@ -1326,8 +1362,8 @@ color: rgb(255, 0, 0)</string>
      <widget class="QPushButton" name="pushButtonShowFinals">
       <property name="geometry">
        <rect>
-        <x>790</x>
-        <y>830</y>
+        <x>1120</x>
+        <y>800</y>
         <width>331</width>
         <height>41</height>
        </rect>
