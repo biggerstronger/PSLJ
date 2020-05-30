@@ -46,14 +46,22 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem(''))
 
     def save_participants(self):
-        for i in range(1, self.counter()):
+        for i in range(0, self.counter() - 1):
             part_data = {}
-            part_data.setdefault('Ст№', self.participantsTable.item(i - 1, 0).text())
-            part_data.setdefault('С.Ф.', self.participantsTable.item(i - 1, 1).text())
-            part_data.setdefault('Фамилия Имя', self.participantsTable.item(i - 1, 2).text())
-            part_data.setdefault('Г.р.', self.participantsTable.item(i - 1, 3).text())
-            part_data.setdefault('Спорт. разр.', self.participantsTable.item(i - 1, 4).text())
-            part_data.setdefault('Очки КР', self.participantsTable.item(i - 1, 5).text())
+            part_data.setdefault('Ст№', self.participantsTable.item(i, 0).text())
+            if self.counter() >= 2:
+                for j in range(i + 1, self.counter() - 1):
+                    if self.participantsTable.item(i, 0).text() == self.participantsTable.item(j, 0).text():
+                        # print(self.participantsTable.item(i, 2).text(), '       ',
+                        #       self.participantsTable.item(j, 2).text())
+                        self.error.show()
+                        self.error.wrong_bib(i + 1, j + 1)
+                        break
+            part_data.setdefault('С.Ф.', self.participantsTable.item(i, 1).text())
+            part_data.setdefault('Фамилия Имя', self.participantsTable.item(i, 2).text())
+            part_data.setdefault('Г.р.', self.participantsTable.item(i, 3).text())
+            part_data.setdefault('Спорт. разр.', self.participantsTable.item(i, 4).text())
+            part_data.setdefault('Очки КР', self.participantsTable.item(i, 5).text())
             part_data.setdefault('QT1_course', None)
             part_data.setdefault('QT_1', None)
             part_data.setdefault('QT2_course', None)
@@ -76,20 +84,20 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             part_data.setdefault('FTBig_course', None)
             part_data.setdefault('FTBig_1', None)
             part_data.setdefault('FTBig_2', None)
-            Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())] = part_data
-            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == '' and \
-                    Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == '':
-                del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
+            Data._participants_data[str(self.participantsTable.item(i, 0).text())] = part_data
+            if Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Ст№'] == '' and \
+                    Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Фамилия Имя'] == '':
+                del Data._participants_data[str(self.participantsTable.item(i, 0).text())]
                 self.error.show()
                 self.error.error_msg_double(i)
                 break
-            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Ст№'] == '':
-                del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
+            if Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Ст№'] == '':
+                del Data._participants_data[str(self.participantsTable.item(i, 0).text())]
                 self.error.error_msg_bib(i)
                 self.error.show()
                 break
-            if Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]['Фамилия Имя'] == '':
-                del Data._participants_data[str(self.participantsTable.item(i - 1, 0).text())]
+            if Data._participants_data[str(self.participantsTable.item(i, 0).text())]['Фамилия Имя'] == '':
+                del Data._participants_data[str(self.participantsTable.item(i, 0).text())]
                 self.error.show()
                 self.error.error_msg_fio(i)
                 break
@@ -118,8 +126,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.divideQ2()
 
     def display_resQ2_callback(self):
-        sleep(1)  # TODO пофиксить переключение вкладок
-        self.tabWidget.setCurrentIndex(4)
+        sleep(1)
+        self.tabWidget.setCurrentIndex(5)
         self.display_res_q2()
         self.sort_res_q2()
 
