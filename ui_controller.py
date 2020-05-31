@@ -52,11 +52,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             if self.counter() >= 2:
                 for j in range(i + 1, self.counter() - 1):
                     if self.participantsTable.item(i, 0).text() == self.participantsTable.item(j, 0).text():
-                        # print(self.participantsTable.item(i, 2).text(), '       ',
-                        #       self.participantsTable.item(j, 2).text())
                         self.error.show()
                         self.error.wrong_bib(i + 1, j + 1)
                         break
+            if type(self.participantsTable.item(i, 0).text()) != 'int':
+                self.error.show()
+                self.error.wrong_bib_type(i + 1)
             part_data.setdefault('С.Ф.', self.participantsTable.item(i, 1).text())
             part_data.setdefault('Фамилия Имя', self.participantsTable.item(i, 2).text())
             part_data.setdefault('Г.р.', self.participantsTable.item(i, 3).text())

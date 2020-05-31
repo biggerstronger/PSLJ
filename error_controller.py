@@ -20,3 +20,6 @@ class ErrorController(QtWidgets.QMainWindow, errordialog.Ui_Dialog):
 
     def wrong_bib(self, i, j):
         self.labelError.setText('bib в строке {i} совпадает с bib в троке {j}!'.format(i=i, j=j))
+
+    def wrong_bib_type(self, i):
+        self.labelError.setText('bib в строке {} должен быть числом'.format(i))
