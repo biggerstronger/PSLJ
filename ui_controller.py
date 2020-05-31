@@ -48,16 +48,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def save_participants(self):
         for i in range(0, self.counter() - 1):
             part_data = {}
-            part_data.setdefault('Ст№', self.participantsTable.item(i, 0).text())
+            try:
+                part_data.setdefault('Ст№', int(self.participantsTable.item(i, 0).text()))
+            except ValueError:
+                self.error.show()
+                self.error.wrong_bib_type(i + 1)
+                break
             if self.counter() >= 2:
                 for j in range(i + 1, self.counter() - 1):
                     if self.participantsTable.item(i, 0).text() == self.participantsTable.item(j, 0).text():
                         self.error.show()
                         self.error.wrong_bib(i + 1, j + 1)
                         break
-            if type(self.participantsTable.item(i, 0).text()) != 'int':
-                self.error.show()
-                self.error.wrong_bib_type(i + 1)
             part_data.setdefault('С.Ф.', self.participantsTable.item(i, 1).text())
             part_data.setdefault('Фамилия Имя', self.participantsTable.item(i, 2).text())
             part_data.setdefault('Г.р.', self.participantsTable.item(i, 3).text())
@@ -102,7 +104,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.error.show()
                 self.error.error_msg_fio(i + 1)
                 break
-            self.divideQ1(Data._participants_data)
+            # self.divideQ1(Data._participants_data)
 
     def delete_participant(self):
         if self.participantsTable.selectionModel().hasSelection():
