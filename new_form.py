@@ -20,18 +20,18 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1487, 945)
+        MainWindow.resize(1550, 945)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setEnabled(True)
-        self.tabWidget.setGeometry(QRect(10, 10, 1481, 911))
+        self.tabWidget.setGeometry(QRect(10, 10, 1481, 891))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.gridLayoutWidget = QWidget(self.tab)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 10, 1391, 831))
+        self.gridLayoutWidget.setGeometry(QRect(10, 10, 1391, 841))
         self.gridLayout = QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -473,12 +473,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.homologation, 24, 1, 1, 1)
 
-        self.pushButtonLoadSettings = QPushButton(self.gridLayoutWidget)
-        self.pushButtonLoadSettings.setObjectName(u"pushButtonLoadSettings")
-        self.pushButtonLoadSettings.setMaximumSize(QSize(150, 45))
-
-        self.gridLayout.addWidget(self.pushButtonLoadSettings, 31, 2, 1, 1)
-
         self.runsComboBox = QComboBox(self.gridLayoutWidget)
         self.runsComboBox.addItem("")
         self.runsComboBox.addItem("")
@@ -508,6 +502,12 @@ class Ui_MainWindow(object):
         self.roundsComboBox.setMaximumSize(QSize(70, 16777215))
 
         self.gridLayout.addWidget(self.roundsComboBox, 2, 3, 1, 1)
+
+        self.pushButtonLoadSettings = QPushButton(self.gridLayoutWidget)
+        self.pushButtonLoadSettings.setObjectName(u"pushButtonLoadSettings")
+        self.pushButtonLoadSettings.setMaximumSize(QSize(150, 45))
+
+        self.gridLayout.addWidget(self.pushButtonLoadSettings, 32, 2, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_3 = QWidget()
@@ -963,7 +963,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1487, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1550, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -1001,7 +1001,7 @@ class Ui_MainWindow(object):
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0440\u0442", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0418\u041d\u0424\u041e\u0420\u041c\u0410\u0426\u0418\u042f \u041e \u0422\u0420\u0410\u0421\u0421\u0415", None))
         self.saveParams.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u043d\u0430 \u0442\u0440\u0430\u0441\u0441\u044b", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043b\u0438\u043d\u0430 \u0442\u0440\u0430\u0441\u0441\u044b", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0438\u043d\u0438\u0448", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0439", None))
         self.label_30.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0413\u041e\u0414\u0410", None))
@@ -1020,7 +1020,6 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0438\u0440\u0435\u043a\u0442\u043e\u0440 \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0439:", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0444\u0435\u0440\u0438 \u043d\u0430 \u0441\u0442\u0430\u0440\u0442\u0435:", None))
         self.label_18.setText("")
-        self.pushButtonLoadSettings.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.runsComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
         self.runsComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
 
@@ -1033,6 +1032,7 @@ class Ui_MainWindow(object):
         self.roundsComboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"1/4", None))
         self.roundsComboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"1/2", None))
 
+        self.pushButtonLoadSettings.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u041f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
         ___qtablewidgetitem = self.participantsTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"bib", None));

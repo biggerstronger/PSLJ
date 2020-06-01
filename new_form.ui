@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1487</width>
+    <width>1550</width>
     <height>945</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
       <x>10</x>
       <y>10</y>
       <width>1481</width>
-      <height>911</height>
+      <height>891</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -39,7 +39,7 @@
         <x>10</x>
         <y>10</y>
         <width>1391</width>
-        <height>831</height>
+        <height>841</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
@@ -832,19 +832,6 @@
          </property>
         </widget>
        </item>
-       <item row="31" column="2">
-        <widget class="QPushButton" name="pushButtonLoadSettings">
-         <property name="maximumSize">
-          <size>
-           <width>150</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Загрузить из файла</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="3">
         <widget class="QComboBox" name="runsComboBox">
          <property name="minimumSize">
@@ -946,6 +933,19 @@
            <string>1/2</string>
           </property>
          </item>
+        </widget>
+       </item>
+       <item row="32" column="2">
+        <widget class="QPushButton" name="pushButtonLoadSettings">
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Загрузить из файла</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -1862,7 +1862,7 @@ color: rgb(255, 0, 0)</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1487</width>
+     <width>1550</width>
      <height>21</height>
     </rect>
    </property>
