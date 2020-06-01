@@ -34,7 +34,7 @@ class Ui_Dialog(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Ошибка", u"Ошибка", None))
         self.labelError.setText("")
         self.pushButtonOK.setText(QCoreApplication.translate("Dialog", u"OK", None))
     # retranslateUi

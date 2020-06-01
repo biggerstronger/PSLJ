@@ -131,7 +131,7 @@ class Data:
                 self.finish.setText(sheet.cell(29, 1).value),
                 self.altitudeDiff.setText(sheet.cell(30, 1).value)
                 self.homologation.setText(sheet.cell(31, 1).value)
-                self.gates.setText(str(sheet.cell(32, 1).value))
+                self.gates.setText(str(int(sheet.cell(32, 1).value)))
                 self.length.setText(sheet.cell(33, 1).value)
                 self.startTime.setText(str(stime))
                 self.finalsTime.setText(str(ftime))
