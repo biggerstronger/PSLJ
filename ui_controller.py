@@ -104,7 +104,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.error.show()
                 self.error.error_msg_fio(i + 1)
                 break
-            # self.divideQ1(Data._participants_data)
+            self.divideQ1(Data._participants_data)
 
     def delete_participant(self):
         if self.participantsTable.selectionModel().hasSelection():

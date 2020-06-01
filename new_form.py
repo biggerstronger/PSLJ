@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setContentsMargins(0, -1, -1, -1)
         self.label_39 = QLabel(self.gridLayoutWidget)
         self.label_39.setObjectName(u"label_39")
-        self.label_39.setMaximumSize(QSize(82, 16777215))
+        self.label_39.setMaximumSize(QSize(90, 16777215))
 
         self.horizontalLayout_5.addWidget(self.label_39)
 
@@ -104,6 +104,8 @@ class Ui_MainWindow(object):
 
         self.city5 = QLineEdit(self.gridLayoutWidget)
         self.city5.setObjectName(u"city5")
+        self.city5.setMinimumSize(QSize(133, 20))
+        self.city5.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city5, 12, 2, 1, 1, Qt.AlignLeft)
 
@@ -114,7 +116,7 @@ class Ui_MainWindow(object):
 
         self.city9 = QLineEdit(self.gridLayoutWidget)
         self.city9.setObjectName(u"city9")
-        self.city9.setMinimumSize(QSize(0, 20))
+        self.city9.setMinimumSize(QSize(133, 20))
         self.city9.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city9, 17, 2, 1, 1)
@@ -141,7 +143,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.label_40 = QLabel(self.gridLayoutWidget)
         self.label_40.setObjectName(u"label_40")
-        self.label_40.setMaximumSize(QSize(80, 16777215))
+        self.label_40.setMaximumSize(QSize(90, 16777215))
 
         self.horizontalLayout_4.addWidget(self.label_40)
 
@@ -181,6 +183,8 @@ class Ui_MainWindow(object):
 
         self.city2 = QLineEdit(self.gridLayoutWidget)
         self.city2.setObjectName(u"city2")
+        self.city2.setMinimumSize(QSize(133, 20))
+        self.city2.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city2, 9, 2, 1, 1, Qt.AlignLeft)
 
@@ -197,6 +201,8 @@ class Ui_MainWindow(object):
 
         self.city6 = QLineEdit(self.gridLayoutWidget)
         self.city6.setObjectName(u"city6")
+        self.city6.setMinimumSize(QSize(133, 20))
+        self.city6.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city6, 13, 2, 1, 1, Qt.AlignLeft)
 
@@ -259,6 +265,8 @@ class Ui_MainWindow(object):
 
         self.city7 = QLineEdit(self.gridLayoutWidget)
         self.city7.setObjectName(u"city7")
+        self.city7.setMinimumSize(QSize(133, 20))
+        self.city7.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city7, 14, 2, 1, 1, Qt.AlignLeft)
 
@@ -274,6 +282,8 @@ class Ui_MainWindow(object):
 
         self.city1 = QLineEdit(self.gridLayoutWidget)
         self.city1.setObjectName(u"city1")
+        self.city1.setMinimumSize(QSize(133, 20))
+        self.city1.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city1, 8, 2, 1, 1, Qt.AlignLeft)
 
@@ -305,7 +315,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.label_37 = QLabel(self.gridLayoutWidget)
         self.label_37.setObjectName(u"label_37")
-        self.label_37.setMaximumSize(QSize(78, 16777215))
+        self.label_37.setMaximumSize(QSize(90, 16777215))
 
         self.horizontalLayout_6.addWidget(self.label_37)
 
@@ -337,6 +347,8 @@ class Ui_MainWindow(object):
 
         self.city3 = QLineEdit(self.gridLayoutWidget)
         self.city3.setObjectName(u"city3")
+        self.city3.setMinimumSize(QSize(133, 20))
+        self.city3.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city3, 10, 2, 1, 1, Qt.AlignLeft)
 
@@ -393,6 +405,8 @@ class Ui_MainWindow(object):
 
         self.city4 = QLineEdit(self.gridLayoutWidget)
         self.city4.setObjectName(u"city4")
+        self.city4.setMinimumSize(QSize(133, 20))
+        self.city4.setMaximumSize(QSize(133, 20))
 
         self.gridLayout.addWidget(self.city4, 11, 2, 1, 1, Qt.AlignLeft)
 

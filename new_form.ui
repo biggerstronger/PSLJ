@@ -122,7 +122,7 @@
           <widget class="QLabel" name="label_39">
            <property name="maximumSize">
             <size>
-             <width>82</width>
+             <width>90</width>
              <height>16777215</height>
             </size>
            </property>
@@ -155,7 +155,20 @@
         </widget>
        </item>
        <item row="12" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city5"/>
+        <widget class="QLineEdit" name="city5">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="23" column="0">
         <widget class="QLabel" name="label_20">
@@ -168,7 +181,7 @@
         <widget class="QLineEdit" name="city9">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>133</width>
            <height>20</height>
           </size>
          </property>
@@ -219,7 +232,7 @@
           <widget class="QLabel" name="label_40">
            <property name="maximumSize">
             <size>
-             <width>80</width>
+             <width>90</width>
              <height>16777215</height>
             </size>
            </property>
@@ -290,7 +303,20 @@
         </widget>
        </item>
        <item row="9" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city2"/>
+        <widget class="QLineEdit" name="city2">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="20" column="0">
         <widget class="QLabel" name="label_22">
@@ -310,7 +336,20 @@
         </widget>
        </item>
        <item row="13" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city6"/>
+        <widget class="QLineEdit" name="city6">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="6" column="0" alignment="Qt::AlignLeft">
         <widget class="QLabel" name="label_9">
@@ -413,12 +452,25 @@
         </widget>
        </item>
        <item row="14" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city7"/>
+        <widget class="QLineEdit" name="city7">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="26" column="0">
         <widget class="QLabel" name="label_27">
          <property name="text">
-          <string>Длинна трассы</string>
+          <string>Длина трассы</string>
          </property>
         </widget>
        </item>
@@ -430,7 +482,20 @@
         </widget>
        </item>
        <item row="8" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city1"/>
+        <widget class="QLineEdit" name="city1">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="32" column="1">
         <widget class="QLineEdit" name="finishTemp">
@@ -484,7 +549,7 @@
           <widget class="QLabel" name="label_37">
            <property name="maximumSize">
             <size>
-             <width>78</width>
+             <width>90</width>
              <height>16777215</height>
             </size>
            </property>
@@ -536,7 +601,20 @@
         </widget>
        </item>
        <item row="10" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city3"/>
+        <widget class="QLineEdit" name="city3">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="17" column="1">
         <widget class="QLineEdit" name="fio9">
@@ -626,7 +704,20 @@
         </widget>
        </item>
        <item row="11" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city4"/>
+        <widget class="QLineEdit" name="city4">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="12" column="0">
         <widget class="QLabel" name="label_14">
