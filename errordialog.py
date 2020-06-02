@@ -9,10 +9,10 @@
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
+                            QRect, QSize, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+                           QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+                           QRadialGradient)
 from PySide2.QtWidgets import *
 
 
@@ -31,6 +31,7 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
 
         QMetaObject.connectSlotsByName(Dialog)
+
     # setupUi
 
     def retranslateUi(self, Dialog):
@@ -38,4 +39,3 @@ class Ui_Dialog(object):
         self.labelError.setText("")
         self.pushButtonOK.setText(QCoreApplication.translate("Dialog", u"OK", None))
     # retranslateUi
-

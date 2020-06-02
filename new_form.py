@@ -712,6 +712,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.RedUnsortListQ1, 1, 0, 1, 1)
 
+        self.pushButtonAcceptRes = QPushButton(self.tab_4)
+        self.pushButtonAcceptRes.setObjectName(u"pushButtonAcceptRes")
+        self.pushButtonAcceptRes.setGeometry(QRect(1100, 800, 331, 41))
+        self.pushButtonTime1 = QPushButton(self.tab_4)
+        self.pushButtonTime1.setObjectName(u"pushButtonTime1")
+        self.pushButtonTime1.setGeometry(QRect(280, 800, 331, 41))
         self.tabWidget.addTab(self.tab_4, "")
         self.CC_Q_2_Tab = QWidget()
         self.CC_Q_2_Tab.setObjectName(u"CC_Q_2_Tab")
@@ -721,13 +727,6 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_43 = QLabel(self.gridLayoutWidget_3)
-        self.label_43.setObjectName(u"label_43")
-        self.label_43.setStyleSheet(u"font-weight: 600;\n"
-"color: rgb(0, 0, 255)")
-
-        self.gridLayout_3.addWidget(self.label_43, 0, 1, 1, 1, Qt.AlignHCenter)
-
         self.redListQ2 = QTableWidget(self.gridLayoutWidget_3)
         if (self.redListQ2.columnCount() < 3):
             self.redListQ2.setColumnCount(3)
@@ -748,6 +747,13 @@ class Ui_MainWindow(object):
 "color: rgb(255, 0, 0)")
 
         self.gridLayout_3.addWidget(self.label_44, 0, 0, 1, 1, Qt.AlignHCenter)
+
+        self.label_43 = QLabel(self.gridLayoutWidget_3)
+        self.label_43.setObjectName(u"label_43")
+        self.label_43.setStyleSheet(u"font-weight: 600;\n"
+"color: rgb(0, 0, 255)")
+
+        self.gridLayout_3.addWidget(self.label_43, 0, 1, 1, 1, Qt.AlignHCenter)
 
         self.blueListQ2 = QTableWidget(self.gridLayoutWidget_3)
         if (self.blueListQ2.columnCount() < 3):
@@ -848,6 +854,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.label_114, 0, 2, 1, 1, Qt.AlignHCenter)
 
+        self.pushButtonTime2 = QPushButton(self.RES_Q_2_Tab)
+        self.pushButtonTime2.setObjectName(u"pushButtonTime2")
+        self.pushButtonTime2.setGeometry(QRect(280, 800, 331, 41))
         self.tabWidget.addTab(self.RES_Q_2_Tab, "")
         self.tab_6 = QWidget()
         self.tab_6.setObjectName(u"tab_6")
@@ -1103,8 +1112,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"\u0424\u0418\u041e", None));
         ___qtablewidgetitem26 = self.RedUnsortListQ1.horizontalHeaderItem(3)
         ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None));
+        self.pushButtonAcceptRes.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0414\u0422\u0412\u0415\u0420\u0414\u0418\u0422\u042c \u0420\u0415\u0417\u0423\u041b\u042c\u0422\u0410\u0422\u042b", None))
+        self.pushButtonTime1.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0414\u0422\u0412\u0415\u0420\u0414\u0418\u0422\u042c \u0412\u0420\u0415\u041c\u042f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Res Q_1", None))
-        self.label_43.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
         ___qtablewidgetitem27 = self.redListQ2.horizontalHeaderItem(0)
         ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"bib", None));
         ___qtablewidgetitem28 = self.redListQ2.horizontalHeaderItem(1)
@@ -1112,6 +1122,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem29 = self.redListQ2.horizontalHeaderItem(2)
         ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f Q1", None));
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0420\u0410\u0421\u041d\u0410\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
+        self.label_43.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0418\u041d\u042f\u042f \u0422\u0420\u0410\u0421\u0421\u0410", None))
         ___qtablewidgetitem30 = self.blueListQ2.horizontalHeaderItem(0)
         ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"bib", None));
         ___qtablewidgetitem31 = self.blueListQ2.horizontalHeaderItem(1)
@@ -1152,6 +1163,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem46 = self.ResSortListQ2.horizontalHeaderItem(5)
         ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0440\u0430\u0441\u0441\u0430", None));
         self.label_114.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0422\u0421\u041e\u0420\u0422\u0418\u0420\u041e\u0412\u0410\u041d\u041d\u041e\u0415 \u041e\u0411\u0429\u0415\u0415 \u0412\u0420\u0415\u041c\u042f", None))
+        self.pushButtonTime2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0414\u0422\u0420\u0415\u0412\u0414\u0418\u0422\u042c \u0412\u0420\u0415\u041c\u042f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.RES_Q_2_Tab), QCoreApplication.translate("MainWindow", u"Res Q_2", None))
         ___qtablewidgetitem47 = self.tableWidgetFinals.horizontalHeaderItem(0)
         ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"bib", None));
