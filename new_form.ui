@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1550</width>
+    <width>1522</width>
     <height>945</height>
    </rect>
   </property>
@@ -22,7 +22,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>1481</width>
+      <width>1491</width>
       <height>891</height>
      </rect>
     </property>
@@ -1640,7 +1640,7 @@ color: rgb(255, 0, 0)</string>
        </rect>
       </property>
       <property name="text">
-       <string>ПОДТРЕВДИТЬ ВРЕМЯ</string>
+       <string>ПОДТВЕРДИТЬ ВРЕМЯ</string>
       </property>
      </widget>
     </widget>
@@ -1648,234 +1648,120 @@ color: rgb(255, 0, 0)</string>
      <attribute name="title">
       <string>Finals</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidgetFinals">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>40</y>
-        <width>891</width>
-        <height>621</height>
-       </rect>
-      </property>
-      <row>
-       <property name="text">
-        <string>Heat 1</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 2</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 3</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 4</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 5</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 6</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 7</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 9</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 10</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 11</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 12</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 13</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 14</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 15</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Heat 16</string>
-       </property>
-      </row>
-      <column>
-       <property name="text">
-        <string>bib</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Трасса1</string>
-       </property>
-       <property name="background">
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Время 1</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Трасса2</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Время 2</string>
-       </property>
-      </column>
-      <item row="0" column="1">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="background">
-        <brush brushstyle="NoBrush">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
-        </brush>
-       </property>
-       <property name="foreground">
-        <brush brushstyle="NoBrush">
-         <color alpha="255">
-          <red>255</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </brush>
-       </property>
-      </item>
-      <item row="0" column="3">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="background">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>0</red>
-          <green>0</green>
-          <blue>255</blue>
-         </color>
-        </brush>
-       </property>
-      </item>
-      <item row="1" column="1">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="foreground">
-        <brush brushstyle="NoBrush">
-         <color alpha="255">
-          <red>255</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
-        </brush>
-       </property>
-      </item>
-      <item row="2" column="1">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="background">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
-        </brush>
-       </property>
-      </item>
-      <item row="3" column="1">
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QWidget" name="gridLayoutWidget_6">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>245</width>
-        <height>19</height>
+        <width>671</width>
+        <height>841</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
-       <item>
-        <widget class="QRadioButton" name="radioButton8">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushButtonfin4">
          <property name="text">
-          <string>1/8</string>
+          <string>Показать 1/4</string>
          </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
         </widget>
        </item>
-       <item>
-        <widget class="QRadioButton" name="radioButton4">
+       <item row="3" column="2">
+        <widget class="QPushButton" name="pushButtonBFSF">
          <property name="text">
-          <string>1/4</string>
+          <string>Показать BF|SF</string>
          </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
         </widget>
        </item>
-       <item>
-        <widget class="QRadioButton" name="radioButtonBF_SF">
+       <item row="0" column="0" rowspan="3" colspan="3">
+        <widget class="QTableWidget" name="finalTable">
+         <column>
+          <property name="text">
+           <string>Q</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>bib</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ФИО</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Run1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Run2</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="pushButtonfin2">
          <property name="text">
-          <string>BF|SF</string>
+          <string>Показать 1/2</string>
          </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>50</y>
+        <width>451</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_41">
+         <property name="text">
+          <string>ПОБЕДИТЕЛИ</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelFirstPlace">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelSecondPlace">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelThirdPlace">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButtonShow_winners">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>280</y>
+        <width>219</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Показать победителей</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_8">
@@ -1901,7 +1787,7 @@ color: rgb(255, 0, 0)</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1550</width>
+     <width>1522</width>
      <height>21</height>
     </rect>
    </property>
