@@ -396,7 +396,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             for i in range(default_fin):
                 # if i % 2 == 0:
                 self.finalTable.insertRow(i)
-                self.finalTable.setItem(i, 0, QtWidgets.QTableWidgetItem(self.ResSortListQ2.item(i, 0).text()))
+                # self.finalTable.setItem(i, 0, QtWidgets.QTableWidgetItem(self.ResSortListQ2.item(i, 0).text()))
                 self.finalTable.setItem(i, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(i, 1).text())))
                 self.finalTable.setItem(i, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(i, 2).text())))
                 self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
@@ -405,7 +405,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             for i in range(default_fin):
                 # if i % 2 == 0:
                 self.finalTable.insertRow(i)
-                self.finalTable.setItem(i, 0, QtWidgets.QTableWidgetItem(self.ResSortListQ1.item(i, 0).text()))
+                # self.finalTable.setItem(i, 0, QtWidgets.QTableWidgetItem(self.ResSortListQ1.item(i, 0).text()))
                 self.finalTable.setItem(i, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(i, 1).text())))
                 self.finalTable.setItem(i, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(i, 2).text())))
                 self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
@@ -416,7 +416,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.finalTable.sortItems(3)
         self.finalTable.sortItems(4)
         for i in range(self.finalTable.rowCount()):
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/8_1'] = self.finalTable.item(i, 3).text()  # TODO ????
+            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/8_1'] = self.finalTable.item(i, 3).text() # TODO ????
             Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/8_2'] = self.finalTable.item(i, 4).text()
             self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
             self.finalTable.setItem(i, 4, QtWidgets.QTableWidgetItem(''))
