@@ -72,7 +72,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             part_data.setdefault('Г.р.', self.participantsTable.item(i, 3).text())
             part_data.setdefault('Спорт. разр.', self.participantsTable.item(i, 4).text())
             part_data.setdefault('Очки КР', self.participantsTable.item(i, 5).text())
-            # part_data.setdefault('Внутренний рейтинг', self.participantsTable.item(i, 6).text())
+            part_data.setdefault('Внутренний рейтинг', self.participantsTable.item(i, 6).text())
             part_data.setdefault('QT1_course', None)
             part_data.setdefault('QT_1', None)
             part_data.setdefault('QT2_course', None)
@@ -127,6 +127,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                     self.participantsTable.removeRow(index.row())
         else:
             print('No row selected!')
+        self.set_bibs()
 
     def display_resQ1_callback(self):
         sleep(1)
@@ -179,8 +180,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 str(data['{}'.format(entry)]['Спорт. разр.'])))
             self.participantsTable.setItem(row, 5, QtWidgets.QTableWidgetItem(
                 str(data['{}'.format(entry)]['Очки КР'])))
-            # self.participantsTable.setItem(row, 6, QtWidgets.QTableWidgetItem(
-            #     str(data['{}'.format(entry)]['Внутренний рейтинг'])))
+            self.participantsTable.setItem(row, 6, QtWidgets.QTableWidgetItem(
+                str(data['{}'.format(entry)]['Внутренний рейтинг'])))
             row += 1
 
     def set_bibs(self):
