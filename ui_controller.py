@@ -1,7 +1,8 @@
+import random
 import sys
 
 from PySide2 import QtCore, QtWidgets, QtGui
-from PySide2.QtCore import QPersistentModelIndex
+from PySide2.QtCore import QPersistentModelIndex, Qt
 
 import error_controller
 import new_form
@@ -24,11 +25,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.pushButtonAccept_2.clicked.connect(self.display_resQ2_callback)
         self.pushButtonTime2.clicked.connect(self.manual_time_2)
         self.pushButtonAcceptRes.clicked.connect(self.res_callback)
-        self.pushButtonShowFinals.clicked.connect(self.show_finals)
-        self.pushButtonfin4.clicked.connect(self.accept1_4)
-        self.pushButtonfin2.clicked.connect(self.accept1_2)
-        self.pushButtonBFSF.clicked.connect(self.acceptBFSF)
-        self.pushButtonShow_winners.clicked.connect(self.show_winners)
+        self.pushButtonSet_bibs.clicked.connect(self.set_bibs)
         self.error = error_controller.ErrorController()
 
     @staticmethod
@@ -52,8 +49,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.participantsTable.setItem(0, 3, QtWidgets.QTableWidgetItem(''))
         self.participantsTable.setItem(0, 4, QtWidgets.QTableWidgetItem(''))
         self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem(''))
+        self.participantsTable.setItem(0, 5, QtWidgets.QTableWidgetItem(''))
 
     def save_participants(self):
+        Data._participants_data.clear()
         for i in range(0, self.counter() - 1):
             part_data = {}
             try:
@@ -73,6 +72,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             part_data.setdefault('Г.р.', self.participantsTable.item(i, 3).text())
             part_data.setdefault('Спорт. разр.', self.participantsTable.item(i, 4).text())
             part_data.setdefault('Очки КР', self.participantsTable.item(i, 5).text())
+            # part_data.setdefault('Внутренний рейтинг', self.participantsTable.item(i, 6).text())
             part_data.setdefault('QT1_course', None)
             part_data.setdefault('QT_1', None)
             part_data.setdefault('QT2_course', None)
@@ -162,15 +162,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         else:
             sleep(1)
             self.tabWidget.setCurrentIndex(6)
-            self.show_finals()
+            # self.show_finals()
 
     def display_participants(self, data):
         self.participantsTable.setRowCount(0)
         row = 0
         for entry in range(1, len(data) + 1):
             self.participantsTable.insertRow(row)
-            self.participantsTable.setItem(row, 0, QtWidgets.QTableWidgetItem(
-                str(data['{}'.format(entry)]['Ст№'])))
             self.participantsTable.setItem(row, 1, QtWidgets.QTableWidgetItem(
                 str(data['{}'.format(entry)]['С.Ф.'])))
             self.participantsTable.setItem(row, 2, QtWidgets.QTableWidgetItem(
@@ -181,8 +179,21 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 str(data['{}'.format(entry)]['Спорт. разр.'])))
             self.participantsTable.setItem(row, 5, QtWidgets.QTableWidgetItem(
                 str(data['{}'.format(entry)]['Очки КР'])))
-            # self.participantsTable.setEditTriggers(QtWidgets.QTableView.NoEditTriggers)
+            # self.participantsTable.setItem(row, 6, QtWidgets.QTableWidgetItem(
+            #     str(data['{}'.format(entry)]['Внутренний рейтинг'])))
             row += 1
+
+    def set_bibs(self):
+        a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        random.shuffle(a)
+        print(a)
+        for j in range(self.participantsTable.rowCount()):
+            item = QtWidgets.QTableWidgetItem()
+            item.setData(Qt.EditRole, int(str(self.participantsTable.item(j, 5).text()) + str(self.participantsTable.item(j, 6).text())))
+            self.participantsTable.setItem(j, 0, item)
+        self.participantsTable.sortItems(0, Qt.DescendingOrder)
+        for i in range(0, 16):
+            self.participantsTable.setItem(i, 0, QtWidgets.QTableWidgetItem(str(a[i])))
 
     def divideQ1(self, data):
         self.redListQ1.setRowCount(0)
@@ -382,76 +393,3 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.redListQ1.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
         for _ in range(break_flag, self.ResSortListQ1.rowCount()):
             self.ResSortListQ2.removeRow(break_flag)
-
-    def show_finals(self):
-        sleep(1)
-        self.tabWidget.setCurrentIndex(6)
-        self.pushButtonShow_winners.setEnabled(False)
-        self.pushButtonfin2.setEnabled(False)
-        self.pushButtonBFSF.setEnabled(False)
-        self.finalTable.setRowCount(0)
-        default_fin = int(self.competition_data['rounds_amount'].split(sep='/')[1]) * 2
-        print(default_fin)
-        if self.qualificationsComboBox.currentText() == '2':
-            for i in range(default_fin):
-                # if i % 2 == 0:
-                self.finalTable.insertRow(i)
-                # self.finalTable.setItem(i, 0, QtWidgets.QTableWidgetItem(self.ResSortListQ2.item(i, 0).text()))
-                self.finalTable.setItem(i, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(i, 1).text())))
-                self.finalTable.setItem(i, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(i, 2).text())))
-                self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
-                self.finalTable.setItem(i, 4, QtWidgets.QTableWidgetItem(''))
-        else:
-            for i in range(default_fin):
-                # if i % 2 == 0:
-                self.finalTable.insertRow(i)
-                # self.finalTable.setItem(i, 0, QtWidgets.QTableWidgetItem(self.ResSortListQ1.item(i, 0).text()))
-                self.finalTable.setItem(i, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(i, 1).text())))
-                self.finalTable.setItem(i, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(i, 2).text())))
-                self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
-                self.finalTable.setItem(i, 4, QtWidgets.QTableWidgetItem(''))
-
-    def accept1_4(self):
-        self.pushButtonfin2.setEnabled(True)
-        self.finalTable.sortItems(3)
-        self.finalTable.sortItems(4)
-        for i in range(self.finalTable.rowCount()):
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/8_1'] = self.finalTable.item(i, 3).text() # TODO ????
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/8_2'] = self.finalTable.item(i, 4).text()
-            self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
-            self.finalTable.setItem(i, 4, QtWidgets.QTableWidgetItem(''))
-            for j in range(self.finalTable.rowCount() // 2, self.finalTable.rowCount()):
-                self.finalTable.removeRow(8)
-
-    def accept1_2(self):
-        self.pushButtonBFSF.setEnabled(True)
-        self.finalTable.sortItems(3)
-        self.finalTable.sortItems(4)
-        for i in range(self.finalTable.rowCount()):
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/4_1'] = self.finalTable.item(i, 3).text()
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/4_2'] = self.finalTable.item(i, 4).text()
-            self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
-            self.finalTable.setItem(i, 4, QtWidgets.QTableWidgetItem(''))
-        for j in range(self.finalTable.rowCount() // 2, self.finalTable.rowCount()):
-            self.finalTable.removeRow(4)
-
-    def acceptBFSF(self):
-        self.pushButtonShow_winners.setEnabled(True)
-        self.finalTable.sortItems(3)
-        self.finalTable.sortItems(4)
-        for i in range(self.finalTable.rowCount()):
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/2_1'] = self.finalTable.item(i, 3).text()
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FT1/2_2'] = self.finalTable.item(i, 4).text()
-            self.finalTable.setItem(i, 3, QtWidgets.QTableWidgetItem(''))
-            self.finalTable.setItem(i, 4, QtWidgets.QTableWidgetItem(''))
-
-    def show_winners(self):
-        for i in range(2):
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FTBig_1'] = self.finalTable.item(i, 3).text()
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FTBig_2'] = self.finalTable.item(i, 4).text()
-        for i in range(2, 4):
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FTSmall_1'] = self.finalTable.item(i, 3).text()
-            Data._participants_data[str(self.finalTable.item(i, 1).text())]['FTSmall_2'] = self.finalTable.item(i, 4).text()
-        self.labelFirstPlace.setText('1-е место - ' + ' ' + self.finalTable.item(0, 2).text())
-        self.labelSecondPlace.setText('2-е место - ' + ' ' + self.finalTable.item(1, 2).text())
-        self.labelThirdPlace.setText('3-е место - ' + ' ' + self.finalTable.item(2, 2).text())

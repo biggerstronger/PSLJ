@@ -964,6 +964,18 @@
         <height>761</height>
        </rect>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>921</width>
+        <height>0</height>
+       </size>
+      </property>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>40</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>120</number>
+      </attribute>
       <column>
        <property name="text">
         <string>bib</string>
@@ -992,6 +1004,11 @@
       <column>
        <property name="text">
         <string>Очки КР</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Внутренний рейтинг</string>
        </property>
       </column>
      </widget>
@@ -1032,7 +1049,7 @@
       <property name="geometry">
        <rect>
         <x>950</x>
-        <y>20</y>
+        <y>10</y>
         <width>181</width>
         <height>61</height>
        </rect>
@@ -1096,6 +1113,19 @@
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonSet_bibs">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>180</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Сформировать список</string>
       </property>
      </widget>
     </widget>
@@ -1658,55 +1688,8 @@ color: rgb(255, 0, 0)</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="3" column="0">
-        <widget class="QPushButton" name="pushButtonfin4">
-         <property name="text">
-          <string>Показать 1/4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QPushButton" name="pushButtonBFSF">
-         <property name="text">
-          <string>Показать BF|SF</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" rowspan="3" colspan="3">
-        <widget class="QTableWidget" name="finalTable">
-         <column>
-          <property name="text">
-           <string>Q</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>bib</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>ФИО</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Run1</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Run2</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="pushButtonfin2">
-         <property name="text">
-          <string>Показать 1/2</string>
-         </property>
-        </widget>
+       <item row="0" column="0" rowspan="3" colspan="2">
+        <widget class="QTableWidget" name="finalTable"/>
        </item>
       </layout>
      </widget>
@@ -1796,7 +1779,4 @@ color: rgb(255, 0, 0)</string>
  </widget>
  <resources/>
  <connections/>
- <buttongroups>
-  <buttongroup name="buttonGroup"/>
- </buttongroups>
 </ui>
