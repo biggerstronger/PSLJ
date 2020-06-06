@@ -84,8 +84,11 @@ class Data:
             self.CC_Q_2_Tab.setDisabled(1)
             self.RES_Q_2_Tab.setDisabled(1)
         write_to_json(self.competition_data)
-        x = self.competition_data['rounds_amount']
-        print(x)
+        default_fin = int(self.competition_data['rounds_amount'].split(sep='/')[1])
+        while default_fin >= 2:
+            self.comboBoxFinals.addItem('1/' + str(default_fin))
+            default_fin = int(default_fin / 2)
+        self.comboBoxFinals.addItem('BF|SF')
 
     def choose_file_participants(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Выберите файл", "",
@@ -158,23 +161,5 @@ class Data:
                     part_data.setdefault('QT_1', None)
                     part_data.setdefault('QT2_course', None)
                     part_data.setdefault('QT_2', None)
-                    part_data.setdefault('FT1/32_course', None)
-                    part_data.setdefault('FT1/32_1', None)
-                    part_data.setdefault('FT1/32_2', None)
-                    part_data.setdefault('FT1/16_course', None)
-                    part_data.setdefault('FT1/16_1', None)
-                    part_data.setdefault('FT1/16_2', None)
-                    part_data.setdefault('FT1/8_course', None)
-                    part_data.setdefault('FT1/8_1', None)
-                    part_data.setdefault('FT1/8_2', None)
-                    part_data.setdefault('FT1/4_course', None)
-                    part_data.setdefault('FT1/4_1', None)
-                    part_data.setdefault('FT1/4_2', None)
-                    part_data.setdefault('FTSmall_course', None)
-                    part_data.setdefault('FTSmall_1', None)
-                    part_data.setdefault('FTSmall_2', None)
-                    part_data.setdefault('FTBig_course', None)
-                    part_data.setdefault('FTBig_1', None)
-                    part_data.setdefault('FTBig_2', None)
                     self._participants_data['{}'.format(part_data['Ст№'])] = part_data
         # print(self._participants_data)
