@@ -906,6 +906,27 @@ class Ui_MainWindow(object):
         self.pushButtonConfirmFinalTime = QPushButton(self.tab_6)
         self.pushButtonConfirmFinalTime.setObjectName(u"pushButtonConfirmFinalTime")
         self.pushButtonConfirmFinalTime.setGeometry(QRect(770, 780, 171, 31))
+        self.verticalLayoutWidget = QWidget(self.tab_6)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(970, 100, 471, 181))
+        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.labelFstPlace = QLabel(self.verticalLayoutWidget)
+        self.labelFstPlace.setObjectName(u"labelFstPlace")
+
+        self.verticalLayout.addWidget(self.labelFstPlace)
+
+        self.labelScndPlace = QLabel(self.verticalLayoutWidget)
+        self.labelScndPlace.setObjectName(u"labelScndPlace")
+
+        self.verticalLayout.addWidget(self.labelScndPlace)
+
+        self.labelThrdPlace = QLabel(self.verticalLayoutWidget)
+        self.labelThrdPlace.setObjectName(u"labelThrdPlace")
+
+        self.verticalLayout.addWidget(self.labelThrdPlace)
+
         self.tabWidget.addTab(self.tab_6, "")
         self.tab_8 = QWidget()
         self.tab_8.setObjectName(u"tab_8")
@@ -1127,6 +1148,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem52 = self.finalTable.horizontalHeaderItem(5)
         ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Run 2", None));
         self.pushButtonConfirmFinalTime.setText(QCoreApplication.translate("MainWindow", u"\u041f\u041e\u0414\u0422\u0412\u0415\u0420\u0414\u0418\u0422\u042c \u0412\u0420\u0415\u041c\u042f", None))
+        self.labelFstPlace.setText("")
+        self.labelScndPlace.setText("")
+        self.labelThrdPlace.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Finals", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u0418\u0442\u043e\u0433", None))
     # retranslateUi

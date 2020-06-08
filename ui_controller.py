@@ -540,6 +540,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
 
+        for i in Data._participants_data:
+            try:
+                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
+                    self.labelFstPlace.setText('1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
+                    self.labelScndPlace.setText('2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '-':
+                    self.labelThrdPlace.setText('3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+            except KeyError:
+                continue
+
     def finals(self):
         if self.comboBoxFinals.currentText() == self.roundsComboBox.currentText():
             self.show_finals()
