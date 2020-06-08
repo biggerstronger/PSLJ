@@ -542,6 +542,7 @@ class Ui_MainWindow(object):
         self.participantsTable.setObjectName(u"participantsTable")
         self.participantsTable.setGeometry(QRect(0, 0, 921, 761))
         self.participantsTable.setMinimumSize(QSize(921, 0))
+        self.participantsTable.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.participantsTable.horizontalHeader().setMinimumSectionSize(40)
         self.participantsTable.horizontalHeader().setDefaultSectionSize(120)
         self.horizontalLayoutWidget = QWidget(self.tab_3)
