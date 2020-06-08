@@ -167,21 +167,52 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 str(data['{}'.format(entry)]['Г.р.'])))
             self.participantsTable.setItem(row, 4, QtWidgets.QTableWidgetItem(
                 str(data['{}'.format(entry)]['Спорт. разр.'])))
-            self.participantsTable.setItem(row, 5, QtWidgets.QTableWidgetItem(
-                str(int(data['{}'.format(entry)]['Очки КР']))))
-            self.participantsTable.setItem(row, 6, QtWidgets.QTableWidgetItem(
-                str(int(data['{}'.format(entry)]['Внутренний рейтинг']))))
+            item = QtWidgets.QTableWidgetItem()
+            item.setData(Qt.EditRole, int(data['{}'.format(entry)]['Очки КР']))
+            self.participantsTable.setItem(row, 5, item)
+            item = QtWidgets.QTableWidgetItem()
+            item.setData(Qt.EditRole, int(data['{}'.format(entry)]['Внутренний рейтинг']))
+            self.participantsTable.setItem(row, 6, item)
             row += 1
+        self.participantsTable.sortItems(0, Qt.DescendingOrder)
 
     def set_bibs(self):
         a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
         random.shuffle(a)
-        for j in range(self.participantsTable.rowCount()):
-            item = QtWidgets.QTableWidgetItem()
-            item.setData(Qt.EditRole, int(
-                str(self.participantsTable.item(j, 5).text()) + str(self.participantsTable.item(j, 6).text())))
-            self.participantsTable.setItem(j, 0, item)
-        self.participantsTable.sortItems(0, Qt.DescendingOrder)
+
+        self.participantsTable.sortItems(5, Qt.DescendingOrder)
+        for i in range(self.participantsTable.rowCount()):
+            for j in range(1, self.participantsTable.rowCount()):
+                if int(self.participantsTable.item(i, 5).text()) == int(self.participantsTable.item(j, 5).text()) and \
+                        int(self.participantsTable.item(i, 6).text()) > int(self.participantsTable.item(j, 6).text()):
+                    temp = [self.participantsTable.item(i, 1).text(),
+                            self.participantsTable.item(i, 2).text(),
+                            self.participantsTable.item(i, 3).text(),
+                            self.participantsTable.item(i, 4).text(),
+                            self.participantsTable.item(i, 5).text(),
+                            self.participantsTable.item(i, 6).text()]
+                    self.participantsTable.setItem(i, 1,
+                                                   QtWidgets.QTableWidgetItem(self.participantsTable.item(j, 1).text()))
+                    self.participantsTable.setItem(i, 2,
+                                                   QtWidgets.QTableWidgetItem(self.participantsTable.item(j, 2).text()))
+                    self.participantsTable.setItem(i, 3,
+                                                   QtWidgets.QTableWidgetItem(self.participantsTable.item(j, 3).text()))
+                    self.participantsTable.setItem(i, 4,
+                                                   QtWidgets.QTableWidgetItem(self.participantsTable.item(j, 4).text()))
+                    item = QtWidgets.QTableWidgetItem()
+                    item.setData(Qt.EditRole, int(self.participantsTable.item(j, 5).text()))
+                    self.participantsTable.setItem(i, 5, item)
+                    item = QtWidgets.QTableWidgetItem()
+                    item.setData(Qt.EditRole, int(self.participantsTable.item(j, 6).text()))
+                    self.participantsTable.setItem(i, 6, item)
+
+                    self.participantsTable.setItem(j, 1, QtWidgets.QTableWidgetItem(temp[0]))
+                    self.participantsTable.setItem(j, 2, QtWidgets.QTableWidgetItem(temp[1]))
+                    self.participantsTable.setItem(j, 3, QtWidgets.QTableWidgetItem(temp[2]))
+                    self.participantsTable.setItem(j, 4, QtWidgets.QTableWidgetItem(temp[3]))
+                    self.participantsTable.setItem(j, 5, QtWidgets.QTableWidgetItem(temp[4]))
+                    self.participantsTable.setItem(j, 6, QtWidgets.QTableWidgetItem(temp[5]))
+
         for i in range(0, 16):
             self.participantsTable.setItem(i, 0, QtWidgets.QTableWidgetItem(str(a[i])))
         for i in range(16, self.participantsTable.rowCount()):
@@ -615,13 +646,16 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
         for i in Data._participants_data:
             try:
-                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
+                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
+                    'FT_1/2_win'] == '+':
                     self.labelFstPlace.setText(
                         '1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)][
+                    'FT_1/2_win'] == '+':
                     self.labelScndPlace.setText(
                         '2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '-':
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
+                    'FT_1/2_win'] == '-':
                     self.labelThrdPlace.setText(
                         '3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
             except KeyError:
