@@ -140,6 +140,11 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.display_participants(Data._participants_data)
 
     def res_callback(self):
+        default_fin = int(self.competition_data['rounds_amount'].split(sep='/')[1])
+        while default_fin >= 2:
+            self.comboBoxFinals.addItem('1/' + str(default_fin))
+            default_fin = int(default_fin / 2)
+        self.comboBoxFinals.addItem('BF|SF')
         if self.competition_data['Q_amount'] == '2':
             sleep(1)
             self.tabWidget.setCurrentIndex(4)
@@ -277,8 +282,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 place = _ + 1
                 self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             self.ResSortListQ1.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-        for _ in range(break_flag, len(data)):
-            self.ResSortListQ1.removeRow(break_flag)
+        # for _ in range(break_flag, len(data)):
+        #     self.ResSortListQ1.removeRow(break_flag)
 
     def divideQ2(self):
         self.redListQ2.setRowCount(0)
@@ -378,8 +383,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 place = _ + 1
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             self.redListQ1.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-        for _ in range(break_flag, self.ResSortListQ1.rowCount()):
-            self.ResSortListQ2.removeRow(break_flag)
+        # for _ in range(break_flag, self.ResSortListQ1.rowCount()):
+        #     self.ResSortListQ2.removeRow(break_flag)
 
     def show_finals(self):
         self.tabWidget.setCurrentIndex(6)
@@ -527,8 +532,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 'FT_{}_1'.format(round_num)] = self.finalTable.item(i + 2, 4).text()
             Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                 'FT_{}_2'.format(round_num)] = self.finalTable.item(i + 2, 6).text()
-            if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_1'.format(round_num)] < \
-                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_1'.format(round_num)]:
+            if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)] < \
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)]:
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
             else:
@@ -613,12 +618,15 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         heat_num = int(self.finalTable.item(self.finalTable.rowCount() - 4, 0).text()[5::]) + 1
         default_fin = self.comboBoxFinals.currentText()
         self.finalTable.setRowCount(0)
-        data_indexes = []
+        data_indexes_win = []
+        data_indexes_lose = []
         ind = 0
         for i in Data._participants_data:
             try:
                 if Data._participants_data[str(i)]['FT_{}_win'.format('1/2')] == '+':
-                    data_indexes.append(str(i))
+                    data_indexes_win.append(str(i))
+                elif Data._participants_data[str(i)]['FT_{}_win'.format('1/2')] == '-':
+                    data_indexes_lose.append(str(i))
             except KeyError:
                 continue
 
@@ -629,18 +637,19 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.finalTable.insertRow(x + 1)
             self.finalTable.setItem(x + 1, 0, QtWidgets.QTableWidgetItem(str('')))
             self.finalTable.setItem(x + 1, 1,
-                                    QtWidgets.QTableWidgetItem(str(Data._participants_data[data_indexes[ind]]['Ст№'])))
-            Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format(str(default_fin)))
-            Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format(str(default_fin)))
-            Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
+                                    QtWidgets.QTableWidgetItem(
+                                        str(Data._participants_data[data_indexes_win[ind]]['Ст№'])))
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)))
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)))
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
-                str(Data._participants_data[data_indexes[ind]]['Фамилия Имя'])))
+                str(Data._participants_data[data_indexes_win[ind]]['Фамилия Имя'])))
             self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('к'))
             self.finalTable.setItem(x + 1, 4, QtWidgets.QTableWidgetItem(
-                Data._participants_data[data_indexes[ind]]['FT_{}_1'.format(str(default_fin))]))
+                Data._participants_data[data_indexes_win[ind]]['FT_{}_1'.format(str(default_fin))]))
             self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('с'))
             self.finalTable.setItem(x + 1, 6, QtWidgets.QTableWidgetItem(
-                Data._participants_data[data_indexes[ind]]['FT_{}_2'.format(str(default_fin))]))
+                Data._participants_data[data_indexes_win[ind]]['FT_{}_2'.format(str(default_fin))]))
             self.finalTable.item(x + 1, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.finalTable.item(x + 1, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.finalTable.item(x + 1, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -652,18 +661,77 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.finalTable.insertRow(x + 2)
             self.finalTable.setItem(x + 2, 0, QtWidgets.QTableWidgetItem(str('')))
             self.finalTable.setItem(x + 2, 1,
-                                    QtWidgets.QTableWidgetItem(str(Data._participants_data[data_indexes[ind]]['Ст№'])))
-            Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format(str(default_fin)))
-            Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format(str(default_fin)))
-            Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
+                                    QtWidgets.QTableWidgetItem(
+                                        str(Data._participants_data[data_indexes_win[ind]]['Ст№'])))
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)))
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)))
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
-                Data._participants_data[data_indexes[ind]]['Фамилия Имя']))
+                Data._participants_data[data_indexes_win[ind]]['Фамилия Имя']))
             self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('с'))
             self.finalTable.setItem(x + 2, 4, QtWidgets.QTableWidgetItem(
-                Data._participants_data[data_indexes[ind]]['FT_{}_1'.format(str(default_fin))]))
+                Data._participants_data[data_indexes_win[ind]]['FT_{}_1'.format(str(default_fin))]))
             self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('к'))
             self.finalTable.setItem(x + 2, 6, QtWidgets.QTableWidgetItem(
-                Data._participants_data[data_indexes[ind]]['FT_{}_2'.format(str(default_fin))]))
+                Data._participants_data[data_indexes_win[ind]]['FT_{}_2'.format(str(default_fin))]))
+            self.finalTable.item(x + 2, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 2, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 2, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 2, 3).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 2, 5).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+
+            ind += 1
+
+            self.finalTable.insertRow(x + 3)
+
+            heat_num += 1
+
+        ind = 0
+        print(data_indexes_lose, data_indexes_win)
+        for x in range(4, 8, 4):
+            self.finalTable.insertRow(x)
+            self.finalTable.setItem(x, 0, QtWidgets.QTableWidgetItem('Heat ' + str(heat_num)))
+
+            self.finalTable.insertRow(x + 1)
+            self.finalTable.setItem(x + 1, 0, QtWidgets.QTableWidgetItem(str('')))
+            self.finalTable.setItem(x + 1, 1,
+                                    QtWidgets.QTableWidgetItem(
+                                        str(Data._participants_data[data_indexes_lose[ind]]['Ст№'])))
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)))
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)))
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
+            self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
+                str(Data._participants_data[data_indexes_lose[ind]]['Фамилия Имя'])))
+            self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(x + 1, 4, QtWidgets.QTableWidgetItem(
+                Data._participants_data[data_indexes_lose[ind]]['FT_{}_1'.format(str(default_fin))]))
+            self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(x + 1, 6, QtWidgets.QTableWidgetItem(
+                Data._participants_data[data_indexes_lose[ind]]['FT_{}_2'.format(str(default_fin))]))
+            self.finalTable.item(x + 1, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 1, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 1, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 1, 3).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.finalTable.item(x + 1, 5).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+
+            ind += 1
+
+            self.finalTable.insertRow(x + 2)
+            self.finalTable.setItem(x + 2, 0, QtWidgets.QTableWidgetItem(str('')))
+            self.finalTable.setItem(x + 2, 1,
+                                    QtWidgets.QTableWidgetItem(
+                                        str(Data._participants_data[data_indexes_lose[ind]]['Ст№'])))
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)))
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)))
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
+            self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
+                Data._participants_data[data_indexes_lose[ind]]['Фамилия Имя']))
+            self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(x + 2, 4, QtWidgets.QTableWidgetItem(
+                Data._participants_data[data_indexes_lose[ind]]['FT_{}_1'.format(str(default_fin))]))
+            self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(x + 2, 6, QtWidgets.QTableWidgetItem(
+                Data._participants_data[data_indexes_lose[ind]]['FT_{}_2'.format(str(default_fin))]))
             self.finalTable.item(x + 2, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.finalTable.item(x + 2, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.finalTable.item(x + 2, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)

@@ -84,11 +84,6 @@ class Data:
             self.CC_Q_2_Tab.setDisabled(1)
             self.RES_Q_2_Tab.setDisabled(1)
         write_to_json(self.competition_data)
-        default_fin = int(self.competition_data['rounds_amount'].split(sep='/')[1])
-        while default_fin >= 2:
-            self.comboBoxFinals.addItem('1/' + str(default_fin))
-            default_fin = int(default_fin / 2)
-        self.comboBoxFinals.addItem('BF|SF')
 
     def choose_file_participants(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Выберите файл", "",
