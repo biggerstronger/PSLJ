@@ -218,6 +218,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 m += 1
 
     def display_res_q1(self, data):
+        self.get_time_qual1()
         self.RedUnsortListQ1.setRowCount(0)
         self.BlueUnsortListQ1.setRowCount(0)
         n = m = 0
@@ -227,7 +228,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.RedUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
                 self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
                 self.RedUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
-                self.RedUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(''))
+                self.RedUnsortListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(n+1)]['QT_1']))
                 self.RedUnsortListQ1.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ1.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ1.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -237,7 +238,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.BlueUnsortListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
                 self.BlueUnsortListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
                 self.BlueUnsortListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
-                self.BlueUnsortListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(''))
+                self.BlueUnsortListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(n+1)]['QT_1']))
                 self.BlueUnsortListQ1.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ1.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ1.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -275,8 +276,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             n += 1
         self.ResSortListQ1.sortItems(3)
         self.ResSortListQ1.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
-        for _ in range(1, break_flag + 1):
-            if self.ResSortListQ1.item(_, 4).text() == self.ResSortListQ1.item(_ - 1, 4).text():
+        for _ in range(1, self.ResSortListQ1.rowCount()):
+            if self.ResSortListQ1.item(_, 3).text() == self.ResSortListQ1.item(_ - 1, 3).text():
                 self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             else:
                 place = _ + 1
@@ -312,6 +313,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 m += 1
 
     def display_res_q2(self):
+        self.get_time_qual2()
         self.RedUnsortListQ2.setRowCount(0)
         self.BlueUnsortListQ2.setRowCount(0)
         for n in range(self.redListQ2.rowCount()):
@@ -324,7 +326,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                  'С.Ф.'])))
             self.RedUnsortListQ2.setItem(n, 2,
                                          QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
-            self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(''))
+            self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(n + 1)]['QT_2']))
             self.RedUnsortListQ2.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.RedUnsortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.RedUnsortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -338,7 +340,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                   'С.Ф.'])))
             self.BlueUnsortListQ2.setItem(m, 2,
                                           QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
-            self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(''))
+            self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(m + 1)]['QT_2']))
             self.BlueUnsortListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.BlueUnsortListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.BlueUnsortListQ2.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -376,13 +378,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.ResSortListQ2.item(n, 5).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
         self.ResSortListQ2.sortItems(4)
         self.ResSortListQ2.setItem(0, 0, QtWidgets.QTableWidgetItem(str(1)))
-        for _ in range(1, break_flag):
+        for _ in range(1, self.ResSortListQ2.rowCount()):
             if self.ResSortListQ2.item(_, 4).text() == self.ResSortListQ2.item(_ - 1, 4).text():
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             else:
                 place = _ + 1
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
-            self.redListQ1.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.ResSortListQ2.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
         # for _ in range(break_flag, self.ResSortListQ1.rowCount()):
         #     self.ResSortListQ2.removeRow(break_flag)
 
@@ -542,12 +544,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
         for i in Data._participants_data:
             try:
-                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
-                    self.labelFstPlace.setText('1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
-                    self.labelScndPlace.setText('2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '-':
-                    self.labelThrdPlace.setText('3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
+                    'FT_1/2_win'] == '+':
+                    self.labelFstPlace.setText(
+                        '1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)][
+                    'FT_1/2_win'] == '+':
+                    self.labelScndPlace.setText(
+                        '2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
+                    'FT_1/2_win'] == '-':
+                    self.labelThrdPlace.setText(
+                        '3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
             except KeyError:
                 continue
 
