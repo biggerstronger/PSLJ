@@ -408,18 +408,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_1'.format('1/' + str(default_fin)), timer)
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_2'.format('1/' + str(default_fin)), timer)
@@ -448,18 +448,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
                     'FT_{}_1'.format('1/' + str(default_fin)), timer)
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
                     'FT_{}_2'.format('1/' + str(default_fin)), timer)
@@ -499,18 +499,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_1'.format('1/' + str(default_fin)), timer)
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_2'.format('1/' + str(default_fin)), timer)
@@ -542,18 +542,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
                     'FT_{}_1'.format('1/' + str(default_fin)), timer)
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
                     'FT_{}_2'.format('1/' + str(default_fin)), timer)
@@ -648,17 +648,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format('1/' + str(default_fin)), timer)
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format('1/' + str(default_fin)), timer)
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format('1/' + str(default_fin)))
@@ -685,17 +685,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format('1/' + str(default_fin)), timer)
 
                 min_time = int(random.uniform(1, 59))
                 sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(0, 9999))
+                micro_time = int(random.uniform(9999, 999999))
                 timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))
+                                 microsecond=micro_time))[3:]
 
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format('1/' + str(default_fin)), timer)
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format('1/' + str(default_fin)))
@@ -747,17 +747,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
@@ -785,17 +785,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
@@ -833,17 +833,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
@@ -871,17 +871,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
 
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
+            micro_time = int(random.uniform(9999, 999999))
             timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))
+                             microsecond=micro_time))[3:]
 
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))

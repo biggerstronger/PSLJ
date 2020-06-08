@@ -19,16 +19,15 @@ class Data:
         for _ in self._participants_data:
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
-            self._participants_data[str(_)]['QT_1'] = str(time(hour=0, minute=min_time, second=sec_time, microsecond=micro_time))
+            micro_time = int(random.uniform(9999, 999999))
+            self._participants_data[str(_)]['QT_1'] = str(time(minute=min_time, second=sec_time, microsecond=micro_time))[3:]
 
     def get_time_qual2(self):
         for _ in self._participants_data:
             min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(0, 9999))
-            self._participants_data[str(_)]['QT_2'] = str(time(hour=0, minute=min_time, second=sec_time,
-                                                           microsecond=micro_time))
+            micro_time = int(random.uniform(9999, 999999))
+            self._participants_data[str(_)]['QT_2'] = str(time(minute=min_time, second=sec_time, microsecond=micro_time))[3:]
 
     def save_settings(self):
         self.competition_data = {
