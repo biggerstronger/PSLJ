@@ -194,7 +194,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         for t in data:
             if int(data[str(t)]['Ст№']) % 2 == 1:
                 self.redListQ1.insertRow(n)
-                self.redListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(t)]['Ст№'])))
+                item = QtWidgets.QTableWidgetItem()
+                item.setData(Qt.DisplayRole, data[str(t)]['Ст№'])
+                self.redListQ1.setItem(n, 0, item)
                 self.redListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(t)]['С.Ф.'])))
                 self.redListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(t)]['Фамилия Имя'])))
                 self.redListQ1.setItem(n, 3, QtWidgets.QTableWidgetItem(str(data[str(t)]['Спорт. разр.'])))
@@ -206,7 +208,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 n += 1
             else:
                 self.blueListQ1.insertRow(m)
-                self.blueListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(data[str(t)]['Ст№'])))
+                item = QtWidgets.QTableWidgetItem()
+                item.setData(Qt.DisplayRole, data[str(t)]['Ст№'])
+                self.blueListQ1.setItem(m, 0, item)
                 self.blueListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(t)]['С.Ф.'])))
                 self.blueListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(t)]['Фамилия Имя'])))
                 self.blueListQ1.setItem(m, 3, QtWidgets.QTableWidgetItem(str(data[str(t)]['Спорт. разр.'])))
@@ -217,6 +221,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.blueListQ1.item(m, 3).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 m += 1
 
+            self.redListQ1.sortItems(0)
+            self.blueListQ1.sortItems(0)
+
     def display_res_q1(self, data):
         self.get_time_qual1()
         self.RedUnsortListQ1.setRowCount(0)
@@ -225,7 +232,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         for x in data:
             if data[x]['QT1_course'] == 'Красная':
                 self.RedUnsortListQ1.insertRow(n)
-                self.RedUnsortListQ1.setItem(n, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
+                item = QtWidgets.QTableWidgetItem()
+                item.setData(Qt.DisplayRole, data[str(x)]['Ст№'])
+                self.RedUnsortListQ1.setItem(n, 0, item)
                 self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
                 self.RedUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
                 self.RedUnsortListQ1.setItem(n, 3,
@@ -236,7 +245,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 n += 1
             else:
                 self.BlueUnsortListQ1.insertRow(m)
-                self.BlueUnsortListQ1.setItem(m, 0, QtWidgets.QTableWidgetItem(str(data[str(x)]['Ст№'])))
+                item = QtWidgets.QTableWidgetItem()
+                item.setData(Qt.DisplayRole, data[str(x)]['Ст№'])
+                self.BlueUnsortListQ1.setItem(m, 0, item)
                 self.BlueUnsortListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
                 self.BlueUnsortListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
                 self.BlueUnsortListQ1.setItem(m, 3,
@@ -245,6 +256,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.BlueUnsortListQ1.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ1.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 m += 1
+        self.RedUnsortListQ1.sortItems(0)
+        self.BlueUnsortListQ1.sortItems(0)
 
     def manual_time_1(self):
         for i in range(self.RedUnsortListQ1.rowCount()):
@@ -602,16 +615,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
         for i in Data._participants_data:
             try:
-                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
-                    'FT_1/2_win'] == '+':
+                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
                     self.labelFstPlace.setText(
                         '1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)][
-                    'FT_1/2_win'] == '+':
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
                     self.labelScndPlace.setText(
                         '2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
-                    'FT_1/2_win'] == '-':
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)]['FT_1/2_win'] == '-':
                     self.labelThrdPlace.setText(
                         '3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
             except KeyError:
@@ -720,7 +730,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 heat_num += 1
 
     def bf_sf(self):
-        heat_num = int(self.finalTable.item(self.finalTable.rowCount() - 4, 0).text()[5::]) + 1
+        # heat_num = int(self.finalTable.item(self.finalTable.rowCount() - 4, 0).text()[5::]) + 1
         default_fin = self.comboBoxFinals.currentText()
         self.finalTable.setRowCount(0)
         data_indexes_win = []
@@ -737,7 +747,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
         for x in range(0, 4, 4):
             self.finalTable.insertRow(x)
-            self.finalTable.setItem(x, 0, QtWidgets.QTableWidgetItem('Heat ' + str(heat_num)))
+            self.finalTable.setItem(x, 0, QtWidgets.QTableWidgetItem('Big Final'))
 
             self.finalTable.insertRow(x + 1)
             self.finalTable.setItem(x + 1, 0, QtWidgets.QTableWidgetItem(str('')))
@@ -817,13 +827,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             self.finalTable.insertRow(x + 3)
 
-            heat_num += 1
+            # heat_num += 1
 
         ind = 0
         print(data_indexes_lose, data_indexes_win)
         for x in range(4, 8, 4):
             self.finalTable.insertRow(x)
-            self.finalTable.setItem(x, 0, QtWidgets.QTableWidgetItem('Heat ' + str(heat_num)))
+            self.finalTable.setItem(x, 0, QtWidgets.QTableWidgetItem('Small Final'))
 
             self.finalTable.insertRow(x + 1)
             self.finalTable.setItem(x + 1, 0, QtWidgets.QTableWidgetItem(str('')))
@@ -903,4 +913,4 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             self.finalTable.insertRow(x + 3)
 
-            heat_num += 1
+            # heat_num += 1
