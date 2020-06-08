@@ -17,33 +17,18 @@ class Data:
 
     def get_time_qual1(self):
         for _ in self._participants_data:
-            g1time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
-            self._participants_data[str(_)]['QT_1'] = g1time
+            min_time = int(random.uniform(1, 59))
+            sec_time = int(random.uniform(1, 59))
+            micro_time = int(random.uniform(0, 9999))
+            self._participants_data[str(_)]['QT_1'] = str(time(hour=0, minute=min_time, second=sec_time, microsecond=micro_time))
 
     def get_time_qual2(self):
         for _ in self._participants_data:
-            g2time = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
-            self._participants_data[str(_)]['QT_2'] = g2time
-
-    def get_time_finals(self):
-        for _ in self._participants_data:  # TODO переписать генерирование времени в конкретный финал
-            mtime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
-            # stime = '{:.2f}'.format(int(random.uniform(10.00, 59.00)))
-            if self.competition_data['rounds_amount'] == '1/16':
-                if self.competition_data['run_amount'] == '1':
-                    self._participants_data[str(_)]['FT1/16_1'] = mtime
-                else:
-                    self._participants_data[str(_)]['FT1/16_2'] = mtime
-            elif self.competition_data['rounds_amount'] == '1/8':
-                if self.competition_data['run_amount'] == '1':
-                    self._participants_data[str(_)]['FT1/8_1'] = mtime
-                else:
-                    self._participants_data[str(_)]['FT1/8_2'] = mtime
-            elif self.competition_data['rounds_amount'] == '1/4':
-                if self.competition_data['run_amount'] == '1':
-                    self._participants_data[str(_)]['FT1/4_1'] = mtime
-                else:
-                    self._participants_data[str(_)]['FT1/4_2'] = mtime  # TODO показ минут
+            min_time = int(random.uniform(1, 59))
+            sec_time = int(random.uniform(1, 59))
+            micro_time = int(random.uniform(0, 9999))
+            self._participants_data[str(_)]['QT_2'] = str(time(hour=0, minute=min_time, second=sec_time,
+                                                           microsecond=micro_time))
 
     def save_settings(self):
         self.competition_data = {
