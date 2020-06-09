@@ -579,7 +579,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 heat_num += 1
 
     def confirm_final_time(self):
-        penalty = 1.5
+        penalty = 1.5  # TODO считать по формуле в эксельке
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
             if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(self.finalTable.item(i + 2, 4).text()) > 0 or \
@@ -608,7 +608,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 else:
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
                     Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
-            else:
+            else:  # TODO если время равно - смотреть по квалификациям
                 first = float(
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_1'.format(round_num)]) + float(
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
