@@ -179,6 +179,11 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def set_bibs(self):
         a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
         random.shuffle(a)
+        for i in range(self.participantsTable.rowCount()):
+            if self.participantsTable.item(i, 6).text() == '':
+                item = QtWidgets.QTableWidgetItem()
+                item.setData(Qt.EditRole, 0)
+                self.participantsTable.setItem(i, 6, item)
 
         self.participantsTable.sortItems(5, Qt.DescendingOrder)
         for i in range(self.participantsTable.rowCount()):
