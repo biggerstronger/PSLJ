@@ -933,6 +933,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.labelThrdPlace)
 
+        self.checkBoxWithDelay = QCheckBox(self.tab_6)
+        self.checkBoxWithDelay.setObjectName(u"checkBoxWithDelay")
+        self.checkBoxWithDelay.setGeometry(QRect(970, 50, 141, 17))
+        self.checkBoxWithDelay.setMinimumSize(QSize(141, 0))
+        self.checkBoxWithDelay.setChecked(True)
         self.tabWidget.addTab(self.tab_6, "")
         self.tab_8 = QWidget()
         self.tab_8.setObjectName(u"tab_8")
@@ -1158,6 +1163,7 @@ class Ui_MainWindow(object):
         self.labelFstPlace.setText("")
         self.labelScndPlace.setText("")
         self.labelThrdPlace.setText("")
+        self.checkBoxWithDelay.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0440\u0442 \u0441 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u043e\u0439", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Finals", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u0418\u0442\u043e\u0433", None))
     # retranslateUi

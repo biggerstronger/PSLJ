@@ -458,24 +458,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.finalTable.insertRow(i + 1)
                 self.finalTable.setItem(i + 1, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 0).text())))
                 self.finalTable.setItem(i + 1, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 1).text())))
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
-                    'FT_{}_1'.format('1/' + str(default_fin)), timer)
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
+                    'FT_{}_1'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
-                    'FT_{}_2'.format('1/' + str(default_fin)), timer)
+                    'FT_{}_2'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(i + 1, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 2).text())))
@@ -498,24 +484,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.finalTable.insertRow(i + 2)
                 self.finalTable.setItem(i + 2, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 0).text())))
                 self.finalTable.setItem(i + 2, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 1).text())))
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
-                    'FT_{}_1'.format('1/' + str(default_fin)), timer)
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
+                    'FT_{}_1'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
-                    'FT_{}_2'.format('1/' + str(default_fin)), timer)
+                    'FT_{}_2'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(i + 2, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 2).text())))
@@ -549,24 +521,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                         QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(x, 0).text())))
                 self.finalTable.setItem(i + 1, 1,
                                         QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(x, 1).text())))
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
-                    'FT_{}_1'.format('1/' + str(default_fin)), timer)
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
+                    'FT_{}_1'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
-                    'FT_{}_2'.format('1/' + str(default_fin)), timer)
+                    'FT_{}_2'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(i + 1, 2,
@@ -592,24 +550,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                         QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(x, 0).text())))
                 self.finalTable.setItem(i + 2, 1,
                                         QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(x, 1).text())))
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
-                    'FT_{}_1'.format('1/' + str(default_fin)), timer)
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
+                    'FT_{}_1'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
-                    'FT_{}_2'.format('1/' + str(default_fin)), timer)
+                    'FT_{}_2'.format('1/' + str(default_fin)), '')
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                     'FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(i + 2, 2,
@@ -635,6 +579,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 heat_num += 1
 
     def confirm_final_time(self):
+        penalty = 1.5
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
             Data._participants_data[self.finalTable.item(i + 1, 1).text()][
@@ -645,13 +590,31 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 'FT_{}_1'.format(round_num)] = self.finalTable.item(i + 2, 4).text()
             Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                 'FT_{}_2'.format(round_num)] = self.finalTable.item(i + 2, 6).text()
-            if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)] < \
-                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)]:
-                Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
-                Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+            if self.checkBoxWithDelay.isChecked():
+                if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)] < \
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)]:
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                else:
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
             else:
-                Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
-                Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                first = int(
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_1'.format(round_num)]) + int(
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
+                second = int(
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_1'.format(round_num)]) + int(
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
+                if first > penalty:
+                    first = penalty
+                if second > penalty:
+                    second = penalty
+                if first < second:
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                elif second < first:
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
 
         for i in Data._participants_data:
             try:
@@ -698,22 +661,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.finalTable.setItem(x + 1, 0, QtWidgets.QTableWidgetItem(str('')))
                 self.finalTable.setItem(x + 1, 1, QtWidgets.QTableWidgetItem(
                     str(Data._participants_data[data_indexes[ind]]['Ст№'])))
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
-                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format('1/' + str(default_fin)), timer)
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
-                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format('1/' + str(default_fin)), timer)
+                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format('1/' + str(default_fin)), '')
+                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format('1/' + str(default_fin)), '')
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
                     str(Data._participants_data[data_indexes[ind]]['Фамилия Имя'])))
@@ -735,22 +684,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.finalTable.setItem(x + 2, 0, QtWidgets.QTableWidgetItem(str('')))
                 self.finalTable.setItem(x + 2, 1, QtWidgets.QTableWidgetItem(
                     str(Data._participants_data[data_indexes[ind]]['Ст№'])))
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
-                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format('1/' + str(default_fin)), timer)
-
-                min_time = int(random.uniform(1, 59))
-                sec_time = int(random.uniform(1, 59))
-                micro_time = int(random.uniform(9999, 999999))
-                timer = str(time(hour=0, minute=min_time, second=sec_time,
-                                 microsecond=micro_time))[3:]
-
-                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format('1/' + str(default_fin)), timer)
+                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_1'.format('1/' + str(default_fin)), '')
+                Data._participants_data[data_indexes[ind]].setdefault('FT_{}_2'.format('1/' + str(default_fin)), '')
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
                     Data._participants_data[data_indexes[ind]]['Фамилия Имя']))
@@ -773,7 +708,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 heat_num += 1
 
     def bf_sf(self):
-        # heat_num = int(self.finalTable.item(self.finalTable.rowCount() - 4, 0).text()[5::]) + 1
         default_fin = self.comboBoxFinals.currentText()
         self.finalTable.setRowCount(0)
         data_indexes_win = []
@@ -797,22 +731,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.finalTable.setItem(x + 1, 1,
                                     QtWidgets.QTableWidgetItem(
                                         str(Data._participants_data[data_indexes_win[ind]]['Ст№'])))
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)), '')
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)), '')
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
                 str(Data._participants_data[data_indexes_win[ind]]['Фамилия Имя'])))
@@ -835,22 +755,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.finalTable.setItem(x + 2, 1,
                                     QtWidgets.QTableWidgetItem(
                                         str(Data._participants_data[data_indexes_win[ind]]['Ст№'])))
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_1'.format(str(default_fin))), ''
+            Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_2'.format(str(default_fin)), '')
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_win[ind]]['Фамилия Имя']))
@@ -870,8 +776,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             self.finalTable.insertRow(x + 3)
 
-            # heat_num += 1
-
         ind = 0
         print(data_indexes_lose, data_indexes_win)
         for x in range(4, 8, 4):
@@ -883,22 +787,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.finalTable.setItem(x + 1, 1,
                                     QtWidgets.QTableWidgetItem(
                                         str(Data._participants_data[data_indexes_lose[ind]]['Ст№'])))
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)), '')
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)), '')
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
                 str(Data._participants_data[data_indexes_lose[ind]]['Фамилия Имя'])))
@@ -921,22 +811,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             self.finalTable.setItem(x + 2, 1,
                                     QtWidgets.QTableWidgetItem(
                                         str(Data._participants_data[data_indexes_lose[ind]]['Ст№'])))
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)), timer)
-
-            min_time = int(random.uniform(1, 59))
-            sec_time = int(random.uniform(1, 59))
-            micro_time = int(random.uniform(9999, 999999))
-            timer = str(time(hour=0, minute=min_time, second=sec_time,
-                             microsecond=micro_time))[3:]
-
-            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)), timer)
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_1'.format(str(default_fin)), '')
+            Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_2'.format(str(default_fin)), '')
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_lose[ind]]['Фамилия Имя']))
@@ -955,5 +831,3 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             ind += 1
 
             self.finalTable.insertRow(x + 3)
-
-            # heat_num += 1
