@@ -184,6 +184,10 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 item = QtWidgets.QTableWidgetItem()
                 item.setData(Qt.EditRole, 0)
                 self.participantsTable.setItem(i, 6, item)
+            if self.participantsTable.item(i, 5).text() == '':
+                item = QtWidgets.QTableWidgetItem()
+                item.setData(Qt.EditRole, 0)
+                self.participantsTable.setItem(i, 5, item)
 
         self.participantsTable.sortItems(5, Qt.DescendingOrder)
         for i in range(self.participantsTable.rowCount()):
