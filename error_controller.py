@@ -26,3 +26,6 @@ class ErrorController(QtWidgets.QMainWindow, errordialog.Ui_Dialog):
 
     def finals_error_time(self, i):
         self.labelError.setText('Ошибка ввода {} или {} должны быть 0.0 сек'.format(i + 1, i + 2))
+
+    def finals_empty_time(self):
+        self.labelError.setText('Заполните все поля!')
