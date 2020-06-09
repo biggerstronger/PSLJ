@@ -937,7 +937,7 @@ class Ui_MainWindow(object):
         self.checkBoxWithDelay.setObjectName(u"checkBoxWithDelay")
         self.checkBoxWithDelay.setGeometry(QRect(970, 50, 141, 17))
         self.checkBoxWithDelay.setMinimumSize(QSize(141, 0))
-        self.checkBoxWithDelay.setChecked(True)
+        self.checkBoxWithDelay.setChecked(False)
         self.tabWidget.addTab(self.tab_6, "")
         self.tab_8 = QWidget()
         self.tab_8.setObjectName(u"tab_8")
