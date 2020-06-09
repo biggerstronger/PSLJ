@@ -23,3 +23,7 @@ class ErrorController(QtWidgets.QMainWindow, errordialog.Ui_Dialog):
 
     def wrong_bib_type(self, i):
         self.labelError.setText('bib в строке {} должен быть числом'.format(i))
+
+    def finals_error_time(self, i):
+        self.labelError.setText('Oшибка ввода, один из результатов должен быть 0.0 сек'.format(i, i+1))
+
