@@ -582,8 +582,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         penalty = 1.5
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
-            if int(self.finalTable.item(i + 1, 4).text()) > 0 and int(self.finalTable.item(i + 2, 4).text()) > 0 or \
-                    int(self.finalTable.item(i + 1, 6).text()) > 0 and int(self.finalTable.item(i + 2, 6).text()) > 0:
+            if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(self.finalTable.item(i + 2, 4).text()) > 0 or \
+                    float(self.finalTable.item(i + 1, 6).text()) > 0 and float(self.finalTable.item(i + 2, 6).text()) > 0:
                 self.error.finals_error_time(i)
                 self.error.show()
                 break
@@ -596,8 +596,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                 'FT_{}_2'.format(round_num)] = self.finalTable.item(i + 2, 6).text()
             if self.checkBoxWithDelay.isChecked():
-                first = int(Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
-                second = int(Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
+                first = float(Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
+                second = float(Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
                 if first > penalty:
                     first = penalty
                 if second > penalty:
@@ -609,11 +609,11 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
                     Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
             else:
-                first = int(
-                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_1'.format(round_num)]) + int(
+                first = float(
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_1'.format(round_num)]) + float(
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
-                second = int(
-                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_1'.format(round_num)]) + int(
+                second = float(
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_1'.format(round_num)]) + float(
                     Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
                 if first > penalty:
                     first = penalty
