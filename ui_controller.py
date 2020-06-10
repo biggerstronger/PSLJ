@@ -450,7 +450,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         default_fin = int(self.competition_data['rounds_amount'].split(sep='/')[1])
         x = 0
         heat_num = 1
-        if self.qualificationsComboBox.currentText() == '2':  # TODO try x = ResSortListQ2 || ResSortListQ1
+        if self.qualificationsComboBox.currentText() == '2':
             table = self.ResSortListQ2
         else:
             table = self.ResSortListQ1
@@ -515,19 +515,24 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             heat_num += 1
 
     def confirm_final_time(self):
-        if self.competition_data['Q_amount'] == '1':
-            penalty = min(float(self.ResSortListQ1.item(0, 3).text()[3::])/100*4, 1.5)
+        if self.qualificationsComboBox.currentText() == '2':
+            table = self.ResSortListQ2
+            q_val = 2
         else:
-            penalty = min(float(self.ResSortListQ2.item(0, 4).text()[3::])/100*4, 1.5)
+            table = self.ResSortListQ1
+            q_val = 1
+        penalty = min(float(table.item(0, 4).text()[3::]) / 100 * 4, 1.5)  # TODO брать срез строки под определенные данные(зависит от строки из таймера)
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
-            if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1, 6).text() == '' or self.finalTable.item(
+            if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1,
+                                                                                   6).text() == '' or self.finalTable.item(
                     i + 2, 4).text() == '' or self.finalTable.item(i + 2, 6).text() == '':
                 self.error.finals_empty_time()
                 self.error.show()
                 break
             if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(self.finalTable.item(i + 2, 4).text()) > 0 or \
-                    float(self.finalTable.item(i + 1, 6).text()) > 0 and float(self.finalTable.item(i + 2, 6).text()) > 0:
+                    float(self.finalTable.item(i + 1, 6).text()) > 0 and float(
+                self.finalTable.item(i + 2, 6).text()) > 0:
                 self.error.finals_error_time(i)
                 self.error.show()
                 break
@@ -540,24 +545,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                 'FT_{}_2'.format(round_num)] = self.finalTable.item(i + 2, 6).text()
             if self.checkBoxWithDelay.isChecked():
-                first = float(Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
-                second = float(Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
-                if first > penalty:
-                    first = penalty
-                if second > penalty:
-                    second = penalty
-                if first < second:
-                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
-                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
-                else:
-                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
-                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
-            else:  # TODO если время равно - смотреть по квалификациям
                 first = float(
-                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_1'.format(round_num)]) + float(
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
                 second = float(
-                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_1'.format(round_num)]) + float(
                     Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
                 if first > penalty:
                     first = penalty
@@ -566,24 +556,58 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 if first < second:
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
                     Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
-                elif second < first:
+                elif first > second:
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
                     Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                elif first == second:
+                    if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['QT_{}'.format(q_val)] > \
+                            Data._participants_data[self.finalTable.item(i + 2, 1).text()]['QT_{}'.format(q_val)]:
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                    else:
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+
+            else:
+                first = float(
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()][
+                        'FT_{}_1'.format(round_num)]) + float(
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
+                second = float(
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()][
+                        'FT_{}_1'.format(round_num)]) + float(
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_2'.format(round_num)])
+                if first > penalty:
+                    first = penalty
+                if second > penalty:
+                    second = penalty
+                if first < second:
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                elif first > second:
+                    Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                    Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                elif first == second:
+                    if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['QT_{}'.format(q_val)] > \
+                            Data._participants_data[self.finalTable.item(i + 2, 1).text()]['QT_{}'.format(q_val)]:
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                    else:
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
 
         for i in Data._participants_data:
             try:
-                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
-                    'FT_1/2_win'] == '+':
+                if Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' \
+                        and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
                     self.labelFstPlace.setText(
                         '1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' and Data._participants_data[str(i)][
-                    'FT_1/2_win'] == '+':
-                    self.labelScndPlace.setText(
-                        '2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' and Data._participants_data[str(i)][
-                    'FT_1/2_win'] == '-':
-                    self.labelThrdPlace.setText(
-                        '3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-'\
+                        and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
+                    self.labelScndPlace.setText('2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+'\
+                        and Data._participants_data[str(i)]['FT_1/2_win'] == '-':
+                    self.labelThrdPlace.setText('3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
             except KeyError:
                 continue
 
