@@ -130,6 +130,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def load_settings_callback(self):
         Data.choose_file_participants(self)
         Data.load_settings(self)
+        Data.save_excel(self)
 
     def load_file_callback(self):
         Data.choose_file_participants(self)
