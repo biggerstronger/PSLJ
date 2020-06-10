@@ -1,6 +1,7 @@
 import json
 import random
 import xlrd
+import xlwt
 from datetime import time
 from PySide2 import QtWidgets
 
@@ -17,17 +18,15 @@ class Data:
 
     def get_time_qual1(self):
         for _ in self._participants_data:
-            min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
             micro_time = int(random.uniform(9999, 999999))
-            self._participants_data[str(_)]['QT_1'] = str(time(minute=min_time, second=sec_time, microsecond=micro_time))[3:]
+            self._participants_data[str(_)]['QT_1'] = str(time(second=sec_time, microsecond=micro_time))[6:]
 
     def get_time_qual2(self):
         for _ in self._participants_data:
-            min_time = int(random.uniform(1, 59))
             sec_time = int(random.uniform(1, 59))
             micro_time = int(random.uniform(9999, 999999))
-            self._participants_data[str(_)]['QT_2'] = str(time(minute=min_time, second=sec_time, microsecond=micro_time))[3:]
+            self._participants_data[str(_)]['QT_2'] = str(time(second=sec_time, microsecond=micro_time))[6:]
 
     def save_settings(self):
         self.competition_data = {

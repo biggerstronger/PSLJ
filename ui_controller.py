@@ -563,7 +563,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             table = self.ResSortListQ1
             q_val = 1
             it = 3
-        penalty = min(float(table.item(0, it).text()[3::]) / 100 * 4, 1.5)  # TODO брать срез строки под определенные данные(зависит от строки из таймера)
+        penalty = min(float(table.item(0, it).text()) / 100 * 4, 1.5)
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
             if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1,
