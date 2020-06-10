@@ -277,7 +277,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.RedUnsortListQ1.setItem(n, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
                 self.RedUnsortListQ1.setItem(n, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
                 self.RedUnsortListQ1.setItem(n, 3,
-                                             QtWidgets.QTableWidgetItem(Data._participants_data[str(n + 1)]['QT_1']))
+                                             QtWidgets.QTableWidgetItem(Data._participants_data[str(x)]['QT_1']))
                 self.RedUnsortListQ1.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ1.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ1.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -290,7 +290,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.BlueUnsortListQ1.setItem(m, 1, QtWidgets.QTableWidgetItem(str(data[str(x)]['С.Ф.'])))
                 self.BlueUnsortListQ1.setItem(m, 2, QtWidgets.QTableWidgetItem(str(data[str(x)]['Фамилия Имя'])))
                 self.BlueUnsortListQ1.setItem(m, 3,
-                                              QtWidgets.QTableWidgetItem(Data._participants_data[str(n + 1)]['QT_1']))
+                                              QtWidgets.QTableWidgetItem(Data._participants_data[str(x)]['QT_1']))
                 self.BlueUnsortListQ1.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ1.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ1.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -404,7 +404,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                      'С.Ф.'])))
                 self.RedUnsortListQ2.setItem(n, 2,
                                              QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
-                self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(n + 1)]['QT_2']))
+                self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2']))
                 self.RedUnsortListQ2.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -421,7 +421,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                       'С.Ф.'])))
                 self.BlueUnsortListQ2.setItem(m, 2,
                                               QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
-                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(m + 1)]['QT_2']))
+                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(self.redListQ2.item(m, 0).text())]['QT_2']))
                 self.BlueUnsortListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ2.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
