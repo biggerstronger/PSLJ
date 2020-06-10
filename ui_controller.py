@@ -351,38 +351,40 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.redListQ2.setRowCount(0)
         self.blueListQ2.setRowCount(0)
         m = n = 0
-        for t in range(1, self.ResSortListQ1.rowCount()):
-            if int(self.ResSortListQ1.item(t - 1, 1).text()) % 2 == 0:
+        for t in range(0, self.ResSortListQ1.rowCount()):
+            if int(self.ResSortListQ1.item(t, 1).text()) % 2 == 0:
                 self.redListQ2.insertRow(n)
-                self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 1).text())))
-                self.redListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 2).text())))
-                self.redListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 3).text())))
-                Data._participants_data[str(self.ResSortListQ1.item(t - 1, 1).text())]['QT2_course'] = 'Красная'
+                self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 1).text())))
+                self.redListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 2).text())))
+                self.redListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 3).text())))
+                Data._participants_data[str(self.ResSortListQ1.item(t, 1).text())]['QT2_course'] = 'Красная'
                 self.redListQ2.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.redListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.redListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 n += 1
             else:
                 self.blueListQ2.insertRow(m)
-                self.blueListQ2.setItem(m, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 1).text())))
-                self.blueListQ2.setItem(m, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 2).text())))
-                self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 3).text())))
-                Data._participants_data[str(self.ResSortListQ1.item(t - 1, 1).text())]['QT2_course'] = 'Синяя'
+                self.blueListQ2.setItem(m, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 1).text())))
+                self.blueListQ2.setItem(m, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 2).text())))
+                self.blueListQ2.setItem(m, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t, 3).text())))
+                Data._participants_data[str(self.ResSortListQ1.item(t, 1).text())]['QT2_course'] = 'Синяя'
                 self.blueListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.blueListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-                self.blueListQ1.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+                # self.blueListQ1.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 m += 1
-        for i in range(16, self.redListQ2.rowCount()):
-            self.redListQ2.removeRow(16)
-        for i in range(16, self.blueListQ2.rowCount()):
-            self.blueListQ2.removeRow(16)
+        if self.redListQ2.rowCount() > 16:
+            for i in range(16, self.redListQ2.rowCount()):
+                self.redListQ2.removeRow(16)
+        if self.blueListQ2.rowCount() > 16:
+            for i in range(16, self.blueListQ2.rowCount()):
+                self.blueListQ2.removeRow(16)
         self.redListQ2.sortItems(2, Qt.DescendingOrder)
         self.blueListQ2.sortItems(2, Qt.DescendingOrder)
         if self.redListQ2.rowCount() > self.blueListQ2.rowCount():
             x = self.redListQ2.rowCount() - self.blueListQ2.rowCount()
             for i in range(0, x):
                 self.blueListQ2.insertRow(0)
-        elif self.redListQ2.rowCount() < self.blueListQ2.rowCount():
+        if self.redListQ2.rowCount() < self.blueListQ2.rowCount():
             x = self.blueListQ2.rowCount() - self.redListQ2.rowCount()
             for i in range(0, x):
                 self.redListQ2.insertRow(0)
