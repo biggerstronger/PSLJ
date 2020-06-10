@@ -112,7 +112,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                     self.participantsTable.removeRow(index.row())
         else:
             print('No row selected!')
-        self.set_bibs()
+        # self.set_bibs()
 
     def display_resQ1_callback(self):
         sleep(1)
@@ -301,11 +301,20 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
     def manual_time_1(self):
         for i in range(self.RedUnsortListQ1.rowCount()):
-            Data._participants_data[str(self.RedUnsortListQ1.item(i, 0).text())]['QT_1'] = self.RedUnsortListQ1.item(i,
-                                                                                                                     3).text()
+            try:
+                Data._participants_data[str(self.RedUnsortListQ1.item(i, 0).text())][
+                    'QT_1'] = self.RedUnsortListQ1.item(
+                    i, 3).text()
+            except KeyError:
+                print('wrong bib: ', i)
+                continue
         for i in range(self.BlueUnsortListQ1.rowCount()):
-            Data._participants_data[str(self.BlueUnsortListQ1.item(i, 0).text())]['QT_1'] = self.BlueUnsortListQ1.item(
-                i, 3).text()
+            try:
+                Data._participants_data[str(self.BlueUnsortListQ1.item(i, 0).text())]['QT_1'] = self.BlueUnsortListQ1.item(
+                    i, 3).text()
+            except KeyError:
+                print('wrong bib: ', i)
+                continue
         self.sort_res_q1(Data._participants_data)
 
     def sort_res_q1(self, data):
@@ -338,14 +347,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 place = _ + 1
                 self.ResSortListQ1.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             self.ResSortListQ1.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-        # for _ in range(break_flag, len(data)):
-        #     self.ResSortListQ1.removeRow(break_flag)
 
     def divideQ2(self):
         self.redListQ2.setRowCount(0)
         self.blueListQ2.setRowCount(0)
         m = n = 0
-        for t in range(1, self.ResSortListQ1.rowCount() + 1):
+        for t in range(1, self.ResSortListQ1.rowCount()):
             if int(self.ResSortListQ1.item(t - 1, 1).text()) % 2 == 0:
                 self.redListQ2.insertRow(n)
                 self.redListQ2.setItem(n, 0, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(t - 1, 1).text())))
@@ -366,47 +373,77 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 self.blueListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.blueListQ1.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 m += 1
+        for i in range(16, self.redListQ2.rowCount()):
+            self.redListQ2.removeRow(16)
+        for i in range(16, self.blueListQ2.rowCount()):
+            self.blueListQ2.removeRow(16)
+        self.redListQ2.sortItems(2, Qt.DescendingOrder)
+        self.blueListQ2.sortItems(2, Qt.DescendingOrder)
+        if self.redListQ2.rowCount() > self.blueListQ2.rowCount():
+            x = self.redListQ2.rowCount() - self.blueListQ2.rowCount()
+            for i in range(0, x):
+                self.blueListQ2.insertRow(0)
+        elif self.redListQ2.rowCount() < self.blueListQ2.rowCount():
+            x = self.blueListQ2.rowCount() - self.redListQ2.rowCount()
+            for i in range(0, x):
+                self.redListQ2.insertRow(0)
 
     def display_res_q2(self):
         self.get_time_qual2()
         self.RedUnsortListQ2.setRowCount(0)
         self.BlueUnsortListQ2.setRowCount(0)
         for n in range(self.redListQ2.rowCount()):
-            self.RedUnsortListQ2.insertRow(n)
-            self.RedUnsortListQ2.setItem(n, 0,
-                                         QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 0).text())))
-            self.RedUnsortListQ2.setItem(n, 1,
-                                         QtWidgets.QTableWidgetItem(str(
-                                             Data._participants_data[str(self.redListQ2.item(n, 0).text())][
-                                                 'С.Ф.'])))
-            self.RedUnsortListQ2.setItem(n, 2,
-                                         QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
-            self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(n + 1)]['QT_2']))
-            self.RedUnsortListQ2.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-            self.RedUnsortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-            self.RedUnsortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            try:
+                self.RedUnsortListQ2.insertRow(n)
+                self.RedUnsortListQ2.setItem(n, 0,
+                                             QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 0).text())))
+                self.RedUnsortListQ2.setItem(n, 1,
+                                             QtWidgets.QTableWidgetItem(str(
+                                                 Data._participants_data[str(self.redListQ2.item(n, 0).text())][
+                                                     'С.Ф.'])))
+                self.RedUnsortListQ2.setItem(n, 2,
+                                             QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
+                self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(n + 1)]['QT_2']))
+                self.RedUnsortListQ2.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+                self.RedUnsortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+                self.RedUnsortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            except AttributeError:
+                continue
         for m in range(self.blueListQ2.rowCount()):
-            self.BlueUnsortListQ2.insertRow(m)
-            self.BlueUnsortListQ2.setItem(m, 0,
-                                          QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 0).text())))
-            self.BlueUnsortListQ2.setItem(m, 1,
-                                          QtWidgets.QTableWidgetItem(str(
-                                              Data._participants_data[str(self.blueListQ2.item(m, 0).text())][
-                                                  'С.Ф.'])))
-            self.BlueUnsortListQ2.setItem(m, 2,
-                                          QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
-            self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(m + 1)]['QT_2']))
-            self.BlueUnsortListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-            self.BlueUnsortListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-            self.BlueUnsortListQ2.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            try:
+                self.BlueUnsortListQ2.insertRow(m)
+                self.BlueUnsortListQ2.setItem(m, 0,
+                                              QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 0).text())))
+                self.BlueUnsortListQ2.setItem(m, 1,
+                                              QtWidgets.QTableWidgetItem(str(
+                                                  Data._participants_data[str(self.blueListQ2.item(m, 0).text())][
+                                                      'С.Ф.'])))
+                self.BlueUnsortListQ2.setItem(m, 2,
+                                              QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
+                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(m + 1)]['QT_2']))
+                self.BlueUnsortListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+                self.BlueUnsortListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+                self.BlueUnsortListQ2.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            except AttributeError:
+                continue
 
     def manual_time_2(self):
         for i in range(self.RedUnsortListQ2.rowCount()):
-            Data._participants_data[str(self.RedUnsortListQ2.item(i, 0).text())]['QT_2'] = self.RedUnsortListQ2.item(i,
-                                                                                                                     3).text()
+            try:
+                Data._participants_data[str(self.RedUnsortListQ2.item(i, 0).text())][
+                    'QT_1'] = self.RedUnsortListQ2.item(
+                    i, 3).text()
+            except (KeyError, AttributeError):
+                print('wrong bib: ', i)
+                continue
         for i in range(self.BlueUnsortListQ2.rowCount()):
-            Data._participants_data[str(self.BlueUnsortListQ2.item(i, 0).text())]['QT_2'] = self.BlueUnsortListQ2.item(
-                i, 3).text()
+            try:
+                Data._participants_data[str(self.BlueUnsortListQ2.item(i, 0).text())][
+                    'QT_1'] = self.BlueUnsortListQ2.item(
+                    i, 3).text()
+            except (KeyError, AttributeError):
+                print('wrong bib: ', i)
+                continue
         self.sort_res_q2()
 
     def sort_res_q2(self):
