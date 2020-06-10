@@ -24,8 +24,8 @@ class ErrorController(QtWidgets.QMainWindow, errordialog.Ui_Dialog):
     def wrong_bib_type(self, i):
         self.labelError.setText('bib в строке {} должен быть числом'.format(i))
 
-    def finals_error_time(self, i):
-        self.labelError.setText('Ошибка ввода {} или {} должны быть 0.0 сек'.format(i + 1, i + 2))
+    def finals_error_time(self, heat):
+        self.labelError.setText('Ошибка ввода в {}:\nвремя одного из спортсменов должно быть 0.0 сек'.format(heat))
 
     def finals_empty_time(self):
         self.labelError.setText('Заполните все поля!')

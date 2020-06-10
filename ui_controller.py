@@ -1,6 +1,4 @@
 import random
-from datetime import time
-
 from PySide2 import QtCore, QtWidgets, QtGui
 from PySide2.QtCore import QPersistentModelIndex, Qt
 
@@ -524,7 +522,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
 
             self.finalTable.insertRow(i + 2)
             self.finalTable.setItem(i + 2, 0, QtWidgets.QTableWidgetItem(str(table.item(x, 0).text())))
-            self.finalTable.setItem(i + 2, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ2.item(x, 1).text())))
+            self.finalTable.setItem(i + 2, 1, QtWidgets.QTableWidgetItem(str(table.item(x, 1).text())))
             Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
                 'FT_{}_1'.format('1/' + str(default_fin)), '')
             Data._participants_data[self.finalTable.item(i + 2, 1).text()].setdefault(
@@ -556,10 +554,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         if self.qualificationsComboBox.currentText() == '2':
             table = self.ResSortListQ2
             q_val = 2
+            it = 4
         else:
             table = self.ResSortListQ1
             q_val = 1
-        penalty = min(float(table.item(0, 4).text()[3::]) / 100 * 4, 1.5)  # TODO брать срез строки под определенные данные(зависит от строки из таймера)
+            it = 3
+        penalty = min(float(table.item(0, it).text()[3::]) / 100 * 4, 1.5)  # TODO брать срез строки под определенные данные(зависит от строки из таймера)
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
             if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1,
@@ -571,7 +571,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(self.finalTable.item(i + 2, 4).text()) > 0 or \
                     float(self.finalTable.item(i + 1, 6).text()) > 0 and float(
                 self.finalTable.item(i + 2, 6).text()) > 0:
-                self.error.finals_error_time(i)
+                self.error.finals_error_time(self.finalTable.item(i, 0).text())
                 self.error.show()
                 break
             Data._participants_data[self.finalTable.item(i + 1, 1).text()][
