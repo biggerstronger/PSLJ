@@ -9,10 +9,10 @@
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-                            QRect, QSize, QUrl, Qt)
+    QRect, QSize, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-                           QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-                           QRadialGradient)
+    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+    QRadialGradient)
 from PySide2.QtWidgets import *
 
 
@@ -23,7 +23,7 @@ class Ui_Dialog(object):
         Dialog.resize(408, 174)
         self.labelError = QLabel(Dialog)
         self.labelError.setObjectName(u"labelError")
-        self.labelError.setGeometry(QRect(26, 42, 361, 51))
+        self.labelError.setGeometry(QRect(26, 22, 361, 101))
         self.pushButtonOK = QPushButton(Dialog)
         self.pushButtonOK.setObjectName(u"pushButtonOK")
         self.pushButtonOK.setGeometry(QRect(270, 130, 121, 31))
@@ -31,11 +31,11 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
 
         QMetaObject.connectSlotsByName(Dialog)
-
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Ошибка", u"Ошибка", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.labelError.setText("")
         self.pushButtonOK.setText(QCoreApplication.translate("Dialog", u"OK", None))
     # retranslateUi
+
