@@ -504,11 +504,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                 'FT_{}_win'.format('1/' + str(default_fin)))
             self.finalTable.setItem(i + 1, 2, QtWidgets.QTableWidgetItem(str(table.item(x, 2).text())))
-            self.finalTable.setItem(i + 1, 3, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(i + 1, 3, QtWidgets.QTableWidgetItem('красная'))
+            self.setColorRed(self.finalTable, i + 1, 3)
             self.finalTable.setItem(i + 1, 4, QtWidgets.QTableWidgetItem(str(
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()][
                     'FT_{}_1'.format('1/' + str(default_fin))])))
-            self.finalTable.setItem(i + 1, 5, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(i + 1, 5, QtWidgets.QTableWidgetItem('синяя'))
+            self.setColorBlue(self.finalTable, i + 1, 5)
             self.finalTable.setItem(i + 1, 6, QtWidgets.QTableWidgetItem(str(
                 Data._participants_data[self.finalTable.item(i + 1, 1).text()][
                     'FT_{}_2'.format('1/' + str(default_fin))])))
@@ -530,11 +532,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[self.finalTable.item(i + 1, 1).text()].setdefault(
                 'FT_{}_win'.format('1/' + str(default_fin)))
             self.finalTable.setItem(i + 2, 2, QtWidgets.QTableWidgetItem(str(table.item(x, 2).text())))
-            self.finalTable.setItem(i + 2, 3, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(i + 2, 3, QtWidgets.QTableWidgetItem('синяя'))
+            self.setColorBlue(self.finalTable, i + 2, 3)
             self.finalTable.setItem(i + 2, 4, QtWidgets.QTableWidgetItem(str(
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                     'FT_{}_1'.format('1/' + str(default_fin))])))
-            self.finalTable.setItem(i + 2, 5, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(i + 2, 5, QtWidgets.QTableWidgetItem('красная'))
+            self.setColorRed(self.finalTable, i + 2, 5)
             self.finalTable.setItem(i + 2, 6, QtWidgets.QTableWidgetItem(str(
                 Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                     'FT_{}_2'.format('1/' + str(default_fin))])))
@@ -682,10 +686,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
                     str(Data._participants_data[data_indexes[ind]]['Фамилия Имя'])))
-                self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('к'))
+                self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('красная'))
+                self.setColorRed(self.finalTable, x + 1, 3)
                 self.finalTable.setItem(x + 1, 4, QtWidgets.QTableWidgetItem(
                     Data._participants_data[data_indexes[ind]]['FT_{}_1'.format('1/' + str(default_fin))]))
-                self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('с'))
+                self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('синяя'))
+                self.setColorBlue(self.finalTable, x + 1, 5)
                 self.finalTable.setItem(x + 1, 6, QtWidgets.QTableWidgetItem(
                     Data._participants_data[data_indexes[ind]]['FT_{}_2'.format('1/' + str(default_fin))]))
                 self.finalTable.item(x + 1, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -705,10 +711,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 Data._participants_data[data_indexes[ind]].setdefault('FT_{}_win'.format('1/' + str(default_fin)))
                 self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
                     Data._participants_data[data_indexes[ind]]['Фамилия Имя']))
-                self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('с'))
+                self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('синяя'))
+                self.setColorBlue(self.finalTable, x + 2, 3)
                 self.finalTable.setItem(x + 2, 4, QtWidgets.QTableWidgetItem(
                     Data._participants_data[data_indexes[ind]]['FT_{}_1'.format('1/' + str(default_fin))]))
-                self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('к'))
+                self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('красная'))
+                self.setColorRed(self.finalTable, x + 2, 5)
                 self.finalTable.setItem(x + 2, 6, QtWidgets.QTableWidgetItem(
                     Data._participants_data[data_indexes[ind]]['FT_{}_2'.format('1/' + str(default_fin))]))
                 self.finalTable.item(x + 2, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -752,10 +760,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
                 str(Data._participants_data[data_indexes_win[ind]]['Фамилия Имя'])))
-            self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('красная'))
+            self.setColorRed(self.finalTable, x + 1, 3)
             self.finalTable.setItem(x + 1, 4, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_win[ind]]['FT_{}_1'.format(str(default_fin))]))
-            self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('синяя'))
+            self.setColorBlue(self.finalTable, x + 1, 5)
             self.finalTable.setItem(x + 1, 6, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_win[ind]]['FT_{}_2'.format(str(default_fin))]))
             self.finalTable.item(x + 1, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -776,10 +786,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[data_indexes_win[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_win[ind]]['Фамилия Имя']))
-            self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('синяя'))
+            self.setColorBlue(self.finalTable, x + 2, 3)
             self.finalTable.setItem(x + 2, 4, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_win[ind]]['FT_{}_1'.format(str(default_fin))]))
-            self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('красная'))
+            self.setColorRed(self.finalTable, x + 2, 5)
             self.finalTable.setItem(x + 2, 6, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_win[ind]]['FT_{}_2'.format(str(default_fin))]))
             self.finalTable.item(x + 2, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -808,10 +820,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 1, 2, QtWidgets.QTableWidgetItem(
                 str(Data._participants_data[data_indexes_lose[ind]]['Фамилия Имя'])))
-            self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(x + 1, 3, QtWidgets.QTableWidgetItem('красная'))
+            self.setColorRed(self.finalTable, x + 1, 3)
             self.finalTable.setItem(x + 1, 4, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_lose[ind]]['FT_{}_1'.format(str(default_fin))]))
-            self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(x + 1, 5, QtWidgets.QTableWidgetItem('синяя'))
+            self.setColorBlue(self.finalTable, x + 1, 5)
             self.finalTable.setItem(x + 1, 6, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_lose[ind]]['FT_{}_2'.format(str(default_fin))]))
             self.finalTable.item(x + 1, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -832,10 +846,12 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[data_indexes_lose[ind]].setdefault('FT_{}_win'.format(str(default_fin)))
             self.finalTable.setItem(x + 2, 2, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_lose[ind]]['Фамилия Имя']))
-            self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('с'))
+            self.finalTable.setItem(x + 2, 3, QtWidgets.QTableWidgetItem('синяя'))
+            self.setColorBlue(self.finalTable, x + 2, 3)
             self.finalTable.setItem(x + 2, 4, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_lose[ind]]['FT_{}_1'.format(str(default_fin))]))
-            self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('к'))
+            self.finalTable.setItem(x + 2, 5, QtWidgets.QTableWidgetItem('красная'))
+            self.setColorRed(self.finalTable, x + 2, 5)
             self.finalTable.setItem(x + 2, 6, QtWidgets.QTableWidgetItem(
                 Data._participants_data[data_indexes_lose[ind]]['FT_{}_2'.format(str(default_fin))]))
             self.finalTable.item(x + 2, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
