@@ -515,9 +515,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             heat_num += 1
 
     def confirm_final_time(self):
-        penalty = 1.5  # TODO считать по формуле в эксельке
+        if self.competition_data['Q_amount'] == '1':
+            penalty = min(float(self.ResSortListQ1.item(0, 3).text()[3::])/100*4, 1.5)
+        else:
+            penalty = min(float(self.ResSortListQ2.item(0, 4).text()[3::])/100*4, 1.5)
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
+            if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1, 6).text() == '' or self.finalTable.item(
+                    i + 2, 4).text() == '' or self.finalTable.item(i + 2, 6).text() == '':
+                self.error.finals_empty_time()
+                self.error.show()
+                break
             if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(self.finalTable.item(i + 2, 4).text()) > 0 or \
                     float(self.finalTable.item(i + 1, 6).text()) > 0 and float(self.finalTable.item(i + 2, 6).text()) > 0:
                 self.error.finals_error_time(i)
