@@ -112,7 +112,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                     self.participantsTable.removeRow(index.row())
         else:
             print('No row selected!')
-        # self.set_bibs()
 
     def display_resQ1_callback(self):
         sleep(1)
