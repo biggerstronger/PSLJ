@@ -36,107 +36,54 @@
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>1391</width>
-        <height>841</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1481</width>
+        <height>861</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="5" column="0" colspan="3">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Постановщик трассы:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city1">
+       <item row="10" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio2">
          <property name="minimumSize">
           <size>
-           <width>133</width>
+           <width>300</width>
            <height>20</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>133</width>
+           <width>16777215</width>
            <height>20</height>
           </size>
          </property>
         </widget>
        </item>
-       <item row="2" column="3">
-        <widget class="QComboBox" name="runsComboBox">
-         <property name="minimumSize">
-          <size>
-           <width>70</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>70</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="currentIndex">
-          <number>1</number>
-         </property>
+       <item row="3" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <property name="text">
-           <string>1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="33" column="1">
-        <widget class="QLineEdit" name="finishTemp">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_40">
+          <widget class="QLabel" name="label_37">
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
-             <width>90</width>
+             <width>130</width>
              <height>16777215</height>
             </size>
            </property>
            <property name="text">
-            <string>Квалификации</string>
+            <string>Круги</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item row="12" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city4">
+       <item row="13" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city5">
          <property name="minimumSize">
           <size>
            <width>133</width>
@@ -151,8 +98,15 @@
          </property>
         </widget>
        </item>
-       <item row="13" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="fio5">
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Организаторы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="orglineEdit">
          <property name="minimumSize">
           <size>
            <width>300</width>
@@ -161,10 +115,91 @@
          </property>
         </widget>
        </item>
-       <item row="26" column="0">
-        <widget class="QLabel" name="label_26">
+       <item row="18" column="0">
+        <widget class="QLabel" name="label_21">
          <property name="text">
-          <string>Количество ворот</string>
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="30" column="0" colspan="3">
+        <widget class="QLabel" name="label_31">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city2">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Название</string>
+         </property>
+        </widget>
+       </item>
+       <item row="32" column="1">
+        <widget class="QLineEdit" name="startTemp">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="34" column="2">
+        <widget class="QPushButton" name="saveParams">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>160</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Сохранить</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city3">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -184,10 +219,614 @@
          </property>
         </widget>
        </item>
+       <item row="9" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city1">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="1">
+        <widget class="QLineEdit" name="fio8">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city4">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+        <widget class="QLineEdit" name="fio1">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_42">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="3">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="31" column="0" colspan="3" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_30">
+         <property name="text">
+          <string>ПОГОДА</string>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="1">
+        <widget class="QLineEdit" name="length">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="34" column="0">
+        <widget class="QLabel" name="label_34">
+         <property name="text">
+          <string>Снег</string>
+         </property>
+        </widget>
+       </item>
+       <item row="25" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>№ гомологации</string>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="1">
+        <widget class="QLineEdit" name="trackName">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="33" column="0">
+        <widget class="QLabel" name="label_33">
+         <property name="text">
+          <string>Температура финиша</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_39">
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Кол-во заездов</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="0" colspan="3">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="32" column="0">
+        <widget class="QLabel" name="label_32">
+         <property name="text">
+          <string>Температура старта</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio3">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="34" column="1">
+        <widget class="QLineEdit" name="snow">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Название трассы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Открывающие:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="29" column="0">
+        <widget class="QLabel" name="label_29">
+         <property name="text">
+          <string>Время финалов</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio6">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QComboBox" name="qualificationsComboBox">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="currentText">
+          <string>2</string>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="25" column="1">
+        <widget class="QLineEdit" name="homologation">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="29" column="1">
+        <widget class="QLineEdit" name="finalsTime">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="24" column="1">
+        <widget class="QLineEdit" name="altitudeDiff">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="26" column="0">
+        <widget class="QLabel" name="label_26">
+         <property name="text">
+          <string>Количество ворот</string>
+         </property>
+        </widget>
+       </item>
+       <item row="24" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Перепад высот</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="city6">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Должность</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="0" colspan="3" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>ИНФОРМАЦИЯ О ТРАССЕ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_40">
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Квалификации</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Главный секретарь:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio5">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="typelineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Технический делегат:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Тип соревнований</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="1">
+        <widget class="QLineEdit" name="fio9">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="0">
+        <widget class="QLabel" name="label_27">
+         <property name="text">
+          <string>Длина трассы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="28" column="1">
+        <widget class="QLineEdit" name="startTime">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="28" column="0">
+        <widget class="QLabel" name="label_28">
+         <property name="text">
+          <string>Время начала</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="2">
+        <widget class="QLineEdit" name="city9">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="2">
+        <widget class="QLineEdit" name="city8">
+         <property name="minimumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>133</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
        <item row="10" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
           <string>Директор соревнований:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Начальник трассы:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="3" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_8">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>ГЛАВНАЯ СУДЕЙСКАЯ КОМИССИЯ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="titlelineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="datelineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Город</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Постановщик трассы:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="1">
+        <widget class="QLineEdit" name="start">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -230,50 +869,18 @@
          </item>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Тип соревнований</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="titlelineEdit">
+       <item row="33" column="1">
+        <widget class="QLineEdit" name="finishTemp">
          <property name="minimumSize">
           <size>
            <width>300</width>
-           <height>0</height>
+           <height>20</height>
           </size>
          </property>
-        </widget>
-       </item>
-       <item row="12" column="0">
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>Главный секретарь:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="32" column="0">
-        <widget class="QLabel" name="label_32">
-         <property name="text">
-          <string>Температура старта</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>Рефери:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="fio4">
-         <property name="minimumSize">
+         <property name="maximumSize">
           <size>
            <width>300</width>
-           <height>0</height>
+           <height>20</height>
           </size>
          </property>
         </widget>
@@ -285,35 +892,6 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_10">
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Технический делегат:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="26" column="1">
-        <widget class="QLineEdit" name="gates">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
@@ -321,249 +899,8 @@
          </property>
         </widget>
        </item>
-       <item row="29" column="0">
-        <widget class="QLabel" name="label_29">
-         <property name="text">
-          <string>Время финалов</string>
-         </property>
-        </widget>
-       </item>
-       <item row="27" column="1">
-        <widget class="QLineEdit" name="length">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="33" column="0">
-        <widget class="QLabel" name="label_33">
-         <property name="text">
-          <string>Температура финиша</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="datelineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="21" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="text">
-          <string>Название трассы</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="orglineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0" alignment="Qt::AlignLeft">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Должность</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="2">
-        <widget class="QLineEdit" name="city9">
-         <property name="minimumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city5">
-         <property name="minimumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Город</string>
-         </property>
-        </widget>
-       </item>
-       <item row="35" column="0" colspan="4">
-        <widget class="QLabel" name="label_41">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="32" column="1">
-        <widget class="QLineEdit" name="startTemp">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="16" column="1">
-        <widget class="QLineEdit" name="fio8">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="30" column="0" colspan="3">
-        <widget class="QLabel" name="label_31">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="23" column="1">
-        <widget class="QLineEdit" name="finish">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="25" column="0">
-        <widget class="QLabel" name="label_25">
-         <property name="text">
-          <string>№ гомологации</string>
-         </property>
-        </widget>
-       </item>
-       <item row="15" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="fio7">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="0" colspan="3" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>ИНФОРМАЦИЯ О ТРАССЕ</string>
-         </property>
-        </widget>
-       </item>
-       <item row="33" column="2">
-        <widget class="QPushButton" name="pushButtonLoadSettings">
-         <property name="maximumSize">
-          <size>
-           <width>150</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Загрузить из файла</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city6">
-         <property name="minimumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="0">
-        <widget class="QLabel" name="label_21">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="21" column="1">
-        <widget class="QLineEdit" name="trackName">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QComboBox" name="qualificationsComboBox">
+       <item row="2" column="3">
+        <widget class="QComboBox" name="runsComboBox">
          <property name="minimumSize">
           <size>
            <width>70</width>
@@ -575,15 +912,9 @@
            <width>70</width>
            <height>16777215</height>
           </size>
-         </property>
-         <property name="currentText">
-          <string>2</string>
          </property>
          <property name="currentIndex">
           <number>1</number>
-         </property>
-         <property name="frame">
-          <bool>true</bool>
          </property>
          <item>
           <property name="text">
@@ -597,314 +928,22 @@
          </item>
         </widget>
        </item>
-       <item row="9" column="1" alignment="Qt::AlignLeft|Qt::AlignVCenter">
-        <widget class="QLineEdit" name="fio1">
+       <item row="33" column="2">
+        <widget class="QPushButton" name="pushButtonLoadSettings">
          <property name="minimumSize">
           <size>
-           <width>300</width>
-           <height>0</height>
+           <width>0</width>
+           <height>25</height>
           </size>
          </property>
-        </widget>
-       </item>
-       <item row="7" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>ФИО</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="fio6">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="3" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>ГЛАВНАЯ СУДЕЙСКАЯ КОМИССИЯ</string>
-         </property>
-        </widget>
-       </item>
-       <item row="34" column="2">
-        <widget class="QPushButton" name="saveParams">
          <property name="maximumSize">
           <size>
-           <width>150</width>
+           <width>160</width>
            <height>45</height>
           </size>
          </property>
          <property name="text">
-          <string>Сохранить</string>
-         </property>
-        </widget>
-       </item>
-       <item row="29" column="1">
-        <widget class="QLineEdit" name="finalsTime">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city3">
-         <property name="minimumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="fio2">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="24" column="0">
-        <widget class="QLabel" name="label_20">
-         <property name="text">
-          <string>Перепад высот</string>
-         </property>
-        </widget>
-       </item>
-       <item row="24" column="1">
-        <widget class="QLineEdit" name="altitudeDiff">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_37">
-           <property name="maximumSize">
-            <size>
-             <width>90</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Круги</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="28" column="0">
-        <widget class="QLabel" name="label_28">
-         <property name="text">
-          <string>Время начала</string>
-         </property>
-        </widget>
-       </item>
-       <item row="34" column="1">
-        <widget class="QLineEdit" name="snow">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="2" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="city2">
-         <property name="minimumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label_39">
-           <property name="maximumSize">
-            <size>
-             <width>90</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Кол-во заездов</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="34" column="0">
-        <widget class="QLabel" name="label_34">
-         <property name="text">
-          <string>Снег</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Название</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Организаторы</string>
-         </property>
-        </widget>
-       </item>
-       <item row="28" column="1">
-        <widget class="QLineEdit" name="startTime">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="22" column="1">
-        <widget class="QLineEdit" name="start">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="27" column="0">
-        <widget class="QLabel" name="label_27">
-         <property name="text">
-          <string>Длина трассы</string>
-         </property>
-        </widget>
-       </item>
-       <item row="22" column="0">
-        <widget class="QLabel" name="label_23">
-         <property name="text">
-          <string>Старт</string>
-         </property>
-        </widget>
-       </item>
-       <item row="16" column="2">
-        <widget class="QLineEdit" name="city8">
-         <property name="minimumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>133</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="typelineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="16" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Открывающие:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="31" column="0" colspan="3" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_30">
-         <property name="text">
-          <string>ПОГОДА</string>
-         </property>
-        </widget>
-       </item>
-       <item row="25" column="1">
-        <widget class="QLineEdit" name="homologation">
-         <property name="minimumSize">
-          <size>
-           <width>300</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>300</width>
-           <height>16777215</height>
-          </size>
+          <string>Загрузить из файла</string>
          </property>
         </widget>
        </item>
@@ -915,8 +954,38 @@
          </property>
         </widget>
        </item>
-       <item row="18" column="1">
-        <widget class="QLineEdit" name="fio9">
+       <item row="11" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Рефери:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>Старт</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio7">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="23" column="1">
+        <widget class="QLineEdit" name="finish">
          <property name="minimumSize">
           <size>
            <width>300</width>
@@ -931,32 +1000,59 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="0" colspan="3">
-        <widget class="QLabel" name="label_19">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="0">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Начальник трассы:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1" alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="fio3">
+       <item row="26" column="1">
+        <widget class="QLineEdit" name="gates">
          <property name="minimumSize">
           <size>
            <width>300</width>
-           <height>0</height>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
           </size>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_42">
+       <item row="7" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_16">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>ФИО</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1" alignment="Qt::AlignLeft">
+        <widget class="QLineEdit" name="fio4">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="35" column="0">
+        <widget class="QLabel" name="label_41">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -987,11 +1083,11 @@
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
       </property>
-      <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>120</number>
-      </attribute>
       <attribute name="horizontalHeaderMinimumSectionSize">
        <number>40</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>120</number>
       </attribute>
       <column>
        <property name="text">
@@ -1067,19 +1163,19 @@
        <rect>
         <x>950</x>
         <y>10</y>
-        <width>181</width>
+        <width>250</width>
         <height>61</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>181</width>
+        <width>250</width>
         <height>61</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>250</width>
         <height>60</height>
        </size>
       </property>
@@ -1759,11 +1855,17 @@ color: rgb(255, 0, 0)</string>
      <widget class="QPushButton" name="pushButtonConfirmFinalTime">
       <property name="geometry">
        <rect>
-        <x>770</x>
+        <x>610</x>
         <y>780</y>
-        <width>171</width>
-        <height>31</height>
+        <width>331</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>331</width>
+        <height>41</height>
+       </size>
       </property>
       <property name="text">
        <string>ПОДТВЕРДИТЬ ВРЕМЯ</string>
@@ -1807,7 +1909,7 @@ color: rgb(255, 0, 0)</string>
        <rect>
         <x>970</x>
         <y>50</y>
-        <width>141</width>
+        <width>181</width>
         <height>17</height>
        </rect>
       </property>

@@ -431,7 +431,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         for i in range(self.RedUnsortListQ2.rowCount()):
             try:
                 Data._participants_data[str(self.RedUnsortListQ2.item(i, 0).text())][
-                    'QT_1'] = self.RedUnsortListQ2.item(
+                    'QT_2'] = self.RedUnsortListQ2.item(
                     i, 3).text()
             except (KeyError, AttributeError):
                 print('wrong bib: ', i)
@@ -439,7 +439,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         for i in range(self.BlueUnsortListQ2.rowCount()):
             try:
                 Data._participants_data[str(self.BlueUnsortListQ2.item(i, 0).text())][
-                    'QT_1'] = self.BlueUnsortListQ2.item(
+                    'QT_2'] = self.BlueUnsortListQ2.item(
                     i, 3).text()
             except (KeyError, AttributeError):
                 print('wrong bib: ', i)
@@ -449,20 +449,32 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
     def sort_res_q2(self):
         self.ResSortListQ2.setRowCount(0)
         place = 1
-        break_flag = int(self.competition_data['rounds_amount'].split(sep='/')[1]) * 2
-        for n in range(self.ResSortListQ1.rowCount()):
+        for n in range(self.redListQ2.rowCount()):
             self.ResSortListQ2.insertRow(n)
-            self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 1).text())))
-            self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 2).text())))
-            self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.ResSortListQ1.item(n, 3).text())))
+            self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 0).text())))
+            self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
+            self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 2).text())))
             self.ResSortListQ2.setItem(n, 4, QtWidgets.QTableWidgetItem(
-                str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT_2'])))
+                str(Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2'])))
             self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(
-                str(Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'])))
-            if Data._participants_data[str(self.ResSortListQ1.item(n, 1).text())]['QT2_course'] == 'Красная':
-                self.setColorRed(self.ResSortListQ2, n, 5)
-            else:
-                self.setColorBlue(self.ResSortListQ2, n, 5)
+                str(Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT2_course'])))
+            self.setColorRed(self.ResSortListQ2, n, 5)
+            self.ResSortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.ResSortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.ResSortListQ2.item(n, 3).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.ResSortListQ2.item(n, 4).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.ResSortListQ2.item(n, 5).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+
+        for n in range(self.blueListQ2.rowCount()):
+            self.ResSortListQ2.insertRow(n)
+            self.ResSortListQ2.setItem(n, 1, QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(n, 0).text())))
+            self.ResSortListQ2.setItem(n, 2, QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(n, 1).text())))
+            self.ResSortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(n, 2).text())))
+            self.ResSortListQ2.setItem(n, 4, QtWidgets.QTableWidgetItem(
+                str(Data._participants_data[str(self.blueListQ2.item(n, 0).text())]['QT_2'])))
+            self.ResSortListQ2.setItem(n, 5, QtWidgets.QTableWidgetItem(
+                str(Data._participants_data[str(self.blueListQ2.item(n, 0).text())]['QT2_course'])))
+            self.setColorBlue(self.ResSortListQ2, n, 5)
             self.ResSortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.ResSortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
             self.ResSortListQ2.item(n, 3).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
