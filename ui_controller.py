@@ -420,7 +420,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                       'С.Ф.'])))
                 self.BlueUnsortListQ2.setItem(m, 2,
                                               QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
-                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(self.redListQ2.item(m, 0).text())]['QT_2']))
+                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT_2']))
                 self.BlueUnsortListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ2.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -489,8 +489,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 place = _ + 1
                 self.ResSortListQ2.setItem(_, 0, QtWidgets.QTableWidgetItem(str(place)))
             self.ResSortListQ2.item(_, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
-        # for _ in range(break_flag, self.ResSortListQ1.rowCount()):
-        #     self.ResSortListQ2.removeRow(break_flag)
 
     def show_finals(self):
         self.tabWidget.setCurrentIndex(6)
