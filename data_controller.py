@@ -61,7 +61,6 @@ class Data:
             'start_temp': self.startTemp.text(),
             'finish_temp': self.finishTemp.text(),
             'snow': self.snow.text()
-
         }
         if self.competition_data["Q_amount"] == '1':
             self.CC_Q_2_Tab.setDisabled(1)
@@ -141,17 +140,3 @@ class Data:
                     part_data.setdefault('QT_2', None)
                     self._participants_data['{}'.format(part_data['Ст№'])] = part_data
         # print(self._participants_data)
-
-    def save_excel(self):
-        wb = xlwt.Workbook()
-        ws = wb.add_sheet('A Test Sheet')
-        ws.write(0, 0, 'Test')
-        ws.write(1, 0, 'TEST')
-        ws.write(2, 0, 1)
-        ws.write(2, 1, 1)
-        ws = wb.add_sheet('A Test Sheet2')
-        ws.write(0, 0, '1234567')
-        ws.write(1, 0, 'TEST')
-        ws.write(2, 0, 1)
-        ws.write(2, 1, 1)
-        wb.save('test.xls')

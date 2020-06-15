@@ -5,10 +5,11 @@ from PySide2.QtCore import QPersistentModelIndex, Qt
 import error_controller
 import new_form
 from data_controller import Data
+from xls_processor import XLS
 from time import sleep
 
 
-class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
+class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -28,6 +29,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         self.pushButtonConfirmFinalTime.clicked.connect(self.confirm_final_time)
         self.comboBoxFinals.currentIndexChanged.connect(self.finals)
         self.error = error_controller.ErrorController()
+        self.xls = XLS()
 
     @staticmethod
     def setColorRed(table, rowIndex, cellIndex):
@@ -120,17 +122,17 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         sleep(1)
         self.tabWidget.setCurrentIndex(5)
         self.display_res_q2()
+        self.xls.save_excel('test', self.competition_data)
 
     def save_settings_callback(self):
         Data.save_settings(self)
         sleep(1)
         self.tabWidget.setCurrentIndex(1)
-        print('Данные сохранены!')
+        print('Settings saved!')
 
     def load_settings_callback(self):
         Data.choose_file_participants(self)
         Data.load_settings(self)
-        Data.save_excel(self)
 
     def load_file_callback(self):
         Data.choose_file_participants(self)
@@ -308,7 +310,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 continue
         for i in range(self.BlueUnsortListQ1.rowCount()):
             try:
-                Data._participants_data[str(self.BlueUnsortListQ1.item(i, 0).text())]['QT_1'] = self.BlueUnsortListQ1.item(
+                Data._participants_data[str(self.BlueUnsortListQ1.item(i, 0).text())][
+                    'QT_1'] = self.BlueUnsortListQ1.item(
                     i, 3).text()
             except KeyError:
                 print('wrong bib: ', i)
@@ -403,7 +406,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                      'С.Ф.'])))
                 self.RedUnsortListQ2.setItem(n, 2,
                                              QtWidgets.QTableWidgetItem(str(self.redListQ2.item(n, 1).text())))
-                self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2']))
+                self.RedUnsortListQ2.setItem(n, 3, QtWidgets.QTableWidgetItem(
+                    Data._participants_data[str(self.redListQ2.item(n, 0).text())]['QT_2']))
                 self.RedUnsortListQ2.item(n, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ2.item(n, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.RedUnsortListQ2.item(n, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -420,7 +424,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                                                       'С.Ф.'])))
                 self.BlueUnsortListQ2.setItem(m, 2,
                                               QtWidgets.QTableWidgetItem(str(self.blueListQ2.item(m, 1).text())))
-                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT_2']))
+                self.BlueUnsortListQ2.setItem(m, 3, QtWidgets.QTableWidgetItem(
+                    Data._participants_data[str(self.blueListQ2.item(m, 0).text())]['QT_2']))
                 self.BlueUnsortListQ2.item(m, 0).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ2.item(m, 1).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
                 self.BlueUnsortListQ2.item(m, 2).setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
@@ -577,18 +582,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
         penalty = min(float(table.item(0, it).text()) / 100 * 4, 1.5)
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
-            if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1,
-                                                                                   6).text() == '' or self.finalTable.item(
-                    i + 2, 4).text() == '' or self.finalTable.item(i + 2, 6).text() == '':
-                self.error.finals_empty_time()
-                self.error.show()
-                break
-            if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(self.finalTable.item(i + 2, 4).text()) > 0 or \
-                    float(self.finalTable.item(i + 1, 6).text()) > 0 and float(
-                self.finalTable.item(i + 2, 6).text()) > 0:
-                self.error.finals_error_time(self.finalTable.item(i, 0).text())
-                self.error.show()
-                break
             Data._participants_data[self.finalTable.item(i + 1, 1).text()][
                 'FT_{}_1'.format(round_num)] = self.finalTable.item(i + 1, 4).text()
             Data._participants_data[self.finalTable.item(i + 1, 1).text()][
@@ -598,6 +591,14 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
             Data._participants_data[self.finalTable.item(i + 2, 1).text()][
                 'FT_{}_2'.format(round_num)] = self.finalTable.item(i + 2, 6).text()
             if self.checkBoxWithDelay.isChecked():
+                if self.finalTable.item(i + 1, 6).text() == '' or self.finalTable.item(i + 2, 6).text() == '':
+                    self.error.finals_empty_time()
+                    self.error.show()
+                    break
+                if float(self.finalTable.item(i + 1, 6).text()) > 0 and float(self.finalTable.item(i + 2, 6).text()) > 0:
+                    self.error.finals_error_time(self.finalTable.item(i, 0).text())
+                    self.error.show()
+                    break
                 first = float(
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_2'.format(round_num)])
                 second = float(
@@ -615,13 +616,30 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 elif first == second:
                     if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['QT_{}'.format(q_val)] > \
                             Data._participants_data[self.finalTable.item(i + 2, 1).text()]['QT_{}'.format(q_val)]:
-                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
-                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '-'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '+'
                     else:
-                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
-                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '+'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '-'
 
             else:
+                if self.finalTable.item(i + 1, 4).text() == '' or self.finalTable.item(i + 1,
+                                                                                       6).text() == '' or self.finalTable.item(
+                    i + 2, 4).text() == '' or self.finalTable.item(i + 2, 6).text() == '':
+                    self.error.finals_empty_time()
+                    self.error.show()
+                    break
+                if float(self.finalTable.item(i + 1, 4).text()) > 0 and float(
+                        self.finalTable.item(i + 2, 4).text()) > 0 or \
+                        float(self.finalTable.item(i + 1, 6).text()) > 0 and float(
+                    self.finalTable.item(i + 2, 6).text()) > 0:
+                    self.error.finals_error_time(self.finalTable.item(i, 0).text())
+                    self.error.show()
+                    break
                 first = float(
                     Data._participants_data[self.finalTable.item(i + 1, 1).text()][
                         'FT_{}_1'.format(round_num)]) + float(
@@ -643,11 +661,15 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                 elif first == second:
                     if Data._participants_data[self.finalTable.item(i + 1, 1).text()]['QT_{}'.format(q_val)] > \
                             Data._participants_data[self.finalTable.item(i + 2, 1).text()]['QT_{}'.format(q_val)]:
-                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '-'
-                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '+'
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '-'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '+'
                     else:
-                        Data._participants_data[self.finalTable.item(i + 1, 1).text()]['FT_{}_win'.format(round_num)] = '+'
-                        Data._participants_data[self.finalTable.item(i + 2, 1).text()]['FT_{}_win'.format(round_num)] = '-'
+                        Data._participants_data[self.finalTable.item(i + 1, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '+'
+                        Data._participants_data[self.finalTable.item(i + 2, 1).text()][
+                            'FT_{}_win'.format(round_num)] = '-'
 
         for i in Data._participants_data:
             try:
@@ -655,12 +677,14 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data):
                         and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
                     self.labelFstPlace.setText(
                         '1 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-'\
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '-' \
                         and Data._participants_data[str(i)]['FT_1/2_win'] == '+':
-                    self.labelScndPlace.setText('2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
-                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+'\
+                    self.labelScndPlace.setText(
+                        '2 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                elif Data._participants_data[str(i)]['FT_BF|SF_win'] == '+' \
                         and Data._participants_data[str(i)]['FT_1/2_win'] == '-':
-                    self.labelThrdPlace.setText('3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
+                    self.labelThrdPlace.setText(
+                        '3 место = участник {}'.format(Data._participants_data[str(i)]['Фамилия Имя']))
             except KeyError:
                 continue
 
