@@ -207,4 +207,4 @@ class XLS:
         wb.save('test.xls')
 
     def save_finals(self):
-        pass
+        print(0)
