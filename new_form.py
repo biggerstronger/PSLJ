@@ -960,12 +960,9 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_6, "")
         self.tab_8 = QWidget()
         self.tab_8.setObjectName(u"tab_8")
-        self.gridLayoutWidget_8 = QWidget(self.tab_8)
-        self.gridLayoutWidget_8.setObjectName(u"gridLayoutWidget_8")
-        self.gridLayoutWidget_8.setGeometry(QRect(-1, -1, 1261, 771))
-        self.gridLayout_10 = QGridLayout(self.gridLayoutWidget_8)
-        self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.gridLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.pushButtonPrint = QPushButton(self.tab_8)
+        self.pushButtonPrint.setObjectName(u"pushButtonPrint")
+        self.pushButtonPrint.setGeometry(QRect(350, 250, 641, 341))
         self.tabWidget.addTab(self.tab_8, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -1184,6 +1181,7 @@ class Ui_MainWindow(object):
         self.labelThrdPlace.setText("")
         self.checkBoxWithDelay.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0440\u0442 \u0441 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u043e\u0439", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Finals", None))
+        self.pushButtonPrint.setText(QCoreApplication.translate("MainWindow", u"PRINT", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u0418\u0442\u043e\u0433", None))
     # retranslateUi
 

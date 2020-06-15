@@ -31,6 +31,15 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         self.error = error_controller.ErrorController()
         self.xls = XLS()
 
+        self.pushButtonPrint.clicked.connect(self.print_callback)
+
+    def print_callback(self):
+        self.xls.save_participants_list('Список участников', self.competition_data, self.participantsTable)
+        self.xls.save_start_list_1('SL Q1', self.competition_data, self.redListQ1, self.blueListQ1)
+        self.xls.save_res_1('Res Q1', self.competition_data, self.ResSortListQ1)
+        self.xls.save_start_list_2('SL Q2', self.competition_data, self.redListQ2, self.blueListQ2)
+        self.xls.save_res_2('Res Q2', self.competition_data, self.ResSortListQ2)
+
     @staticmethod
     def setColorRed(table, rowIndex, cellIndex):
         table.item(rowIndex, cellIndex).setForeground(QtGui.QColor(255, 0, 0))
@@ -122,7 +131,6 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         sleep(1)
         self.tabWidget.setCurrentIndex(5)
         self.display_res_q2()
-        self.xls.save_excel('test', self.competition_data)
 
     def save_settings_callback(self):
         Data.save_settings(self)

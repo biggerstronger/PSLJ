@@ -1943,16 +1943,18 @@ color: rgb(255, 0, 0)</string>
      <attribute name="title">
       <string>Итог</string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget_8">
+     <widget class="QPushButton" name="pushButtonPrint">
       <property name="geometry">
        <rect>
-        <x>-1</x>
-        <y>-1</y>
-        <width>1261</width>
-        <height>771</height>
+        <x>350</x>
+        <y>250</y>
+        <width>641</width>
+        <height>341</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_10"/>
+      <property name="text">
+       <string>PRINT</string>
+      </property>
      </widget>
     </widget>
    </widget>
