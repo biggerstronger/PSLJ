@@ -9,18 +9,18 @@ class XLS:
     def __init__(self):
         open('test.xls', 'w').close()
         wb = xlwt.Workbook()
-        ws = wb.add_sheet('Шаблон')
-        ws.write(0, 0, 'Hello')
+        ws = wb.add_sheet('Шаблон', cell_overwrite_ok=True)
+        ws.write(0, 0, '')
         wb.save('test.xls')
 
-    def save_excel(self, sheet_name, data):  # TODO param: sheet_name, table_name; make a template with competition data
+    def save_excel(self, sheet_name, data):
         rb = xlrd.open_workbook('test.xls', formatting_info=True)
         wb = copy(rb)
-        ws = wb.add_sheet(sheet_name)
+        ws = wb.add_sheet(sheet_name, cell_overwrite_ok=True)
         ws.write_merge(0, 0, 0, 6, '{}'.format(data['title']), xlwt.easyxf("align: horiz center"))
         ws.write_merge(1, 1, 0, 6, '{}'.format(data['place']), xlwt.easyxf("align: horiz center"))
-        ws.write_merge(3, 3, 0, 6, '{}'.format('test'),
-                       xlwt.easyxf("align: horiz center"))  # TODO add param 'list name'
+        ws.write_merge(3, 3, 0, 6, '{}'.format(sheet_name),
+                       xlwt.easyxf("align: horiz center"))
         ws.write_merge(5, 5, 0, 6, '{}'.format(data['type']), xlwt.easyxf("align: horiz center"))
         ws.write_merge(7, 7, 0, 1, '{}'.format('Организаторы:'), xlwt.easyxf("align: horiz left"))
         # TODO set column width depending on len(data)
@@ -206,14 +206,25 @@ class XLS:
             sheet.write(28 + i, 4, table1.item(i, 5).text())
         wb.save('test.xls')
 
-    def save_finals(self):
-        print(0)
+    def save_finals(self, sheet_name, table, data):
+        rb = xlrd.open_workbook('test.xls', formatting_info=True)
+        wb = copy(rb)
+        wb.add_sheet(sheet_name)
+        sheet = wb.get_sheet(6)
+        sheet.col(3).width = 256 * 100
+        sheet.write(0, 3, '{}'.format(data['title']), xlwt.easyxf("align: horiz center"))
+        sheet.write(1, 3, '{}'.format(data['place']), xlwt.easyxf("align: horiz center"))
+        sheet.write(3, 3, '{}'.format(sheet_name), xlwt.easyxf("align: horiz center"))
+        sheet.write(5, 3, '{}'.format(data['type']), xlwt.easyxf("align: horiz center"))
+        print(data['penalty'])
+        sheet.write(5, 26, data['penalty'])
+        wb.save('test.xls')
 
     def results(self, sheet_name, data, participants):
         self.save_excel(sheet_name, data)
         rb = xlrd.open_workbook('test.xls', formatting_info=True)
         wb = copy(rb)
-        sheet = wb.get_sheet(6)
+        sheet = wb.get_sheet(7)
         sheet.write(27, 0, 'Место')
         sheet.write(27, 1, 'Ст№')
         sheet.write(27, 2, 'С.Ф.')
@@ -232,7 +243,6 @@ class XLS:
         sheet.write(52, 0, 'Qualifications')
 
         for i in participants:
-            print(participants[str(i)])
             try:
                 if participants[str(i)]['FT_BF|SF_win'] == '+' and participants[str(i)]['FT_1/2_win'] == '+':
                     sheet.write(29, 0, '1')

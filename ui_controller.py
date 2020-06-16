@@ -2,6 +2,7 @@ import random
 from PySide2 import QtCore, QtWidgets, QtGui
 from PySide2.QtCore import QPersistentModelIndex, Qt
 
+import subprocess
 import error_controller
 import new_form
 from data_controller import Data
@@ -28,10 +29,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         self.pushButtonShowFinals.clicked.connect(self.show_finals)
         self.pushButtonConfirmFinalTime.clicked.connect(self.confirm_final_time)
         self.comboBoxFinals.currentIndexChanged.connect(self.finals)
+        self.pushButtonExcel.clicked.connect(self.print_callback)
         self.error = error_controller.ErrorController()
         self.xls = XLS()
-
-        self.pushButtonPrint.clicked.connect(self.print_callback)
 
     def print_callback(self):
         self.xls.save_participants_list('Список участников', self.competition_data, self.participantsTable)
@@ -39,7 +39,9 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         self.xls.save_res_1('Res Q1', self.competition_data, self.ResSortListQ1)
         self.xls.save_start_list_2('SL Q2', self.competition_data, self.redListQ2, self.blueListQ2)
         self.xls.save_res_2('Res Q2', self.competition_data, self.ResSortListQ2)
+        self.xls.save_finals('Финалы', self.finalTable, self.competition_data)
         self.xls.results('Результаты', self.competition_data, Data._participants_data)
+        subprocess.run('test.xls', check=True, shell=True)
 
     @staticmethod
     def setColorRed(table, rowIndex, cellIndex):
@@ -589,6 +591,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
             q_val = 1
             it = 3
         penalty = min(float(table.item(0, it).text()) / 100 * 4, 1.5)
+        self.competition_data.setdefault('penalty', penalty)
         round_num = self.comboBoxFinals.currentText()
         for i in range(0, self.finalTable.rowCount(), 4):
             Data._participants_data[self.finalTable.item(i + 1, 1).text()][

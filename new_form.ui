@@ -1938,24 +1938,24 @@ color: rgb(255, 0, 0)</string>
        <bool>false</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButtonExcell">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>320</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Результаты в Excel</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_8">
      <attribute name="title">
       <string>Итог</string>
      </attribute>
-     <widget class="QPushButton" name="pushButtonPrint">
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>250</y>
-        <width>641</width>
-        <height>341</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PRINT</string>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>
