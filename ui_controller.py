@@ -39,6 +39,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         self.xls.save_res_1('Res Q1', self.competition_data, self.ResSortListQ1)
         self.xls.save_start_list_2('SL Q2', self.competition_data, self.redListQ2, self.blueListQ2)
         self.xls.save_res_2('Res Q2', self.competition_data, self.ResSortListQ2)
+        self.xls.results('Результаты', self.competition_data, Data._participants_data)
 
     @staticmethod
     def setColorRed(table, rowIndex, cellIndex):

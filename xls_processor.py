@@ -130,11 +130,11 @@ class XLS:
         sheet.write(27, 1, 'Ст№')
         sheet.write(27, 2, 'С.Ф.')
         sheet.write(27, 3, 'Фамилия Имя')
-        sheet.write(27, 4, 'Г.р.')
+        sheet.write(27, 4, 'С.к.')
         sheet.write(27, 8, 'Ст№')
         sheet.write(27, 9, 'С.Ф.')
         sheet.write(27, 10, 'Фамилия Имя')
-        sheet.write(27, 11, 'Г.р.')
+        sheet.write(27, 11, 'С.к.')
         for i in range(table1.rowCount()):
             sheet.write(28 + i, 1, table1.item(i, 0).text())
             sheet.write(28 + i, 2, table1.item(i, 1).text())
@@ -208,3 +208,85 @@ class XLS:
 
     def save_finals(self):
         print(0)
+
+    def results(self, sheet_name, data, participants):
+        self.save_excel(sheet_name, data)
+        rb = xlrd.open_workbook('test.xls', formatting_info=True)
+        wb = copy(rb)
+        sheet = wb.get_sheet(6)
+        sheet.write(27, 0, 'Место')
+        sheet.write(27, 1, 'Ст№')
+        sheet.write(27, 2, 'С.Ф.')
+        sheet.write(27, 3, 'Фамилия Имя')
+        sheet.write(27, 4, 'Г.р.')
+        sheet.write(27, 5, 'С.к.')
+        sheet.write(27, 6, 'Кв-1')
+        sheet.write(27, 7, 'Кв-2')
+        sheet.write(27, 8, 'Сумма')
+        sheet.write(27, 9, 'Спорт. разряд')
+
+        sheet.write(28, 0, 'Final')
+        sheet.write(32, 0, 'Small-final')
+        sheet.write(36, 0, '1/4')
+        sheet.write(42, 0, '1/8')
+        sheet.write(52, 0, 'Qualifications')
+
+        for i in participants:
+            print(participants[str(i)])
+            try:
+                if participants[str(i)]['FT_BF|SF_win'] == '+' and participants[str(i)]['FT_1/2_win'] == '+':
+                    sheet.write(29, 0, '1')
+                    sheet.write(29, 1, participants[str(i)]['С.Ф.'])
+                    sheet.write(29, 1, participants[str(i)]['Ст№'])
+                    sheet.write(29, 3, participants[str(i)]['Фамилия Имя'])
+                if participants[str(i)]['FT_BF|SF_win'] == '-' and participants[str(i)]['FT_1/2_win'] == '+':
+                    sheet.write(30, 0, '2')
+                    sheet.write(30, 1, participants[str(i)]['С.Ф.'])
+                    sheet.write(30, 1, participants[str(i)]['Ст№'])
+                    sheet.write(30, 3, participants[str(i)]['Фамилия Имя'])
+                if participants[str(i)]['FT_BF|SF_win'] == '+' and participants[str(i)]['FT_1/2_win'] == '-':
+                    sheet.write(33, 0, '3')
+                    sheet.write(33, 1, participants[str(i)]['С.Ф.'])
+                    sheet.write(33, 1, participants[str(i)]['Ст№'])
+                    sheet.write(33, 3, participants[str(i)]['Фамилия Имя'])
+                if participants[str(i)]['FT_BF|SF_win'] == '-' and participants[str(i)]['FT_1/2_win'] == '-':
+                    sheet.write(34, 0, '4')
+                    sheet.write(34, 1, participants[str(i)]['С.Ф.'])
+                    sheet.write(34, 1, participants[str(i)]['Ст№'])
+                    sheet.write(34, 3, participants[str(i)]['Фамилия Имя'])
+            except KeyError:
+                continue
+        x = 37
+        place = 5
+        for i in participants:
+            try:
+                if participants[str(i)]['FT_1/8_win'] == '+' and participants[str(i)][
+                    'FT_1/4_win'] == '-' and 'FT_1/2_win' not in participants[str(i)]:
+                    sheet.write(x, 0, str(place))
+                    sheet.write(x, 1, participants[str(i)]['С.Ф.'])
+                    sheet.write(x, 1, participants[str(i)]['Ст№'])
+                    sheet.write(x, 3, participants[str(i)]['Фамилия Имя'])
+                    x += 1
+                    place += 1
+            except KeyError:
+                continue
+        x = 43
+        y = 53
+        place_non_rate = 17
+        for i in participants:
+            try:
+                if participants[str(i)]['FT_1/8_win'] == '-':
+                    sheet.write(x, 0, str(place))
+                    sheet.write(x, 1, participants[str(i)]['С.Ф.'])
+                    sheet.write(x, 1, participants[str(i)]['Ст№'])
+                    sheet.write(x, 3, participants[str(i)]['Фамилия Имя'])
+                    x += 1
+                    place += 1
+            except KeyError:
+                sheet.write(y, 0, str(place_non_rate))
+                sheet.write(y, 1, participants[str(i)]['С.Ф.'])
+                sheet.write(y, 1, participants[str(i)]['Ст№'])
+                sheet.write(y, 3, participants[str(i)]['Фамилия Имя'])
+                y += 1
+                place_non_rate += 1
+        wb.save('test.xls')
