@@ -7,7 +7,6 @@ import error_controller
 import new_form
 from data_controller import Data
 from xls_processor import XLS
-from time import sleep
 
 
 class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
@@ -39,7 +38,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         self.xls.save_res_1('Res Q1', self.competition_data, self.ResSortListQ1)
         self.xls.save_start_list_2('SL Q2', self.competition_data, self.redListQ2, self.blueListQ2)
         self.xls.save_res_2('Res Q2', self.competition_data, self.ResSortListQ2)
-        self.xls.save_finals('Финалы', self.finalTable, self.competition_data)
+        self.xls.save_finals('Финалы', self.finalTable, self.competition_data, self.comboBoxFinals)
         self.xls.results('Результаты', self.competition_data, Data._participants_data)
         subprocess.run('test.xls', check=True, shell=True)
 
@@ -126,18 +125,18 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
             print('No row selected!')
 
     def display_resQ1_callback(self):
-        sleep(1)
+
         self.tabWidget.setCurrentIndex(3)
         self.display_res_q1(Data._participants_data)
 
     def display_resQ2_callback(self):
-        sleep(1)
+
         self.tabWidget.setCurrentIndex(5)
         self.display_res_q2()
 
     def save_settings_callback(self):
         Data.save_settings(self)
-        sleep(1)
+
         self.tabWidget.setCurrentIndex(1)
         print('Settings saved!')
 
@@ -156,12 +155,13 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
             self.comboBoxFinals.addItem('1/' + str(default_fin))
             default_fin = int(default_fin / 2)
         self.comboBoxFinals.addItem('BF|SF')
+        print(self.comboBoxFinals.count())
         if self.competition_data['Q_amount'] == '2':
-            sleep(1)
+
             self.tabWidget.setCurrentIndex(4)
             self.divideQ2()
         else:
-            sleep(1)
+
             self.tabWidget.setCurrentIndex(6)
             self.show_finals()
 
@@ -607,7 +607,8 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
                     self.error.finals_empty_time()
                     self.error.show()
                     break
-                if float(self.finalTable.item(i + 1, 6).text()) > 0 and float(self.finalTable.item(i + 2, 6).text()) > 0:
+                if float(self.finalTable.item(i + 1, 6).text()) > 0 and float(
+                        self.finalTable.item(i + 2, 6).text()) > 0:
                     self.error.finals_error_time(self.finalTable.item(i, 0).text())
                     self.error.show()
                     break

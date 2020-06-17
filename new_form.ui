@@ -1938,7 +1938,7 @@ color: rgb(255, 0, 0)</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButtonExcell">
+     <widget class="QPushButton" name="pushButtonExcel">
       <property name="geometry">
        <rect>
         <x>970</x>

@@ -163,6 +163,17 @@ class XLS:
             sheet.write(28 + i, 2, table1.item(i, 2).text())
             sheet.write(28 + i, 3, table1.item(i, 3).text())
             sheet.write(28 + i, 4, table1.item(i, 4).text())
+        # for col in sheet.col:
+        #     max_length = 0
+        #     column = col[0].column  # Get the column name
+        #     for cell in col:
+        #         try:  # Necessary to avoid error on empty cells
+        #             if len(str(cell.value)) > max_length:
+        #                 max_length = len(cell.value)
+        #         except:
+        #             pass
+        #     adjusted_width = (max_length + 2) * 1.2
+        #     worksheet.column_dimensions[column].width = adjusted_width
         wb.save('test.xls')
 
     def save_start_list_2(self, sheet_name, data, table1, table2):  # switch blueList and redList (?)
@@ -204,20 +215,36 @@ class XLS:
             sheet.write(28 + i, 2, table1.item(i, 2).text())
             sheet.write(28 + i, 3, table1.item(i, 4).text())
             sheet.write(28 + i, 4, table1.item(i, 5).text())
+        # self.len_setter(rb)
         wb.save('test.xls')
 
-    def save_finals(self, sheet_name, table, data):
+    def save_finals(self, sheet_name, table, data, rounds):
         rb = xlrd.open_workbook('test.xls', formatting_info=True)
         wb = copy(rb)
         wb.add_sheet(sheet_name)
         sheet = wb.get_sheet(6)
-        sheet.col(3).width = 256 * 100
         sheet.write(0, 3, '{}'.format(data['title']), xlwt.easyxf("align: horiz center"))
         sheet.write(1, 3, '{}'.format(data['place']), xlwt.easyxf("align: horiz center"))
         sheet.write(3, 3, '{}'.format(sheet_name), xlwt.easyxf("align: horiz center"))
         sheet.write(5, 3, '{}'.format(data['type']), xlwt.easyxf("align: horiz center"))
         print(data['penalty'])
-        sheet.write(5, 26, data['penalty'])
+        sheet.write(4, 16, 'PENALTY')
+        sheet.write(5, 16, data['penalty'])
+        x = 0
+        for i in range(rounds.count()):
+            rounds.setCurrentIndex(i)
+            for j in range(table.rowCount()):
+                try:
+                    sheet.write(8 + j, x, table.item(j, 0).text(), xlwt.easyxf("align: horiz center"))
+                    sheet.write(8 + j, x + 1, table.item(j, 1).text(), xlwt.easyxf("align: horiz center"))
+                    sheet.write(8 + j, x + 2, table.item(j, 2).text(), xlwt.easyxf("align: horiz center"))
+                    sheet.write(8 + j, x + 3, table.item(j, 3).text(), xlwt.easyxf("align: horiz center"))
+                    sheet.write(8 + j, x + 4, table.item(j, 4).text(), xlwt.easyxf("align: horiz center"))
+                    sheet.write(8 + j, x + 5, table.item(j, 5).text(), xlwt.easyxf("align: horiz center"))
+                    sheet.write(8 + j, x + 6, table.item(j, 6).text(), xlwt.easyxf("align: horiz center"))
+                except AttributeError:
+                    continue
+            x += 8
         wb.save('test.xls')
 
     def results(self, sheet_name, data, participants):
@@ -300,3 +327,14 @@ class XLS:
                 y += 1
                 place_non_rate += 1
         wb.save('test.xls')
+
+    # def len_setter(self, wb):
+    #     for sheet in wb.sheets():
+    #         rows = sheet.nrows
+    #         columns = sheet.ncols
+    #         for i in range(columns):
+    #             m = []
+    #             for j in range(rows):
+    #                 m.append(len(sheet.cell_value(j, i)))
+    #             # sheet.col(i).width = max(m) * 256
+    #             print(sheet)
