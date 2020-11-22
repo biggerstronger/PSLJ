@@ -5,11 +5,12 @@ from PySide2.QtCore import QPersistentModelIndex, Qt
 import subprocess
 import error_controller
 import new_form
+from db import DB_Controller
 from data_controller import Data
 from xls_processor import XLS
 
 
-class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
+class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS, DB_Controller):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -31,6 +32,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         self.pushButtonExcel.clicked.connect(self.print_callback)
         self.error = error_controller.ErrorController()
         self.xls = XLS()
+        # self.db = DB_Controller()
 
     def print_callback(self):
         self.xls.save_participants_list('Список участников', self.competition_data, self.participantsTable)
@@ -128,6 +130,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
 
         self.tabWidget.setCurrentIndex(3)
         self.display_res_q1(Data._participants_data)
+        self.add_db(self.competition_data)
 
     def display_resQ2_callback(self):
 
@@ -144,7 +147,7 @@ class Controller(QtWidgets.QMainWindow, new_form.Ui_MainWindow, Data, XLS):
         Data.choose_file_participants(self)
         Data.load_settings(self)
 
-    def load_file_callback(self):
+    def  load_file_callback(self):
         Data.choose_file_participants(self)
         Data.load_file(self)
         self.display_participants(Data._participants_data)

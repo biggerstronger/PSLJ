@@ -139,4 +139,4 @@ class Data:
                     part_data.setdefault('QT2_course', None)
                     part_data.setdefault('QT_2', None)
                     self._participants_data['{}'.format(part_data['Ст№'])] = part_data
-        # print(self._participants_data)
+        # print(self.competition_data)
